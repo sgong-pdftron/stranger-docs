@@ -26,3 +26,5 @@ For more see [Highlights](https://developers.google.com/style/highlights) of Goo
 * In general, nesting a lot might not work well. E.g. H4-H6 are probably never needed.
 * Outside of code snippets, **all** Classes and Methods **shall** contain a link to the corresponding API.
 * Prefer images over lots of text.
+
+-![stranger docs](https://github.com/sgong-pdftron/stranger-docs/blob/master/stranger-docs.png "Stranger Docs")
