@@ -1,31 +1,28 @@
-# quick-menu-config
----
-
-## Quick Menu Config
+# Quick Menu Config
 
 A Configuration for quick menu type and icon pair.
 
-### Basic example:
-#### get icon resource id by menu type:
+## Basic example:
+### get icon resource id by menu type:
 ```
 QuickMenuConfig.getInstance().getMenuIconId("appearance");
 ```
-#### get customized Icon resource id only by menu type:
+### get customized Icon resource id only by menu type:
 ```
 QuickMenuConfig.getInstance().getMenuIconId("appearance", false);
 ```
-#### add a customized menu type and icon pair:
+### add a customized menu type and icon pair:
 ```
 QuickMenuConfig.getInstance().putIconMenuMap("appearance", R.drawable.ic_android);
 ```
-#### add entire customized menu type and icon set:
+### add entire customized menu type and icon set:
 ```
 HashMap<String, Integer> map = new HashMap<>();
 map.put("appearance", R.drawable.ic_android);
 QuickMenuConfig.getInstance().putIconMenuMap(map);
 ```
 
-### Default menu type and icon set:
+## Default menu type and icon set:
 | Type                      | Icon ResourceId                              | Icon                                             |
 |---------------------------|----------------------------------------------|--------------------------------------------------|
 | [Tool.QM_APPEARANCE]()    | R.drawable.ic_color_lens_black_24dp          | ![](./img/ic_color_lens_black_24dp.PNG)          |
