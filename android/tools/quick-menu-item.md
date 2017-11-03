@@ -1,10 +1,9 @@
-# quick-menu-item
-
-## Quick Menu Item
+# Quick Menu Item
 
 A menu item for quick menu. that defines menu type, menu display text, menu icon color, and menu opacity here. It auto generates menu icon resource from [QuickMenuConfig](./quick-menu-config.md). There are three possible display modes:
 
-##### FIRST_ROW_MENU
+#### FIRST_ROW_MENU
+ 
   _int FIRST_ROW_MENU_
 
   The menu item is going to be displayed in first row in quick menu.
@@ -24,27 +23,27 @@ A menu item for quick menu. that defines menu type, menu display text, menu icon
   The menu item is going to be displayed in overflow list in quick menu.
 
   Constant Value: 2
-### Initialize Quick Menu Item
+## Initialize Quick Menu Item
 ```
 // creates a quick menu item with type "appearance", display text: "style",
 // and show in first row.
 QuickMenuItem menuItem = new QuickMenuItem("apperance", "style", FIRST_ROW_MENU);
 ```
 
-### Customize
-#### set display text
+## Customize
+### set display text
 ```
 menuItem.setText("customized display text");
 ```
-#### set icon resource
+### set icon resource
 ```
 menuItem.setIconRes(R.drawable.ic_android);
 ```
-#### set icon color
+### set icon color
 ```
 menuItem.setIconColor(Color.red);
 ```
-#### set menu item opacity
+### set menu item opacity
 ```
 menuItem.setIconOpacity(0.54);
 ```
