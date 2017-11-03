@@ -25,7 +25,7 @@ public void showMenu(Context context, PDFViewCtrl pdfViewCtrl, RectF anchor_rect
     // add a menu item in overflow list of quick menu
     menuItems.add(new QuickMenuItem(Tool.QM_TRANSLATE, "translate", QuickMenuItem.OVERFLOW_ROW_MENU));
 
-	QuickMenu quickMenu = new QuickMenu(context, pdfViewCtrl, anchor_rect, menuItems);
+    QuickMenu quickMenu = new QuickMenu(context, pdfViewCtrl, anchor_rect, menuItems);
     // show quick menu
     quickMenu.show();
     // .....
