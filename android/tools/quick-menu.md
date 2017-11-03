@@ -5,11 +5,11 @@
 
 A menu Layout that can be shown in [PDFViewCtrl](../pdf-view-ctrl). It shows a small menu layout with maximum two rows, and a overflow menu list.
 
-![quick menu main layout](./quick-menu-main-layout.png) ![quick menu overflow layout](./quick-menu-overflow-layout.png)
+![quick menu main layout](./img/quick-menu-main-layout.png) ![quick menu overflow layout](./img/quick-menu-overflow-layout.png)
 
 With a given anchor rectangle view, quick menu auto adjust position so it will be shown in either at the top of the anchor view or at the bottom of the anchor view:
 
-![quick-menu-layout](https://image.ibb.co/caOU5w/quick_menu_layout.jpg)
+![quick-menu-layout](./img/quick-menu-layout.jpg)
 
 ### Basic Example:
 
@@ -35,8 +35,8 @@ public void showMenu(Context context, PDFViewCtrl pdfViewCtrl, RectF anchor_rect
 
 ```
 #### Result
-![main layout](./quick-menu-example-main.png)
-![overflow layout](./quick-menu-example-overflow.png)
+![main layout](./img/quick-menu-example-main.png)
+![overflow layout](./img/quick-menu-example-overflow.png)
 
 ### Customization
 
