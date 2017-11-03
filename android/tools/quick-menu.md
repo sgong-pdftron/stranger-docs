@@ -41,7 +41,7 @@ public void showMenu(Context context, PDFViewCtrl pdfViewCtrl, RectF anchor_rect
 ### Customization
 
 #### Icons
-Quick menu gets icon automatically based on menu item type in [QuickMenuConfig](./quick-menu-config). You can add customized icons by calling
+Quick menu gets icon automatically based on menu item type in [QuickMenuConfig](./quick-menu-config.md). You can add customized icons by calling
 ```
 QuickMenuConfing.getInstance().putIconMenuMap(String type, @DrawableRes int iconResId);
 ```
@@ -49,7 +49,7 @@ or
 ```
 QuickMenuConfing.getInstance().putIconMenuMap(HashMap<String, Integer> iconMap);
 ```
-See  [QuickMenuConfig](./quick-menu-config) for more details.
+See  [QuickMenuConfig](./quick-menu-config.md) for more details.
 
 #### Menu Item Color or Style
 - If you want to set a menu item icon color, you can set menuItem color as following example:
