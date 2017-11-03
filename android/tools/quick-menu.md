@@ -56,7 +56,7 @@ See  [QuickMenuConfig](./quick-menu-config.md) for more details.
 	```
 	menuItem.setIconColor(context.getColor(R.color.red));
 	```
-	More details see [QuickMenuItem.setIconColor](./quick-menu-item#setIconColor).
+	More details see [QuickMenuItem.setIconColor](./quick-menu-item.md#set-icon-color).
 - If quick menu is already displayed, you can get menu item view by menu item type by calling:
 	```
     quickMenu.findButtonByMenuType(menuType);
