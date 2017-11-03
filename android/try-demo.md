@@ -35,7 +35,7 @@ implementation "com.pdftron:tools:6.8.0"
 implementation "com.pdftron:demo:1.0.0"
 ```
 
-Next, add the trial license key to AndroidManifest.xml inside the <application/> tag:
+Next, add the trial license key to AndroidManifest.xml inside the `<application/>` tag:
 
 ```
 <meta-data
