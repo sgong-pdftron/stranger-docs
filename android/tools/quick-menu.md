@@ -3,7 +3,7 @@
 
 ## Quick Menu
 
-A menu Layout that can be shown in [PDFViewCtrl](../pdf-view-ctrl). It shows a small menu layout with maximum two rows, and a overflow menu list.
+A menu Layout that can be shown in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFDoc.html). It shows a small menu layout with maximum two rows, and a overflow menu list.
 
 ![quick menu main layout](./img/quick-menu-main-layout.png) ![quick menu overflow layout](./img/quick-menu-overflow-layout.png)
 
