@@ -1,4 +1,4 @@
-# quick-menu
+# quick-menu-config
 ---
 
 ## Quick Menu Config
