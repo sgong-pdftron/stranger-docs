@@ -6,21 +6,21 @@ A menu item for quick menu. that defines menu type, menu display text, menu icon
  
   _int FIRST_ROW_MENU_
 
-  The menu item is going to be displayed in first row in quick menu.
+  Display the menu item in first row.
 
   Constant Value: 0
 
 #### SECOND_ROW_MENU
   _int SECOND_ROW_MENU_
 
-  The menu item is going to be displayed in second row in quick menu.
+  Display the menu item in second row.
 
   Constant Value: 1
 
 #### OVERFLOW_ROW_MENU
   _int OVERFLOW_ROW_MENU_
 
-  The menu item is going to be displayed in overflow list in quick menu.
+  Display the menu item in overflow menu list.
 
   Constant Value: 2
 ## Initialize Quick Menu Item
