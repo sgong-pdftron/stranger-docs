@@ -3,7 +3,7 @@
 [CustomRelativeLayout]() is a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html) that can be nested and displayed in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by a given page position and page number. Therefore all child views of [CustomRelativeLayout]() are displayed in PDF view.
 
 ## XML Attributes
-[CustomRelativeLayout] lets child views to be displayed in side [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
+[CustomRelativeLayout] lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
 
 ### app:posX
 Specifies the x coordinates in page point.
