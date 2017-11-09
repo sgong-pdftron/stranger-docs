@@ -30,9 +30,9 @@ pdfView.setToolManager(toolManager);
 ```
 
 ### Add custom constructor parameter to tool manager
-Generally, tools are using [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) as their contructor parameter. If your custom tool requires more than [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html), you can add your customized parameter as following:
+Generally, tools are using [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) as their contructor parameter. If your custom tool requires other parameters, you can add your customized parameter as following:
 ```
-toolManager.addCustomizedTool(new CustomTool(pdfView), pdfView, param1, param2);
+toolManager.addCustomizedTool(new CustomTool(pdfView), param1, param2);
 ```
 
 ### Set custom tool as default tool in ToolManager
