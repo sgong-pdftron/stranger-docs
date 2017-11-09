@@ -121,18 +121,22 @@ Used for [StickyNote](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/
 
 resource name: `R.array.icon_colors`
 
-### Sticky note icons
-Used for selecting icons for [StickyNote](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Text.html) annotation.
-
-![icon-picker](./img/note-icon-picker.png)
-
-resource name: `R.array.stickynote_icons`
-
 ### Signature colors
 Used for changing colors for [Signature]() tool.
 
 ![color-picker](./img/signature-color-picker.PNG)
 
 resource name: `R.array.signature_colors`
+
+### Sticky note icons
+Used for selecting icons for [StickyNote](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Text.html) annotation. For each annotation icon, it stores two identical icons, one for filling color, the other one for outline.
+
+![icon-picker](./img/note-icon-picker.png)
+
+resource name: `R.array.stickynote_icons`
+
+Corresponding drawable resource: `R.drawable.annotaiton_note_icon_{$icon-name}_fill` and `R.drawable.annotation_note_icon_{$icon-name}_outline`
+
+
 
 
