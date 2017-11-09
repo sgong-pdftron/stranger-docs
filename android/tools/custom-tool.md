@@ -42,15 +42,21 @@ toolManager.setDefaultToolCLass(CustomTool.class);
 ```
 
 ## Switching between tools
-Tools are automatically switching to next tool by protected field `mNextToolMode` in [Tool](). To change the next tool mode to custom tool mode, you need to call [currentTool.setNextToolModeHelper(int nextToolMode)]()
+To use Custom tools, you can use [ToolManager.setTool]() to switch to Custom Tool:
 ```
 Button button = findViewById(R.id.button);
 button.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        ((Tool)mToolManager.getTool()).setNextToolModeHelper(CustomTool.MODE);
-    }
+  @Override
+  public void onClick(View v) {
+    mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));;
+  }
 });
+```
+
+Alternatively, If your current tool is an instance of [Tool](), you can also use `Tool.setNextToolModeHelper` to set next tool to be custom tool, and also easily switch to the other tools.
+
+```
+((Tool) mToolManager.getTool()).setNextToolModeHelper(CustomTool.MODE);
 ```
 
 ## Example
@@ -91,7 +97,7 @@ Button button = findViewById(R.id.button);
 button.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        ((Tool)mToolManager.getTool()).setNextToolModeHelper(CustomizedTool.MODE);
+        mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));;
     }
 });
 ```
