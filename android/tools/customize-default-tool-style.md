@@ -65,6 +65,7 @@ format: float
 ## Customize style
 ### Overriding existing style
 The following table are default exisitng styles for corresponding tool:
+
 | Tool                                | style resource                       |
 |-------------------------------------|--------------------------------------|
 | [ToolManager.e_text_highlight]()    | R.style.HighlightAnnotationProperty  |
