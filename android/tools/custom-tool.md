@@ -48,7 +48,7 @@ Button button = findViewById(R.id.button);
 button.setOnClickListener(new View.OnClickListener() {
   @Override
   public void onClick(View v) {
-    mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));;
+    mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));
   }
 });
 ```
@@ -97,7 +97,7 @@ Button button = findViewById(R.id.button);
 button.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));;
+        mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));
     }
 });
 ```
