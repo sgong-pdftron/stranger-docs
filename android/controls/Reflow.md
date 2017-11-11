@@ -1,9 +1,7 @@
 # Reflow
----
 Reflow makes the document more flexible and easier to read, especially on small devices. PDFNet is able to extract reflowable layout of each page of a PDF document as an HTML file. In this article we explains how simple is to show a widget that allows the user to swipe left or right through the pages of the document to see reflowable document pages. Later, we provide necessary functions to convert a hard-layout document page to an HTML document page.
 
 # How to show Reflow pager
----
 ReflowControl is a [ViewPager](https://developer.android.com/reference/android/support/v4/view/ViewPager.html) that allows the user to flip left and right through reflowable layout of pages in a certain PDF document.
 
 ![](https://github.com/sgong-pdftron/stranger-docs/blob/master/android/controls/gif/reflow_pager.gif?raw=true "Reflow")
@@ -105,11 +103,9 @@ You can support right-to-left languages by setting the direction of reflowable t
 ReflowControl:setRightToLeftDirection(isRtlMode)
 
 # How to generate a Reflow page
----
 You don't need a reflow pager to have a reflowable layout of PDF pages. Indeed, you can extract the reflowable layout by creating an HTML file from a certain page of the document.
 
 ## Implementation
----
 The first step is to let the core knows you are going to use reflow by calling:
 ```android
 ReflowProcessor.clearCache();
