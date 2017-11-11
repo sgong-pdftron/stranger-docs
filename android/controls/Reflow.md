@@ -90,7 +90,7 @@ Alternatively you can zoom in/out to change the reflowable text size:
     }
 ```     
 
-Assuming the current text size is %100, by calling zoomReflow(reflowControl, true) and zoomReflow(reflowControl, false) the new text size will be %125 and %75, respectively.
+Assuming the current text size is 100%, by calling zoomReflow(reflowControl, true) and zoomReflow(reflowControl, false) the new text size will be 125% and 75% of the original size, respectively.
 
 ### Set background color
 There are three methods to change the background color:
