@@ -157,4 +157,4 @@ When reflow processor has been initialized, you can request for reflow by callin
 
 To cancel all reflow requests, call ReflowProcessor.cancelAllRequests();
 
-Finally, if you want to clear all HTML files created in the cache you many need to call ReflowProcessor.clearCache().
+Finally, if you want to clear all HTML files created in the cache you may need to call ReflowProcessor.clearCache().
