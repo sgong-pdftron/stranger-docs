@@ -1,9 +1,9 @@
 # Creating Custom Tool
 
-You can create your own customized tool based on the fundamental tool: [Tool](). [Tool]() is responsible to creating annotations or handling annotations when user interacts with [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). This tutorial helps you create a customized tool.
+You can create your own customized tool based on the fundamental tool: [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html). [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html) is responsible to creating annotations or handling annotations when user interacts with [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). This tutorial helps you create a customized tool.
 
 ## Subclass a Tool
-All the tool class defined in PDFViewCtrlTools extend [Tool](). Your custom tool can also extent Tool directly, or you can save time by extending one of the existing tool subclasses, such as [RectCreate]()
+All the tool class defined in PDFViewCtrlTools extend [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html). Your custom tool can also extent Tool directly, or you can save time by extending one of the existing tool subclasses, such as [RectCreate]()
 ```
 class CustomTool extends Tool {
   public static int MODE = 1234;
@@ -36,7 +36,7 @@ toolManager.addCustomizedTool(new CustomTool(pdfView), param1, param2);
 ```
 
 ### Set custom tool as default tool in ToolManager
-If your custom tool is a subclass of [Pan]() tool and you want to replace the original [Pan]() tool to be the default tool in tool manager, you can set it as the following:
+If your custom tool is a subclass of [Pan](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Pan.html) tool and you want to replace the original [Pan](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Pan.html) tool to be the default tool in tool manager, you can set it as the following:
 ```
 toolManager.setDefaultToolCLass(CustomTool.class);
 ```
@@ -48,12 +48,12 @@ Button button = findViewById(R.id.button);
 button.setOnClickListener(new View.OnClickListener() {
   @Override
   public void onClick(View v) {
-    mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));;
+    mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));
   }
 });
 ```
 
-Alternatively, If your current tool is an instance of [Tool](), you can also use `Tool.setNextToolModeHelper` to set next tool to be custom tool, and also easily switch to the other tools.
+Alternatively, If your current tool is an instance of [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html), you can also use `Tool.setNextToolModeHelper` to set next tool to be custom tool, and also easily switch to the other tools.
 
 ```
 ((Tool) mToolManager.getTool()).setNextToolModeHelper(CustomTool.MODE);
@@ -97,7 +97,51 @@ Button button = findViewById(R.id.button);
 button.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));;
+        mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));
     }
 });
 ```
+
+## Additional Tips
+If your custom tool is going to create a new annotation by drawing a shape on page, your custom tool can extends [SimpleShapeCreate]() or subclasses class of it depends on the shape the custom tool going to draw. After that, you can just simply override the `createMarkup(PDFDoc doc, Rect bbox)` function for creating your custom annotation.
+
+For instance, If you want to draw a rectangle on page first, and then using that rectangle area to create a signature field. You can create a custom tool by extends [RectCreate]():
+```
+/**
+ * This class is for creating a signature field annotation
+ */
+public class SignatureFieldCreate extends RectCreate {
+    public SignatureFieldCreate(PDFViewCtrl ctrl) {
+        super(ctrl);
+    }
+
+    @Override
+    public int getMode() {
+        return ToolManager.e_signature_field; // return a unique tool mode
+    }
+
+    // Override this function to return a Widget annotation with field type Field.e_sigature
+    @Override
+    protected Annot createMarkup(PDFDoc doc, Rect bbox) throws PDFNetException {
+        Annot annot =  Widget.create(doc, bbox, doc.fieldCreate("signature", Field.e_signature));
+        return annot;
+    }
+}
+```
+
+The following create tools may help you creates annotation easily:
+
+#### [SimeleShapeCreate]():
+The subclasses will draw something on page first, and then creates an annotation.
+
+Helpful tools for drawing on page: [RectCreate](), [OvalCreate](), [LineCreate](), [ArrowCreate]()
+
+Example tool: [SignatureFieldCreate]()
+
+#### [TextMarkupCreate]()
+It will select the text first, and then creates an annotation. If the annotation created is not [TextMarkup](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/TextMarkup.html), it will creates a rectangle surrounding the selected text.
+
+Example tool: [TextLinkCreate](), [TextUnderlineCreate](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/TextUnderlineCreate.html)
+
+
+
