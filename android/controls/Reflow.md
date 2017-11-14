@@ -60,46 +60,50 @@ reflowControl.setOnPostProcessColorListener(mOnPostProcessColorListener):
 To refresh the reflow pager to show the latest changes on your document, you should let the reflow pager know that the document has been modified:
 
 ```android
-    void notifyReflowModified(ReflowControl reflowControl) {
-        if (reflowControl != null && reflowControl.isReady()) {
-            reflowControl.notifyPagesModified();
-        }
+void notifyReflowModified(ReflowControl reflowControl) {
+    if (reflowControl != null && reflowControl.isReady()) {
+        reflowControl.notifyPagesModified();
     }
+}
 ```     
 
 ### Set text size
 You can change the reflowable text size as a fraction of 100 (valid values are 5, 10, 25, 50, 75, 100, 125, 150, 200, 40, 800, 1600):
 ```android
-    void changeReflowSize(ReflowControl reflowControl, int percent) {
-        if (reflowControl != null && reflowControl.isReady()) {
-            reflowControl.setTextSizeInPercent(percent);
-        }
+void changeReflowSize(ReflowControl reflowControl, int percent) {
+    if (reflowControl != null && reflowControl.isReady()) {
+        reflowControl.setTextSizeInPercent(percent);
     }
+}
 ```     
 Alternatively you can zoom in/out to change the reflowable text size:
 
 ```android
-    void zoomReflow(ReflowControl reflowControl, boolean zoomIn) {
-        if (reflowControl != null && reflowControl.isReady()) {
-            if (zoomIn) {
-                reflowControl.zoomIn();
-            } else {
-                reflowControl.zoomOut();
-            }
+void zoomReflow(ReflowControl reflowControl, boolean zoomIn) {
+    if (reflowControl != null && reflowControl.isReady()) {
+        if (zoomIn) {
+            reflowControl.zoomIn();
+        } else {
+            reflowControl.zoomOut();
         }
     }
+}
 ```     
 
 Assuming the current text size is 100%, by calling zoomReflow(reflowControl, true) and zoomReflow(reflowControl, false) the new text size will be 125% and 75% of the original size, respectively.
 
 ### Set background color
 There are three methods to change the background color:
+
 ReflowControl:setDayMode(): no background
+
 ReflowControl:setNightMode(): night background
+
 ReflowControl:setCustomColorMode(int): customized background
 
 ### Set right-to-left direction
 You can support right-to-left languages by setting the direction of reflowable text:
+
 ReflowControl:setRightToLeftDirection(isRtlMode)
 
 # How to generate a Reflow page
