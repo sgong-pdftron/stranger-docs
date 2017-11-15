@@ -119,36 +119,36 @@ Please note that this method clears all existing reflowable data. So, preferably
 When reflow processor has been initialized, you can request for reflow by calling getReflow(Page, RequestHandler, Object). Once the reflowable HTML file is ready the RequestHandler.RequestHandlerProc(int, String, customData) callback is executed:
 
 ``` android
-    void getReflowPage(PDFDoc doc, int pageNum) {
-        boolean shouldUnlockRead = false;
-        try {
-            // request for reflow output
-            doc.lockRead();
-            shouldUnlockRead = true;
-            Page page = doc.getPage(pageNum);
-            ReflowProcessor.getReflow(page, mRequestHandler, pageNum);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (shouldUnlockRead) {
-                Utils.unlockReadQuietly(doc);
-            }
+void getReflowPage(PDFDoc doc, int pageNum) {
+    boolean shouldUnlockRead = false;
+    try {
+        // request for reflow output
+        doc.lockRead();
+        shouldUnlockRead = true;
+        Page page = doc.getPage(pageNum);
+        ReflowProcessor.getReflow(page, mRequestHandler, pageNum);
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        if (shouldUnlockRead) {
+            Utils.unlockReadQuietly(doc);
         }
     }
+}
 
-    RequestHandler mRequestHandler = new RequestHandler(new RequestHandler.RequestHandlerCallback() {
+RequestHandler mRequestHandler = new RequestHandler(new RequestHandler.RequestHandlerCallback() {
     /**
-        * @param result The result state. The possible values are
-        *               RequestHandler.JOB_REQUEST_RESULT_FAILURE = 0;
-        *               RequestHandler.JOB_REQUEST_RESULT_SUCCESS = 1;
-        *               RequestHandler.JOB_REQUEST_RESULT_SECURITY_ERROR = 2;
-        *               RequestHandler.JOB_REQUEST_RESULT_CANCEL = 3;
-        *               RequestHandler.JOB_REQUEST_RESULT_PACKAGE_ERROR = 4;
-        *               RequestHandler.JOB_REQUEST_RESULT_PREVIOUS_CRASH = 5;
-        *               RequestHandler.JOB_REQUEST_RESULT_POSTPONED = 9;
-        * @param outFilename The reflowable HTML file name
-        * @param customData The custom data
-        */
+     * @param result The result state. The possible values are
+     *               RequestHandler.JOB_REQUEST_RESULT_FAILURE = 0;
+     *               RequestHandler.JOB_REQUEST_RESULT_SUCCESS = 1;
+     *               RequestHandler.JOB_REQUEST_RESULT_SECURITY_ERROR = 2;
+     *               RequestHandler.JOB_REQUEST_RESULT_CANCEL = 3;
+     *               RequestHandler.JOB_REQUEST_RESULT_PACKAGE_ERROR = 4;
+     *               RequestHandler.JOB_REQUEST_RESULT_PREVIOUS_CRASH = 5;
+     *               RequestHandler.JOB_REQUEST_RESULT_POSTPONED = 9;
+     * @param outFilename The reflowable HTML file name
+     * @param customData The custom data
+     */
     @Override
     public void RequestHandlerProc(int result, String outFilename, Object customData) {
         if (result == RequestHandler.JOB_REQUEST_RESULT_SUCCESS) {
