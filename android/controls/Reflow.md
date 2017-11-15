@@ -112,7 +112,7 @@ You don't need a reflow pager to have a reflowable layout of PDF pages. Indeed, 
 ## Implementation
 The first step is to let the core knows you are going to use reflow by calling:
 ```android
-ReflowProcessor.clearCache();
+ReflowProcessor.initialize();
 ```
 Please note that this method clears all existing reflowable data. So, preferably put this in your application or activity.
 
