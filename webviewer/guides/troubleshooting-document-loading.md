@@ -7,6 +7,7 @@ If you see a 404 for files on your server but you're very sure that the files ar
 If you're using XOD files you'll need to add `xod` with a mime type of `application/octet-stream` or `application/vnd.ms-xpsdocument`
 
 For PDF files you'll need to add the following:
+
 |Extension|Mime Type|
 |---|---|
 |res|application/octet-stream|
