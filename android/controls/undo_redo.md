@@ -2,31 +2,31 @@
 
 PDFTron supports undo/redo for any manipulation on the document. For convenience reasons, we have provided a class called UndoRedoManger to facilitate undo/redo. This class is by default attached to ToolManager class. In other words, if you are using ToolManger you don't need to do anything to make undo/redo enabled. Just ensure you raise the appropriate events existing in ToolManager when you manipulate the document:
 
-- void raiseAnnotationsAddedEvent(Map<Annot,Integer>)
+- `void raiseAnnotationsAddedEvent(Map<Annot,Integer>)`
 
-- void raiseAnnotationsPreModifyEvent(Map<Annot,Integer>) 
+- `void raiseAnnotationsPreModifyEvent(Map<Annot,Integer>)`
 
-- void raiseAnnotationsModifiedEvent(Map<Annot,Integer>)
+- `void raiseAnnotationsModifiedEvent(Map<Annot,Integer>)`
 
-- void raiseAnnotationsPreRemoveEvent(Map<Annot,Integer>)
+- `void raiseAnnotationsPreRemoveEvent(Map<Annot,Integer>)`
 
-- void raiseAnnotationsRemovedEvent(Map<Annot,Integer>)
+- `void raiseAnnotationsRemovedEvent(Map<Annot,Integer>)`
 
-- void raiseAllAnnotationsRemovedEvent()
+- `void raiseAllAnnotationsRemovedEvent()`
 
-- void raiseAnnotationActionEvent()
+- `void raiseAnnotationActionEvent()`
 
-- void raiseBookmarkModified()
+- `void raiseBookmarkModified()`
 
-- void raisePagesCropped()
+- `void raisePagesCropped()`
 
-- void raisePagesAdded(List<Integer>)
+- `void raisePagesAdded(List<Integer>)`
 
-- void raisePagesDeleted(List<Integer>)
+- `void raisePagesDeleted(List<Integer>)`
 
-- void raisePagesRotated(List<Integer>)
+- `void raisePagesRotated(List<Integer>)`
 
-- void raisePageMoved(int, int)
+- `void raisePageMoved(int, int)`
 
 To do undo/redo operation simply call
 
