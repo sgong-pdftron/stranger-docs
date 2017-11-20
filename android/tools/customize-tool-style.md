@@ -1,7 +1,7 @@
-# Customize Tool Style
-When creating annotation, each annotation creator tool has a default color and presets. These default color are defined in styles and can be easily customized by overriding the styles.
+# Customize tool style
+When creating annotations, each annotation creator tool has default color and presets. These defaults can be easily customized by overriding the styles.
 
-## Default Styles Attributes
+## Default styles attributes
 ### annot_color:
 default color when creating annotation
 
@@ -90,7 +90,7 @@ This example will override the color presets for [ToolManager.e_ink_create]() to
 </style>
 ```
 
-### Add Customize Tool default style
+### Add customize tool default style
 You can also add your customized tool default style resource to [ToolStyleConfig]() as following:
 ```
 ToolStyleConfig.getInstance().addDefaultStyleMap(ToolManager.e_rect_create, R.style.rectangle_style);
@@ -98,7 +98,7 @@ ToolStyleConfig.getInstance().addDefaultStyleMap(ToolManager.e_rect_create, R.st
 
 ## Customize color in tool color picker board
 
-Color picker board style are located in `res/values/arrays.xml`, you can customize them by overriding them.
+The color picker board styles are located in `res/values/arrays.xml`, you can customize them by overriding them.
 
 ### Standard colors
 Used in the color picker **Basic** page.
@@ -129,7 +129,7 @@ Used for changing colors for [Signature]() tool.
 resource name: `R.array.signature_colors`
 
 ### Sticky note icons
-Used for selecting icons for [StickyNote](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Text.html) annotation. For each annotation icon, it stores two identical icons, one for filling color, the other one for outline.
+Used for selecting icons for [StickyNote](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Text.html) annotation. For each annotation icon, it stores two identical icons, one for filling color, and the other for outline.
 
 ![icon-picker](./img/note-icon-picker.png)
 
