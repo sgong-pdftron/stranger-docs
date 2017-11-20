@@ -45,7 +45,7 @@ mToolManager.getUndoRedoManger().jumpToUndoRedo(PDFViewCtrl, String, boolean)
 ```
 This function will show the transition with an animation.
 
-## Next undo/redo actions
+## Next Undo/Redo actions
 There area several facility functions provided in UndoRedoManger to see the action you can undo/redo, including
 
 - `canUndo()`
@@ -102,8 +102,8 @@ try {
 }
 ```
 
-## Last but not Least
-Again, don't forget to take undo snapshot before saving the document:
+## Last but not least
+Again, don't forget to take an undo snapshot before saving the document:
 
 ``` android
 boolean shouldUnlock = false;
