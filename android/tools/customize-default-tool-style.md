@@ -1,7 +1,7 @@
-# Customize Default Tool Style
-When creating annotation, each annotation creator tool has a default color and presets. These default color are defined in styles and can be easily customized by overriding the styles.
+# Customize default tool style
+When creating annotations, each annotation creator tool has default color and presets. These defaults can be easily customized by overriding the styles.
 
-## Styles Attributes
+## Styles attributes
 ### annot_color:
 default color when creating annotation
 
@@ -90,7 +90,7 @@ This example will override the color presets for [ToolManager.e_ink_create]() to
 </style>
 ```
 
-### Add Customize Tool default style
+### Add customize tool default style
 You can also add your customized tool default style resource to [ToolStyleConfig]() as following:
 ```
 ToolStyleConfig.getInstance().addDefaultStyleMap(ToolManager.e_rect_create, R.style.rectangle_style);
