@@ -1,6 +1,6 @@
 # stranger-docs
 ---
-## Style Guide
+## Style guide
 
 Unless over rulled below, please use the [*Google Documentation Style Guide*](https://developers.google.com/style/) as a basis for writing.
 
@@ -12,9 +12,9 @@ The following are the main points to follow from the Google Style Guide
 
 For more see [Highlights](https://developers.google.com/style/highlights) of Google Documentation Style Guide
 
-## PDFTron Specific Rules
+## PDFTron specific rules
 
-### File and Folder Names
+### File and folder names
 * lower case, alphanumeric, ASCII characters only.
 * No spaces in filenames.
 * Instead use a hyphen "-" as a word delimiter. e.g. `doc-lock.md`
