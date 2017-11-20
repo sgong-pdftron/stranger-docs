@@ -1,6 +1,6 @@
-# Quick Menu Item
+# Quick menu item
 
-A menu item for quick menu. that defines menu type, menu display text, menu icon color, and menu opacity here. It auto generates menu icon resource from [QuickMenuConfig](./quick-menu-config.md). There are three possible display modes:
+A menu item for the quick menu, which defines menu type, menu display text, menu icon color, and menu opacity. It auto generates menu icon resource from [QuickMenuConfig](./quick-menu-config.md). There are three possible display modes:
 
 #### FIRST_ROW_MENU
  
