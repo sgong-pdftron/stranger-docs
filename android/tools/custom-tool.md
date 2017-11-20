@@ -1,9 +1,9 @@
-# Creating Custom Tool
+# Creating custom tool
 
-You can create your own customized tool based on the fundamental tool: [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html). [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html) is responsible to creating annotations or handling annotations when user interacts with [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). This tutorial helps you create a customized tool.
+You can create your own customized tool based on the fundamental tool: [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html). [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html) is responsible for creating annotations, or handling annotations when user interacts with [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). This tutorial helps you create a customized tool.
 
-## Subclass a Tool
-All the tool class defined in PDFViewCtrlTools extend [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html). Your custom tool can also extent Tool directly, or you can save time by extending one of the existing tool subclasses, such as [RectCreate]()
+## Subclass a tool
+All of the tool classes defined in PDFViewCtrlTools extend [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html). Your custom tool can also extend `Tool` directly, or you can save time by extending one of the existing tool subclasses, such as [FreehandCreate](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/FreehandCreate.html)
 ```
 class CustomTool extends Tool {
   public static int MODE = 1234;
@@ -42,7 +42,7 @@ toolManager.setDefaultToolCLass(CustomTool.class);
 ```
 
 ## Switching between tools
-To use Custom tools, you can use [ToolManager.setTool]() to switch to Custom Tool:
+To use Custom tools, you can use [ToolManager.setTool](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/ToolManager.html#setTool(com.pdftron.pdf.tools.ToolManager.Tool)) to switch to Custom Tool:
 ```
 Button button = findViewById(R.id.button);
 button.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +53,7 @@ button.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-Alternatively, If your current tool is an instance of [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html), you can also use `Tool.setNextToolModeHelper` to set next tool to be custom tool, and also easily switch to the other tools.
+Alternatively, if your current tool is an instance of [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html), you can also use `Tool.setNextToolModeHelper` to set next tool to be custom tool, and also easily switch to the other tools.
 
 ```
 ((Tool) mToolManager.getTool()).setNextToolModeHelper(CustomTool.MODE);
@@ -102,10 +102,10 @@ button.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-## Additional Tips
-If your custom tool is going to create a new annotation by drawing a shape on page, your custom tool can extends [SimpleShapeCreate]() or subclasses class of it depends on the shape the custom tool going to draw. After that, you can just simply override the `createMarkup(PDFDoc doc, Rect bbox)` function for creating your custom annotation.
+## Additional tips
+If your custom tool is going to create a new annotation by drawing a shape on page, your custom tool can extend [SimpleShapeCreate]() or one its subclasses that best match your desired behaviour. After that, you can simply override the `createMarkup(PDFDoc doc, Rect bbox)` function for creating your custom annotation.
 
-For instance, If you want to draw a rectangle on page first, and then using that rectangle area to create a signature field. You can create a custom tool by extends [RectCreate]():
+For instance, If you want to draw a rectangle on page first, and then using that rectangle area to create a signature field. You can create a custom tool by extending [RectCreate]():
 ```
 /**
  * This class is for creating a signature field annotation
@@ -129,7 +129,7 @@ public class SignatureFieldCreate extends RectCreate {
 }
 ```
 
-The following create tools may help you creates annotation easily:
+The following creation tools may help you create custom annotations more easily:
 
 #### [SimeleShapeCreate]():
 The subclasses will draw something on page first, and then creates an annotation.
