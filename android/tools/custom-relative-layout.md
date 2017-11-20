@@ -1,8 +1,8 @@
-# Custom Relative Layout
+# Custom relative layout
 
 [CustomRelativeLayout]() is a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html) that can be nested and displayed in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by a given page position and page number. Therefore all child views of [CustomRelativeLayout]() are displayed in PDF view.
 
-## XML Attributes
+## XML attributes
 [CustomRelativeLayout] lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
 
 ### app:posX
@@ -32,7 +32,7 @@ Specifies the width of the view, it has to be **exact number**.
 ### android:layout_height
 Specifies the height of the view, it has to be **exact number**.
 
-## XML Example
+## XML example
 
 ```
 <com.pdftron.pdf.PDFViewCtrl
@@ -68,7 +68,7 @@ Screenshot:
 
 ![screenshot](./img/custom_layout.PNG)
 
-## Programming Example
+## Programming example
 ```
 public void addCustomeLayout(PDFViewCtrl pdfViewCtrl) {
   // initialize custom layout
