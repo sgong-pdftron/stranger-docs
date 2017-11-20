@@ -1,14 +1,14 @@
-# Quick Menu
+# Quick menu
 
 A menu Layout that can be shown in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFDoc.html). It shows a small menu layout with maximum two rows, and a overflow menu list.
 
 ![quick menu main layout](./img/quick-menu-main-layout.png) ![quick menu overflow layout](./img/quick-menu-overflow-layout.png)
 
-With a given anchor rectangle view, quick menu auto adjust position so it will be shown in either at the top of the anchor view or at the bottom of the anchor view:
+With a given anchor rectangle view, quick menu will auto adjust position so it will be shown in either at the top of the anchor view or at the bottom of the anchor view:
 
 ![quick-menu-layout](./img/quick-menu-layout.jpg)
 
-## Basic Example:
+## Basic example:
 
 ```
 public void showMenu(Context context, PDFViewCtrl pdfViewCtrl, RectF anchor_rect) {
@@ -38,7 +38,7 @@ public void showMenu(Context context, PDFViewCtrl pdfViewCtrl, RectF anchor_rect
 ## Customization
 
 ### Icons
-Quick menu gets icon automatically based on menu item type in [QuickMenuConfig](./quick-menu-config.md). You can add customized icons by calling
+Quick menu gets icons automatically based on menu item type in [QuickMenuConfig](./quick-menu-config.md). You can add customized icons by calling
 ```
 QuickMenuConfing.getInstance().putIconMenuMap(String type, @DrawableRes int iconResId);
 ```
@@ -48,8 +48,8 @@ QuickMenuConfing.getInstance().putIconMenuMap(HashMap<String, Integer> iconMap);
 ```
 See  [QuickMenuConfig](./quick-menu-config.md) for more details.
 
-### Menu Item Color or Style
-- If you want to set a menu item icon color, you can set menuItem color as following example:
+### Menu item color or style
+- If you want to set a menu item icon color, you can set menuItem color by calling:
 	```
 	menuItem.setIconColor(context.getColor(R.color.red));
 	```
@@ -59,13 +59,13 @@ See  [QuickMenuConfig](./quick-menu-config.md) for more details.
     quickMenu.findButtonByMenuType(menuType);
     ```
     After that, you can customize the menu button view as normal View.
-- Menu item buttons are using `R.style.Widget_Material_Button_Borderless` style, you can customize them by override it. 
+- Menu item buttons are using `R.style.Widget_Material_Button_Borderless` style, you can customize them by overriding it. 
 
 ### Background
-Quick menu background is using `drawable/quickmenu_bg_rext.xml` for *API 21* and `drawable/quickmenu_bg_rect_old_api` for *API under 21* You can changing background by overriding these drawable files.
+Quick menu background is using `drawable/quickmenu_bg_rext.xml` for *API 21* and `drawable/quickmenu_bg_rect_old_api` for *API under 21*. You can change the background by overriding these drawable files.
 
 ### Divider
-There is a hairline divider between menu first row and second row. By default, if tboth first row and second row exist, divider is **VISIBLE**. You can set this hairline divider visibility as following:
+There is a hairline divider between menu first row and second row. By default, if both first row, and second row exist, divider is **VISIBLE**. You can set this hairline divider visibility by calling:
 ```
 quickMenu.setDividerVisibility(View.INVISIBLE);
 ```
