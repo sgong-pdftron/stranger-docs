@@ -1,4 +1,4 @@
-# How to Run Samples
+# How to run samples
 
 1. Double click one of the `.sln` files in `Samples` folder.
 1. Hit `F5` or click `Start` from Visual Studio, to run the default sample.
@@ -6,7 +6,7 @@
 
 You are now ready to run different samples. Note that samples are grouped into `CSharp` and `VisualBasic` folders for ease.
 
-## Document Viewing Samples
+## Document viewing samples
 
 PDFNet for .Net4+ includes a number of samples that show document viewing, using one of two viewer classes, [`PDFViewCtrl`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/T_pdftron_PDF_PDFViewCtrl.htm) and [`PDFViewWPF`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/T_pdftron_PDF_PDFViewWPF.htm).
 
@@ -24,7 +24,7 @@ This is the newer viewer which offers full cusomtization over the user experienc
 
 Run either the `CSharp/PDFVewWPFSimpleTest` or `CSharp/PDFViewWPFTest` projects, both of which use the `CSharp/PDFViewWPFTools` project.
 
-## Miscellaneous Samples
+## Miscellaneous samples
 
 The rest of the samples, in the `CSharp` and `VisualBasic` folders, show how to accomplish various tasks using the `PDFNet` API. Select any as the startup project and select `Run`.
 
