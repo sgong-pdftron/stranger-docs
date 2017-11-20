@@ -1,13 +1,13 @@
 # Reflow
-Reflow makes the document more flexible and easier to read, especially on small devices. PDFNet is able to extract reflowable layout of each page of a PDF document as an HTML file. In this article we explains how simple is to show a widget that allows the user to swipe left or right through the pages of the document to see reflowable document pages. Later, we provide necessary functions to convert a hard-layout PDF page to an HTML document page.
+Reflow makes the document more flexible and easier to read, especially on small devices. PDFNet is able to extract reflowable layout of each page of a PDF document as an HTML file. In this article we explain how simple it is to show a widget that allows the user to swipe left or right through the pages of the document to see reflowable document pages. Later, we provide necessary functions to convert a hard-layout PDF page to a HTML document page.
 
-# How to show Reflow pager
+# How to show Reflow Pager
 ReflowControl is a [ViewPager](https://developer.android.com/reference/android/support/v4/view/ViewPager.html) that allows the user to flip left and right through reflowable layout of pages in a certain PDF document.
 
 <img src="https://github.com/sgong-pdftron/stranger-docs/blob/master/android/controls/gif/reflow_pager.gif?raw=true" width="32%">
 
 ## Implementation
-To set up your layout with ReflowControl, add a `<ReflowControl>` element to your XML layout. For example, if each page in the swipe view should consume the entire layout, then your layout looks like this:
+To set up your layout with [ReflowControl](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/controls/ReflowControl.html), add a `<ReflowControl>` element to your XML layout. For example, if each page in the swipe view should consume the entire layout, then your layout looks like this:
 
 ```android
 <com.pdftron.pdf.controls.ReflowControl
@@ -24,9 +24,9 @@ ReflowControl reflowControl = (ReflowControl) findViewById(R.id.reflow_pager);
 reflowControl.setup(pdfDoc);
 ```
 
-That is everything you need to have a simple reflow pager. In the followings we will go through advanced features.
+That is everything you need to have a simple reflow pager. Next, we will go through advanced features.
 
-### Post Process color
+### Post process color
 If you want to map each original color to a new color (for example for handling night mode) you need to pass an OnPostProcessColorListener listener to the ReflowControl.
 
 To do so, you can provide an OnPostProcessColorListener listener when setting up the ReflowControl:
@@ -107,10 +107,10 @@ You can support right-to-left languages by setting the direction of reflowable t
 ReflowControl:setRightToLeftDirection(isRtlMode)
 
 # How to generate a Reflow page
-You don't need a reflow pager to have a reflowable layout of PDF pages. Indeed, you can extract the reflowable layout by creating an HTML file from a certain page of the document.
+You don't need a reflow pager to have a reflowable layout of PDF pages. Indeed, you can extract the reflowable layout by creating a HTML file from a certain page of the document.
 
 ## Implementation
-The first step is to let the core knows you are going to use reflow by calling:
+The first step is to let the core know you are going to use reflow by calling:
 ```android
 ReflowProcessor.initialize();
 ```
