@@ -2,7 +2,7 @@
 
 To integrate the PDFNet libraries into one of your own projects, here are a few simple steps to prepare your Android Studio project.
 
-First, add rules to your root-level `build.gradle` file, to include the PDFNet's Maven repository:
+First, add rules to your root-level `build.gradle` file, to include PDFNet's Maven repository:
 
 ```
 allprojects {
@@ -20,14 +20,14 @@ allprojects {
 }
 ```
 
-You can either include your access key above, however here we recommend you to add the credentials in your project's `gradle.properties`:
+You can either include your access key above, however we recommend you to add the credentials in your project's `gradle.properties`:
 
 ```
 AWS_ACCESS_KEY=<YOUR_ACCESS_KEY_GOES_HERE>
 AWS_SECRET_KEY=<YOUR_SECRET_KEY_GOES_HERE>
 ```
 
-Then, in your module Gradle file (usually the app/build.gradle), add:
+Then, in your module Gradle file (usually `app/build.gradle`), add:
 
 ```
 implementation "com.pdftron:pdfnet:6.8.0"
