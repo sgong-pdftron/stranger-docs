@@ -1,8 +1,8 @@
-# Getting Started with PDFNet Document Locking
+# Getting started with PDFNet document locking
 
 As computing devices become more parallel in nature, PDFNet is evolving to allow developers to leverage this power in new and exciting ways. PDFNet version 6.0 introduces new locking semantics which allow for concurrent access of a [`PDFDoc`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/T_pdftron_PDF_PDFDoc.htm) instance. This was done to improve performance during interactive viewing (simultaneous rendering, text extraction, etc.), as well as to open up the possibility for new use cases (parallel rendering). This article introduces the locking system, and will get you on your way to developing parallel applications with PDFNet SDK.
 
-## PDFDoc Lock
+## PDFDoc lock
 
 PDFNet uses a recursive read/write locking system. Multiple threads can hold a read lock on the document, **but only one thread can hold a write lock at any given time**. A thread can acquire an equivalent or weaker lock as many times as it likes without causing a deadlock. In other words, the following is valid:
 
@@ -21,7 +21,7 @@ Some of our API calls internally acquire a write lock on the document. As a resu
 
 In general, the parts of our library that manage the UI will maintain document locks. **For the lower level calls which actually modify the document, you are responsible for maintaining document locks.**
 
-## Client Side Locking
+## Client side locking
 
 PDFNet provides the following APIs for locking the document:
 
@@ -56,15 +56,15 @@ void PDFViewWPF.DocUnlockRead()
 
 At the low level, a [`PDFDoc`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/T_pdftron_PDF_PDFDoc.htm) uses an `input filter` to access its PDF data. this data could be stored on the file system, in a memory buffer, or over a network. Now that PDFNet supports concurrent access of PDFDocs across many threads, these input filters must also be made thread-safe. StdFile, which was not a thread-safe filter, is no longer available. Instead, you should now use the new [`MappedFile`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/T_pdftron_Filters_MappedFile.htm) filter, which provides thread-safe and efficient read access on a file. Custom user filters are still supported, although they are now wrapped in an internal filter that guarantees thread safety.
 
-## Migration of Earlier Code
+## Migration of earlier code
 
 The new locking system is backwards compatible, meaning previous calls to [`PDFDoc.Lock()`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/M_pdftron_PDF_PDFDoc_Lock.htm) now acquire a write lock. If you would like to take advantage of the ability to read a PDF concurrently, it is your responsibility to review document locks and determine whether it is safe to downgrade them to a read lock.
 
-## Opting Out
+## Opting out
 
 Conversely, if you are happy with the existing *'one document, one thread'* model previously used in PDFNet 5.9., you can continue to work with this system. No change is required on your behalf.
 
-## API Calls Which Can Acquire a Write Lock
+## API calls which can acquire a write lock
 
 ### PDFViewCtrl
 ```
