@@ -6,7 +6,7 @@ PDFNet ships with three projects each containing examples that you could use in 
 
 <img src="./img/complete_reader_app.png" width="250">
 
-This app can be downloaded from `GITHUB-LINK-GOES-HERE`.
+This app can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 
 This app contains two main Activities, Simple Reader and Complete Reader.
 
@@ -27,3 +27,15 @@ Features: (TODO: link to actual tutorial):
 - PDF merging, splitting
 - Page re-organizing, rotation
 - Localization
+
+### MiscellaneousSamples app
+
+This app can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
+
+This app shows the functionalities of the PDFNet SDK and includes the samples found in the [sample code](http://www.pdftron.com/pdfnet/samplecode.html) page. Inspect its source code to learn how to use some of the main classes and features of the SDK, or just run the sample and check the results.
+
+### PDFDrawDemo app
+
+This app can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
+
+This app is a simple example that shows how PDFDraw can be used to make a simple PDF viewer. Tap top (bottom) half of the viewer to turn pages backward (forward).
