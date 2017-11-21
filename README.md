@@ -27,6 +27,7 @@ For more see [Highlights](https://developers.google.com/style/highlights) of Goo
 * H1 headers might appear in side panel, so use sparingly (as sub-topics).
 * **Use Headers** where every you think a **URL anchor** would be useful. This allows us to point a customer directly to the right part of the documentation.
 * In other words, use H1 sparingly, but use H2 and H3 a lot.
+* For heading use normal capitalization (like a normal sentence), so typically only the first word is capitalized. https://developers.google.com/style/capitalization
 * In general, nesting a lot might not work well. E.g. H4-H6 are probably never needed.
 * Outside of code snippets, **all** Classes and Methods **shall** contain a link to the corresponding API.
 * Prefer images over lots of text.
