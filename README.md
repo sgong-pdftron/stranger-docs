@@ -19,6 +19,10 @@ For more see [Highlights](https://developers.google.com/style/highlights) of Goo
 * No spaces in filenames.
 * Instead use a hyphen "-" as a word delimiter. e.g. `doc-lock.md`
 
+### Links
+* For links to API, make sure to use code ticks inside the square brackets, for best formatting. For example.
+`['ToolManager.setTool'](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/ToolManager.html#setTool(com.pdftron.pdf.tools.ToolManager.Tool))`
+
 ### General
 * H1 headers might appear in side panel, so use sparingly (as sub-topics).
 * **Use Headers** where every you think a **URL anchor** would be useful. This allows us to point a customer directly to the right part of the documentation.
