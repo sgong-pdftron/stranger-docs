@@ -1,4 +1,4 @@
-## Try the PDFNet Demo
+## Try the PDFNet Demo in your application
 
 To integrate the PDFNet libraries into one of your own projects, here are a few simple steps to prepare your Android Studio project.
 
