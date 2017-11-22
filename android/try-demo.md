@@ -6,9 +6,9 @@ First, add rules to your root-level `build.gradle` file, to include PDFNet's Mav
 
 ```
 allprojects {
-    // ...
+    ...
     repositories {
-        // ...
+        ...
         maven {
             url "s3://pdfnet-maven/release"
             credentials(AwsCredentials) {
@@ -34,7 +34,7 @@ Then, in your module Gradle file (usually `app/build.gradle`), add:
 ```
 android {
     defaultConfig {
-        // ...
+        ...
         vectorDrawables.useSupportLibrary = true
         manifestPlaceholders = [pdftronLicenseKey:PDFTRON_LICENSE_KEY]
     }
@@ -45,7 +45,7 @@ android {
 }
 
 dependencies {
-    // ...
+    ...
     implementation "com.pdftron:pdfnet:6.8.0"
     implementation "com.pdftron:tools:6.8.0"
     implementation "com.pdftron:demo:1.0.0"
@@ -101,7 +101,7 @@ Finally, add style to `res/values/styles.xml`:
 To open Simple Reader demo, use:
 ```
 import com.pdftron.demo.app.SimpleReaderActivity;
-// ...
+...
 SimpleReaderActivity.open(this);
 ```
 
@@ -112,7 +112,7 @@ You will see:
 To open Complete Reader demo, use:
 ```
 import com.pdftron.demo.app.CompleteReaderActivity;
-// ...
+...
 CompleteReaderActivity.open(this);
 ```
 

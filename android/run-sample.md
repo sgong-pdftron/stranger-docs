@@ -1,6 +1,6 @@
 ## Run sample projects
 
-PDFNet ships with three projects each containing examples that you could use in your project.
+PDFNet ships with three sample projects each containing examples that you could use in your project.
 
 ### CompleteReader app
 
@@ -24,6 +24,7 @@ Features: (TODO: link to actual tutorial):
 - Reflow
 - Full text search
 - Annotation creation and form filling
+- PDF creation
 - PDF merging, splitting
 - Page re-organizing, rotation
 - Localization
