@@ -1,6 +1,6 @@
 ## Run sample projects
 
-PDFNet ships with three projects each containing examples that you could use in your project.
+PDFNet ships with three sample projects each containing examples that you could use in your project.
 
 ### CompleteReader app
 
