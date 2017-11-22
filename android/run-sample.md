@@ -24,6 +24,7 @@ Features: (TODO: link to actual tutorial):
 - Reflow
 - Full text search
 - Annotation creation and form filling
+- PDF creation
 - PDF merging, splitting
 - Page re-organizing, rotation
 - Localization
