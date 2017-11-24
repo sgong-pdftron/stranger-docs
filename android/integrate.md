@@ -29,20 +29,39 @@ AWS_ACCESS_KEY=<YOUR_ACCESS_KEY_GOES_HERE>
 AWS_SECRET_KEY=<YOUR_SECRET_KEY_GOES_HERE>
 ```
 
-To use PDFNet initialize helper, also include:
+To use PDFNet initialize helper, also include the following in the same file:
 
 ```
 PDFTRON_LICENSE_KEY=<YOUR_PDFNET_LICENSE_KEY_GOES_HERE>
 ```
 
+To use PDFNet initialize helper, add license key placeholder to `AndroidManifest.xml` file inside the `<application/>` tag:
+
+```
+<meta-data
+  android:name="pdftron_license_key"
+  android:value="${pdftronLicenseKey}"/>
+```
+
 Then, in your module Gradle file (usually `app/build.gradle`), add:
 
 ```
-implementation "com.pdftron:pdfnet:6.8.0"
-implementation "com.pdftron:tools:6.8.0"
+android {
+    defaultConfig {
+        ...
+        vectorDrawables.useSupportLibrary = true
+        manifestPlaceholders = [pdftronLicenseKey:PDFTRON_LICENSE_KEY]
+    }
+}
+
+dependencies {
+    ...
+    implementation "com.pdftron:pdfnet:6.8.0"
+    implementation "com.pdftron:tools:6.8.0"
+}
 ```
 
-To use Activities shown in the Complete Reader sample project, also include:
+To use Activities and fragments shown in the CompleteReader sample project, also include:
 
 ```
 implementation "com.pdftron:demo:1.0.0"

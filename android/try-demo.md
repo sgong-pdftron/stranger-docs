@@ -10,7 +10,8 @@ allprojects {
     repositories {
         ...
         maven {
-            url "s3://pdfnet-maven/release"
+            //TODO: change to real link, use temp for internal testing purpose
+            url "s3://pdfnet-maven/xodo"
             credentials(AwsCredentials) {
                 accessKey AWS_ACCESS_KEY
                 secretKey AWS_SECRET_KEY
