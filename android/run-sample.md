@@ -26,7 +26,7 @@ Features: (TODO: link to actual tutorial):
 - Annotation creation and form filling
 - PDF creation
 - PDF merging, splitting
-- Page re-organizing, rotation
+- Page thumbnails plus adding, removing, re-organizing, and rotating pages
 - Localization
 
 ### MiscellaneousSamples app
