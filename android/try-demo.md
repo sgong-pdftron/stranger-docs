@@ -10,7 +10,9 @@ AWS_SECRET_KEY=YOUR_SECRET_KEY_GOES_HERE
 PDFTRON_LICENSE_KEY=YOUR_PDFNET_LICENSE_KEY_GOES_HERE
 ```
 
-Add rules to your root-level `build.gradle` file, to include PDFNet's Maven repository:
+Add rules to your root-level `build.gradle` file, to include PDFNet's Maven repository.
+
+Copy the following as is, do **not** import `org.gradle.api.credentials.Credentials`:
 
 ```
 allprojects {
