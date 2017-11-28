@@ -1,37 +1,37 @@
 - header: Getting started
 - title: Run sample
-  link: content/android/guides/getting-started/run-sample
+  link: android/guides/getting-started/run-sample
 - title: Try demo in your project
-  link: content/android/guides/getting-started/try-demo
+  link: android/guides/getting-started/try-demo
 - title: Integrate to your project
-  link: content/android/guides/getting-started/integrate
+  link: android/guides/getting-started/integrate
 - title: Using ProGuard
-  link: content/android/guides/getting-started/proguard
+  link: android/guides/getting-started/proguard
 - header: Basics
 - title: PDFNet document locking
-  link: content/android/guides/doc-lock
+  link: android/guides/doc-lock
 - title: Annotations list
-  link: content/android/guides/dialog/annotation
+  link: android/guides/dialog/annotation
 - title: Outline list
-  link: content/android/guides/dialog/outline
+  link: android/guides/dialog/outline
 - title: User bookmarks list
-  link: content/android/guides/dialog/user_bookmarks
+  link: android/guides/dialog/user_bookmarks
 - title: Bookmark dialog
-  link: content/android/guides/dialog/bookmarks
+  link: android/guides/dialog/bookmarks
 - title: Reflow
-  link: content/android/guides/controls/reflow
+  link: android/guides/controls/reflow
 - title: Undo and redo
-  link: content/android/guides/controls/undo-redo
+  link: android/guides/controls/undo-redo
 - header: Advanced
 - title: Custom relative layout
-  link: content/android/guides/tools/custom-relative-layout
+  link: android/guides/tools/custom-relative-layout
 - title: Custom tool
-  link: content/android/guides/tools/custom-tool
+  link: android/guides/tools/custom-tool
 - title: Custom tool style
-  link: content/android/guides/tools/customize-tool-style
+  link: android/guides/tools/customize-tool-style
 - title: Quick menu
-  link: content/android/guides/tools/quick-menu
+  link: android/guides/tools/quick-menu
 - title: Quick menu item
-  link: content/android/guides/tools/quick-menu-item
+  link: android/guides/tools/quick-menu-item
 - title: Quick menu config
-  link: content/android/guides/tools/quick-menu-config
+  link: android/guides/tools/quick-menu-config
