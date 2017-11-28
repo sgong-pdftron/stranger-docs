@@ -16,10 +16,9 @@ BookmarksDialogFragment bookmarksDialogFragment = BookmarksDialogFragment.newIns
 ```
 and setup the dialog:
 ```android
-bookmarksDialogFragment.setPdfViewCtrl(pdfViewCtrl)
-.setDialogFragmentTabs(dialogFragmentTabs);
+bookmarksDialogFragment.setPdfViewCtrl(pdfViewCtrl).setDialogFragmentTabs(dialogFragmentTabs);
 ```
-where DialogFragmentTab specifies the information about each tab including the type of class and the tab tag.
+where `DialogFragmentTab` specifies the information about each tab including the type of class and the tab tag.
 
 
 | Dialog           | Type of class                    | Tab tag            |
@@ -28,7 +27,7 @@ where DialogFragmentTab specifies the information about each tab including the t
 | document outline | OutlineDialogFragment.class      | TAG_TAB_OUTLINE    |
 | user bookmarks   | UserBookmarkDialogFragment.class | TAG_TAB_BOOKMARK   |
 
-The following example shows how to display an annotations list, a document outline and a user-defined bookmark list tabs in BookmarksDialogFragment:
+The following example shows how to display an annotations list, a document outline and a user-defined bookmark list tabs in bookmarks dialog fragment:
 
 ```android
 BookmarksDialogFragment showBookmarksDialog(FragmentManager fragmentManager, PDFViewCtrl pdfViewCtrl) {
