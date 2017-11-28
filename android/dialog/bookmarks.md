@@ -86,7 +86,7 @@ public void onAnnotationClicked(Annot annotation, int pageNum) {
 }
 
 @Override
-public void onExportAnnotationsClicked() {
-    // the export annotation button was clicked
+public void onExportAnnotations(PDFDoc) {
+    // the annotation was exported to a PDF doc
 }
 ```
