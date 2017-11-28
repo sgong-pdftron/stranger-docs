@@ -2,7 +2,17 @@
 
 To try the PDFNet demo Activities in one of your own projects, here are a few simple steps to prepare your Android Studio project.
 
-First, add rules to your root-level `build.gradle` file, to include PDFNet's Maven repository:
+First, add the credentials in your project's `gradle.properties` file:
+
+```
+AWS_ACCESS_KEY=YOUR_ACCESS_KEY_GOES_HERE
+AWS_SECRET_KEY=YOUR_SECRET_KEY_GOES_HERE
+PDFTRON_LICENSE_KEY=YOUR_PDFNET_LICENSE_KEY_GOES_HERE
+```
+
+Add rules to your root-level `build.gradle` file, to include PDFNet's Maven repository.
+
+Copy the following **as is**, do **not** import `org.gradle.api.credentials.Credentials`:
 
 ```
 allprojects {
@@ -20,14 +30,6 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 }
-```
-
-Add the credentials in your project's `gradle.properties` file:
-
-```
-AWS_ACCESS_KEY=<YOUR_ACCESS_KEY_GOES_HERE>
-AWS_SECRET_KEY=<YOUR_SECRET_KEY_GOES_HERE>
-PDFTRON_LICENSE_KEY=<YOUR_PDFNET_LICENSE_KEY_GOES_HERE>
 ```
 
 Then, in your module Gradle file (usually `app/build.gradle`), add:
@@ -63,7 +65,7 @@ Next, add permissions to `AndroidManifest.xml` file outside of the `<application
 
 ```
 
-Next, add license key placeholder, activity declarations to `AndroidManifest.xml` file inside the `<application/>` tag:
+Add license key placeholder, activity declarations to `AndroidManifest.xml` file inside the `<application/>` tag:
 
 ```
 <meta-data
