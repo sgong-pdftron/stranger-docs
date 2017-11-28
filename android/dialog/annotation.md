@@ -1,6 +1,6 @@
 # Annotation dialog fragment
 
-This class shows a list of all the annotations in a document being viewed by a PDFViewCtrl. The list will contain any comments that have been added to the annotations.
+This class shows a list of all the annotations in a document being viewed by a `PDFViewCtrl`. The list will contain any comments that have been added to the annotations.
 
 <p align="center"><img src="img/annotations.png?raw=true" width="32%"></p>
 
