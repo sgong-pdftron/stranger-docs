@@ -12,7 +12,7 @@ Zoom | Zoom level is not constrained
 
 ## Changing fit mode through UI
 
-![Fit modes UI](../../../static/webviewer-fit-modes-ui.png)
+![Fit modes UI](./img/fit-modes-ui.png)
 
 - The fit modes UI is found on top tool bar
 - Each button refers to FitWidth and FitPage mode from left to right

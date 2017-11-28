@@ -15,7 +15,7 @@ Cover continuous | All pages in two continuous, scrollable column, but the first
 
 ## Changing layout mode through UI
 
-![Layout modes UI](../../../static/webviewer-layout-modes-and-rotate-ui.png)
+![Layout modes UI](./img/layout-modes-and-rotate-ui.png)
 
 - The layout modes UI is shown when you hover the layout button, found on top tool bar
 - Each button refers to Single, Continuous, Facing, Facing continuous, Cover, Cover continuous mode from left to right

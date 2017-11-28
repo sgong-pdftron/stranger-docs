@@ -4,7 +4,7 @@ title: Zoom
 
 ## Zooming through UI
 
-![Zoom UI](../../../static/webviewer-zoom-ui.png)
+![Zoom UI](./img/zoom-ui.png)
 
 - The zoom UI is found on top tool bar
 - Minus/plus buttons zoom out/in the document respectively

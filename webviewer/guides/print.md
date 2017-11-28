@@ -5,7 +5,7 @@ title: Print
 ## Printing through UI
 
 
-![Print UI](../../../static/webviewer-print-button.png)
+![Print UI](./img/print-button.png)
 
 
 - The print button is found on top tool bar
