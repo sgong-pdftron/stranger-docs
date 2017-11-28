@@ -9,7 +9,7 @@ title: Assets
 ## Location
 
 * Store them in `/static` folder directly (without any extra folder layers).
-* When referencing the assets in markdown, you will use relative path. See [Images](/readme/images) for details.
+* When referencing the assets in markdown, you will use relative path. See [Images](/readme-docs/images) for details.
 
 ### Example
 

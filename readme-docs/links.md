@@ -12,10 +12,10 @@ title: Links
 ### Example 1
 
 ```
-[Title and headers](/readme/title-and-headers)
+[Title and headers](/readme-docs/title-and-headers)
 ```
 
-[Title and headers](/readme/title-and-headers)
+[Title and headers](/readme-docs/title-and-headers)
 
 ### Example 2
 
