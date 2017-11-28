@@ -1,12 +1,11 @@
 ---
 title: Fullscreen
-author: Justin Jung
 ---
 
 ## Toggle fullscreen through UI
 
 
-![Fullscreen UI](../img/fullscreen-button.png)
+![Fullscreen UI](../../../static/webviewer-fullscreen-button.png)
 
 
 - The fullscreen button is found on top tool bar

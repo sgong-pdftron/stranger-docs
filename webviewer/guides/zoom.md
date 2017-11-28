@@ -1,11 +1,10 @@
 ---
 title: Zoom
-author: Justin Jung
 ---
 
 ## Zooming through UI
 
-![Zoom UI](../img/zoom-ui.png)
+![Zoom UI](../../../static/webviewer-zoom-ui.png)
 
 - The zoom UI is found on top tool bar
 - Minus/plus buttons zoom out/in the document respectively
@@ -25,4 +24,28 @@ myWebViewer.setZoomLevel(currentZoom * 0.8);
 ```js
 var currentZoom = readerControl.getZoomLevel();
 readerControl.setZoomLevel(currentZoom * 0.8);
+```
+
+## Related events
+
+### Outside the iframe
+
+```js
+viewerElement.on('zoomChanged', function(event, zoomLevel) {
+  ...
+});
+```
+
+### Inside the iframe (config.js)
+
+```js
+$(document).on('zoomChanged', function(event, zoomLevel) {
+  ...
+});
+
+// or
+
+readerControl.docViewer.on('zoomUpdated', function(event, zoomLevel) {
+  ...
+});
 ```

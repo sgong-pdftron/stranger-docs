@@ -1,15 +1,12 @@
 ---
-title: Quick Start
-author: Justin Jung
-nextLink: /webviewer/guides/document-loading
-nextTitle: Document Loading
+title: Integrate to your project
 ---
 
 WebViewer is designed to view and interact with documents, regardless they are XOD, PDF or Office. It contains a viewer to visually 
 
 ## Download WebViewer
 
-You can download the latest WebViewer [here](#). Its folder structure is as follows:
+You can download the [latest WebViewer](http://www.pdftron.com/webviewer/download.html). Its folder structure is as follows:
 
 ```
 - lib

@@ -1,11 +1,10 @@
 ---
 title: Rotate
-author: Justin Jung
 ---
 
 ## Rotating through UI
 
-![Rotate UI](../img/layout-modes-and-rotate-ui.png)
+![Rotate UI](../../../static/webviewer-layout-modes-and-rotate-ui.png)
 
 - The rotate UI is shown when you hover the layout button, found on top tool bar
 - Clockwise/Counter-clockwise buttons refer to rotating documents 90 degrees in corresponding direction

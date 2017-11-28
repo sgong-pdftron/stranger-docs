@@ -1,6 +1,5 @@
 ---
 title: Layout Modes
-author: Justin Jung
 ---
 
 ## List of layout modes
@@ -16,7 +15,7 @@ Cover continuous | All pages in two continuous, scrollable column, but the first
 
 ## Changing layout mode through UI
 
-![Layout modes UI](../img/layout-modes-and-rotate-ui.png)
+![Layout modes UI](../../../static/webviewer-layout-modes-and-rotate-ui.png)
 
 - The layout modes UI is shown when you hover the layout button, found on top tool bar
 - Each button refers to Single, Continuous, Facing, Facing continuous, Cover, Cover continuous mode from left to right
@@ -37,4 +36,28 @@ var currentLayoutMode = readerControl.getLayoutMode();
 readerControl.setLayoutMode(CoreControls.DisplayModes.Single);
 ```
 
-Enumeration for each layout mode is listed in [CoreControls.DisplayModes](#)
+Enumeration for each layout mode is listed in [CoreControls.DisplayModes](https://www.pdftron.com/webviewer/demo/lib/html5/doc/CoreControls.html#.DisplayModes__anchor).
+
+## Related events
+
+### Outside the iframe
+
+```js
+viewerElement.on('layoutModeChanged', function(event, layoutMode) {
+  ...
+});
+```
+
+### Inside the iframe (config.js)
+
+```js
+$(document).on('layoutModeChanged', function(event, layoutMode) {
+  ...
+});
+
+// or
+
+readerControl.docViewer.on('displayModeUpdated', function(event) {
+  ...
+});
+```

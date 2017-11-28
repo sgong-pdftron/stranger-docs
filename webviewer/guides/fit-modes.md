@@ -1,6 +1,5 @@
 ---
 title: Fit Modes
-author: Justin Jung
 ---
 
 ## List of fit modes
@@ -13,7 +12,7 @@ Zoom | Zoom level is not constrained
 
 ## Changing fit mode through UI
 
-![Fit modes UI](../img/fit-modes-ui.png)
+![Fit modes UI](../../../static/webviewer-fit-modes-ui.png)
 
 - The fit modes UI is found on top tool bar
 - Each button refers to FitWidth and FitPage mode from left to right
@@ -34,7 +33,7 @@ var currentLayoutMode = readerControl.getFitMode();
 readerControl.setFitMode(CoreControls.DocumentViewer.FitMode.FitWidth);
 ```
 
-Enumeration for each fit mode is listed in [CoreControls.DocumentViewer.FitMode](#)
+Enumeration for each fit mode is listed in [CoreControls.DocumentViewer.FitMode](https://www.pdftron.com/webviewer/demo/lib/html5/doc/CoreControls.DocumentViewer.html#.FitMode__anchor).
 
 ## Related events
 

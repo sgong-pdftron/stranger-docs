@@ -1,12 +1,11 @@
 ---
 title: Print
-author: Justin Jung
 ---
 
 ## Printing through UI
 
 
-![Print UI](../img/print-button.png)
+![Print UI](../../../static/webviewer-print-button.png)
 
 
 - The print button is found on top tool bar

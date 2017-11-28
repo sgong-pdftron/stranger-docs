@@ -1,0 +1,23 @@
+- header: Getting started
+- title: Integrate to your project
+  link: /webviewer/guides
+- header: Basics
+- title: Instantiation
+  link: /webviewer/guides/instantiation
+- title: Download
+  link: /webviewer/guides/download
+- title: Fit Modes
+  link: /webviewer/guides/fit-modes
+- title: Fullscreen
+  link: /webviewer/guides/fullscreen
+- title: Layout Modes
+  link: /webviewer/guides/layout-modes
+- title: Page Navigation
+  link: /webviewer/guides/page-navigation
+- title: Print
+  link: /webviewer/guides/print
+- title: Rotate
+  link: /webviewer/guides/rotate
+- title: Zoom
+  link: /webviewer/guides/zoom
+- header: Advanced
