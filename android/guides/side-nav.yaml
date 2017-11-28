@@ -8,7 +8,30 @@
 - title: Using ProGuard
   link: content/android/guides/getting-started/proguard
 - header: Basics
+- title: PDFNet document locking
+  link: content/android/guides/doc-lock
+- title: Annotations list
+  link: content/android/guides/dialog/annotation
+- title: Outline list
+  link: content/android/guides/dialog/outline
+- title: User bookmarks list
+  link: content/android/guides/dialog/user_bookmarks
+- title: Bookmark dialog
+  link: content/android/guides/dialog/bookmarks
+- title: Reflow
+  link: content/android/guides/controls/reflow
+- title: Undo and redo
+  link: content/android/guides/controls/undo-redo
 - header: Advanced
 - title: Custom relative layout
   link: content/android/guides/tools/custom-relative-layout
-  
+- title: Custom tool
+  link: content/android/guides/tools/custom-tool
+- title: Custom tool style
+  link: content/android/guides/tools/customize-tool-style
+- title: Quick menu
+  link: content/android/guides/tools/quick-menu
+- title: Quick menu item
+  link: content/android/guides/tools/quick-menu-item
+- title: Quick menu config
+  link: content/android/guides/tools/quick-menu-config
