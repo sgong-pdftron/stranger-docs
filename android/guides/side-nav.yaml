@@ -5,8 +5,18 @@
   link: /android/guides/getting-started/try-demo
 - title: Integrate to your project
   link: /android/guides/getting-started/integrate
+- title: Manual & nightly integration
+  link: /android/guides/getting-started/integrate_manual
+- title: Upgrading
+  link: /android/guides/getting-started/upgrading
+- title: Adding PDFNet License Key
+  link: /android/guides/getting-started/add_license
 - title: Using ProGuard
   link: /android/guides/getting-started/proguard
+- title: Using an Activity
+  link: /android/guides/getting-started/using_activity
+- title: Using a Fragment
+  link: /android/guides/getting-started/using_fragment
 - header: Basics
 - title: PDFNet document locking
   link: /android/guides/doc-lock
