@@ -22,8 +22,6 @@
 - header: Basics
 - title: Quick menu
   link: /android/guides/tools/quick-menu
-- title: Quick menu item
-  link: /android/guides/tools/quick-menu-item
 - title: Annotations list
   link: /android/guides/dialog/annotations
 - title: Outline list

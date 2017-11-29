@@ -4,7 +4,8 @@ You can create your own customized tool based on the fundamental tool: [Tool](ht
 
 ## Subclass a tool
 All of the tool classes defined in PDFViewCtrlTools extend [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html). Your custom tool can also extend `Tool` directly, or you can save time by extending one of the existing tool subclasses, such as [FreehandCreate](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/FreehandCreate.html)
-```
+
+```java
 class CustomTool extends Tool {
   public static int MODE = 1234;
   public CustomTool(PDFViewCtrl ctrl) {
@@ -21,7 +22,8 @@ class CustomTool extends Tool {
 
 ## Add custom tool to ToolManager
 When creating toolManager, add the custom tool to [ToolManager](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.ToolManager.html) so when the next tool mode is the custom tool mode, it can auto generate custom tool class.
-```
+
+```java
 PDFViewCtrl pdfView = findViewById(R.id.pdfviewctrl);
 ToolManager toolManager = new ToolManager(pdfView);
 // add custom tool to toolManager
@@ -31,19 +33,22 @@ pdfView.setToolManager(toolManager);
 
 ### Add custom constructor parameter to tool manager
 Generally, tools are using [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) as their contructor parameter. If your custom tool requires other parameters, you can add your customized parameter as following:
-```
+
+```java
 toolManager.addCustomizedTool(new CustomTool(pdfView), param1, param2);
 ```
 
 ### Set custom tool as default tool in ToolManager
 If your custom tool is a subclass of [Pan](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Pan.html) tool and you want to replace the original [Pan](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Pan.html) tool to be the default tool in tool manager, you can set it as the following:
-```
+
+```java
 toolManager.setDefaultToolCLass(CustomTool.class);
 ```
 
 ## Switching between tools
 To use Custom tools, you can use [ToolManager.setTool](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/ToolManager.html#setTool(com.pdftron.pdf.tools.ToolManager.Tool)) to switch to Custom Tool:
-```
+
+```java
 Button button = findViewById(R.id.button);
 button.setOnClickListener(new View.OnClickListener() {
   @Override
@@ -55,13 +60,15 @@ button.setOnClickListener(new View.OnClickListener() {
 
 Alternatively, if your current tool is an instance of [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html), you can also use `Tool.setNextToolModeHelper` to set next tool to be custom tool, and also easily switch to the other tools.
 
-```
+```java
 ((Tool) mToolManager.getTool()).setNextToolModeHelper(CustomTool.MODE);
 ```
 
 ## Example
-Custom Tool:
-```
+
+##### Custom Tool:
+
+```java
 public class CustomTool extends Tool {
 
     public static int MODE = 1234;
@@ -82,8 +89,9 @@ public class CustomTool extends Tool {
     }
 }
 ```
-Main Activity:
-```
+##### Main Activity:
+
+```java
 PDFViewCtrl mPDFView = (PDFViewCtrl) findViewById(R.id.pdfviewctrl);
 ToolManager mToolManager = new ToolManager(mPDFView);
 setToolManagerStatusBarHeight();
@@ -106,7 +114,8 @@ button.setOnClickListener(new View.OnClickListener() {
 If your custom tool is going to create a new annotation by drawing a shape on page, your custom tool can extend [SimpleShapeCreate]() or one its subclasses that best match your desired behaviour. After that, you can simply override the `createMarkup(PDFDoc doc, Rect bbox)` function for creating your custom annotation.
 
 For instance, If you want to draw a rectangle on page first, and then using that rectangle area to create a signature field. You can create a custom tool by extending [RectCreate]():
-```
+
+```java
 /**
  * This class is for creating a signature field annotation
  */

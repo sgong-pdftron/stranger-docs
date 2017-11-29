@@ -2,38 +2,39 @@
 
 [CustomRelativeLayout]() is a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html) that can be nested and displayed in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by a given page position and page number. Therefore all child views of [CustomRelativeLayout]() are displayed in PDF view.
 
-## XML attributes
-[CustomRelativeLayout] lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
+## Add CustomRelativeLayout in xml layout resource
 
-### app:posX
+### XML attributes
+[CustomRelativeLayout]() lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
+
+####`app:posX`
 Specifies the x coordinates in page point.
 
 Default value: 0
 
-### app:posY
+####`app:posY`
 
 Specifies the y coordinates in page point.
 
 Default value: 0
 
-### app:pageNum
+####`app:pageNum`
 Specifies the page number of the document.
 
 Default value: 1
 
-### app:zoomWithParent
+####`app:zoomWithParent`
 Specifies whether the view will be zoom with parent. 
 
 Default value: true
 
-### android:layout_width
+####`android:layout_width`
 Specifies the width of the view, it has to be **exact number**.
 
-### android:layout_height
+####`android:layout_height`
 Specifies the height of the view, it has to be **exact number**.
 
-## XML example
-
+##### Example
 ```xml
 <com.pdftron.pdf.PDFViewCtrl
     android:id="@+id/pdfviewctrl"
@@ -68,7 +69,11 @@ Screenshot:
 
 ![screenshot](./img/custom_layout.PNG)
 
-## Programming example
+## Adding Custom layout programmably
+
+Alternatively, you can also add custom layout programmably like a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html).
+
+##### Example:
 ```java
 public void addCustomeLayout(PDFViewCtrl pdfViewCtrl) {
   // initialize custom layout
