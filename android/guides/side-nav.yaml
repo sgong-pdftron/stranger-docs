@@ -17,9 +17,9 @@
   link: /android/guides/getting-started/using_activity
 - title: Using a Fragment
   link: /android/guides/getting-started/using_fragment
-- header: Basics
-- title: PDFNet document locking
+- title: Document locking
   link: /android/guides/doc-lock
+- header: Basics
 - title: Quick menu
   link: /android/guides/tools/quick-menu
 - title: Quick menu item
