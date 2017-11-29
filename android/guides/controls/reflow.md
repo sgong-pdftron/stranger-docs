@@ -9,7 +9,7 @@ ReflowControl is a [ViewPager](https://developer.android.com/reference/android/s
 ## Implementation
 To set up your layout with [ReflowControl](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/controls/ReflowControl.html), add a `<ReflowControl>` element to your XML layout. For example, if each page in the swipe view should consume the entire layout, then your layout looks like this:
 
-```android
+```java
 <com.pdftron.pdf.controls.ReflowControl
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/reflow_pager"
@@ -19,7 +19,7 @@ To set up your layout with [ReflowControl](http://www.pdftron.com/pdfnet/mobile/
 
 Then, you need to attach a PDFDoc to the reflow pager:
 
-```android
+```java
 ReflowControl reflowControl = (ReflowControl) findViewById(R.id.reflow_pager);
 reflowControl.setup(pdfDoc);
 ```
@@ -36,7 +36,7 @@ reflowControl.setup(pdfDoc, mOnPostProcessColorListener);
 </code></pre>
 
 where, mOnPostProcessColorListener can be defined by PDFViewCtrl as:
-```android
+```java
     private final ReflowControl.OnPostProcessColorListener mOnPostProcessColorListener =
         new ReflowControl.OnPostProcessColorListener() {
             @Override
@@ -50,7 +50,7 @@ where, mOnPostProcessColorListener can be defined by PDFViewCtrl as:
 ```
 
 Alternatively you can set a listener:
-```android
+```java
 ReflowControl reflowControl = (ReflowControl) findViewById(R.id.reflow_pager);
 reflowControl.setup(pdfDoc);
 reflowControl.setOnPostProcessColorListener(mOnPostProcessColorListener):
@@ -59,7 +59,7 @@ reflowControl.setOnPostProcessColorListener(mOnPostProcessColorListener):
 ### Notify Reflow pager that the document has been modified
 To refresh the reflow pager to show the latest changes on your document, you should let the reflow pager know that the document has been modified:
 
-```android
+```java
 void notifyReflowModified(ReflowControl reflowControl) {
     if (reflowControl != null && reflowControl.isReady()) {
         reflowControl.notifyPagesModified();
@@ -69,7 +69,7 @@ void notifyReflowModified(ReflowControl reflowControl) {
 
 ### Set text size
 You can change the reflowable text size as a fraction of 100 (valid values are 5, 10, 25, 50, 75, 100, 125, 150, 200, 40, 800, 1600):
-```android
+```java
 void changeReflowSize(ReflowControl reflowControl, int percent) {
     if (reflowControl != null && reflowControl.isReady()) {
         reflowControl.setTextSizeInPercent(percent);
@@ -78,7 +78,7 @@ void changeReflowSize(ReflowControl reflowControl, int percent) {
 ```     
 Alternatively you can zoom in/out to change the reflowable text size:
 
-```android
+```java
 void zoomReflow(ReflowControl reflowControl, boolean zoomIn) {
     if (reflowControl != null && reflowControl.isReady()) {
         if (zoomIn) {
@@ -111,14 +111,14 @@ You don't need a reflow pager to have a reflowable layout of PDF pages. Indeed, 
 
 ## Implementation
 The first step is to let the core know you are going to use reflow by calling:
-```android
+```java
 ReflowProcessor.initialize();
 ```
 Please note that this method clears all existing reflowable data. So, preferably put this in your application or activity.
 
 When reflow processor has been initialized, you can request for reflow by calling getReflow(Page, RequestHandler, Object). Once the reflowable HTML file is ready the RequestHandler.RequestHandlerProc(int, String, customData) callback is executed:
 
-``` android
+```java
 void getReflowPage(PDFDoc doc, int pageNum) {
     boolean shouldUnlockRead = false;
     try {

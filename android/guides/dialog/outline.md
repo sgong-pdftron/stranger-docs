@@ -5,7 +5,7 @@ This class shows a a document outline (bookmarks) that can be used to navigate t
 ![](img/outline.png "Outline dialog fragment")
 
 To create a new instance of the outline dialog fragment call `newInstance()` and set the PDFViewCtrl: 
-```android
+```java
 OutlineDialogFragment showOutlineDialog(FragmentManager fragmentManager, PDFViewCtrl pdfViewCtrl) {
     OutlineDialogFragment outlineDialogFragment = OutlineDialogFragment.newInstance();
     outlineDialogFragment.setPdfViewCtrl(pdfViewCtrl);

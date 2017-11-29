@@ -5,7 +5,7 @@ This class shows a list of user-defined bookmarks that can be used to navigate t
 ![](img/user_bookmarks.png "User bookmark dialog fragment")
 
 To create a new instance of the user bookmark dialog fragment call `newInstance()` and set the PDFViewCtrl: 
-```android
+```java
 UserBookmarkDialogFragment showUserBookmarkDialog(FragmentManager fragmentManager, PDFViewCtrl pdfViewCtrl) {
     UserBookmarkDialogFragment userBookmarkDialogFragment = UserBookmarkDialogFragment.newInstance();
     userBookmarkDialogFragment.setPdfViewCtrl(pdfViewCtrl);

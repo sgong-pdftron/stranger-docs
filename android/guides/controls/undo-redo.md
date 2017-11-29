@@ -34,11 +34,11 @@ PDFTron supports undo/redo for any manipulation on the document. For convenience
 
 To do undo/redo operation simply call
 
-``` android
+```java
 String undoInfo = mToolManager.getUndoRedoManger().undo()
 ```
 or
-``` android
+```java
 String redoInfo = mToolManager.getUndoRedoManger().redo()
 ```
 The `undoInfo`/`redoInfo` contains the information about the action that has been undone/redone; for example, it can be something like this when the undo/redo action is corresponding to annotation addition:
@@ -49,7 +49,7 @@ From this you can understand the action was adding a text box in page 1 at the r
 
 ## Jump to Undo/Redo
 If you are in the PDF view and like the view to jump to the undo/redo changes you can call
-``` android
+```java
 mToolManager.getUndoRedoManger().jumpToUndoRedo(PDFViewCtrl, String, boolean)
 ```
 This function will show the transition with an animation. The second input argument is the attached information to undo action, and the third argument specifies if the action was undo or redo.
@@ -88,18 +88,18 @@ We highly recommend to call `UndoRedoManger.takeUndoSnapshotForSafety()` before 
 
 # Build your own Undo/Redo Manager
 If you don't use ToolManger or you'd like to have you own undo/redo control you need to enable undo/redo as the first step:
-``` android
+```java
 mPdfViewCtrl.enableUndoRedo();
 ```
 You can see if the undo/redo is enabled in the PDF view using:
-``` android
+```java
 boolean isUndoRedoEnabled = mPdfViewCtrl.isUndoRedoEnabled();
 ```
 
 ## Undo/Redo Snapshots
 After enabling undo/redo, you should determine the snapshots for undo/redo operations, i.e. calling the followings when there is a modification on the document (or if you prefer after a short period of time):
 
-``` android
+```java
 try {
     mPdfViewCtrl.takeUndoSnapshot(info);
 } catch (Exception e) {
@@ -109,7 +109,7 @@ try {
 
 If you have at least one undo snapshot you can back to the last modification using `PDFViewCtrl.undo()` and get the information you passed through when taking undo snapshot:
 
-``` android
+```java
 try {
     mPdfViewCtrl.cancelRendering();
     info = mPdfViewCtrl.undo();
@@ -120,7 +120,7 @@ try {
 
 Or, if you have any undo in the stack you can redo the last undo by
 
-``` android
+```java
 try {
     mPdfViewCtrl.cancelRendering();
     info = mPdfViewCtrl.redo();
@@ -132,7 +132,7 @@ try {
 ## Last but not least
 Again, don't forget to take an undo snapshot before saving the document:
 
-``` android
+```java
 boolean shouldUnlock = false;
 try {
     mPdfViewCtrl.docLock(false);
