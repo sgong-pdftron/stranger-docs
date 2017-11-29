@@ -5,7 +5,7 @@ This class shows a list of user-defined bookmarks that can be used to navigate t
 ![](img/user_bookmarks.png "User bookmark dialog fragment")
 
 To create a new instance of the user bookmark dialog fragment call `newInstance()` and set the PDFViewCtrl: 
-```android
+```java
 UserBookmarkDialogFragment showUserBookmarkDialog(FragmentManager fragmentManager, PDFViewCtrl pdfViewCtrl) {
     UserBookmarkDialogFragment userBookmarkDialogFragment = UserBookmarkDialogFragment.newInstance();
     userBookmarkDialogFragment.setPdfViewCtrl(pdfViewCtrl);
@@ -17,7 +17,4 @@ UserBookmarkDialogFragment showUserBookmarkDialog(FragmentManager fragmentManage
 
 You should set a listener via `setUserBookmarkListener(UserBookmarkDialogListener)` to be notified when a user bookmark is clicked.
 
-If the document has write access, users can add new user bookmarks using floating action button. To specify whether the document is read-only call 
-```android
-setReadOnly(boolean)
-```
+If the document has write access, users can add new user bookmarks using floating action button. To specify whether the document is read-only call `android setReadOnly(boolean)`.

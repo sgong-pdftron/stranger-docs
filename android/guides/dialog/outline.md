@@ -4,9 +4,8 @@ This class shows a a document outline (bookmarks) that can be used to navigate t
 
 ![](img/outline.png "Outline dialog fragment")
 
-user_bookmarks
 To create a new instance of the outline dialog fragment call `newInstance()` and set the PDFViewCtrl: 
-```android
+```java
 OutlineDialogFragment showOutlineDialog(FragmentManager fragmentManager, PDFViewCtrl pdfViewCtrl) {
     OutlineDialogFragment outlineDialogFragment = OutlineDialogFragment.newInstance();
     outlineDialogFragment.setPdfViewCtrl(pdfViewCtrl);
@@ -16,9 +15,6 @@ OutlineDialogFragment showOutlineDialog(FragmentManager fragmentManager, PDFView
 }
 ```
 
-You can also sets the current bookmark using 
-```android
-setCurrentBookmark(Bookmark)
-```
+You can also sets the current bookmark using `setCurrentBookmark(Bookmark)'.
 
 You should set a listener via `setOutlineDialogListener(OutlineDialogListener)` to be notified when an outline is clicked.

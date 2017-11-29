@@ -11,11 +11,11 @@
 ![Bookmarks dialog fragment](gif/bookmarks.gif)
 
 To create a new instance of the bookmarks dialog fragment call
-```android
+```java
 BookmarksDialogFragment bookmarksDialogFragment = BookmarksDialogFragment.newInstance();
 ```
 and setup the dialog:
-```android
+```java
 bookmarksDialogFragment.setPdfViewCtrl(pdfViewCtrl)
 .setDialogFragmentTabs(dialogFragmentTabs);
 ```
@@ -30,7 +30,7 @@ where DialogFragmentTab specifies the information about each tab including the t
 
 The following example shows how to display an annotations list, a document outline and a user-defined bookmark list tabs in BookmarksDialogFragment:
 
-```android
+```java
 BookmarksDialogFragment showBookmarksDialog(FragmentManager fragmentManager, PDFViewCtrl pdfViewCtrl) {
     DialogFragmentTab annotationsDialog = new DialogFragmentTab(
         AnnotationDialogFragment.class,
