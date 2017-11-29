@@ -14,7 +14,7 @@ Add rules to your root-level `build.gradle` file, to include PDFNet's Maven repo
 
 Copy the following **as is**, do **not** import `org.gradle.api.credentials.Credentials`:
 
-```
+```groovy
 allprojects {
     ...
     repositories {
@@ -34,7 +34,7 @@ allprojects {
 
 Then, in your module Gradle file (usually `app/build.gradle`), add:
 
-```
+```groovy
 android {
     defaultConfig {
         ...
@@ -57,7 +57,7 @@ dependencies {
 
 Next, add permissions to `AndroidManifest.xml` file outside of the `<application/>` tag:
 
-```
+```xml
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -67,7 +67,7 @@ Next, add permissions to `AndroidManifest.xml` file outside of the `<application
 
 Add license key placeholder, activity declarations to `AndroidManifest.xml` file inside the `<application/>` tag:
 
-```
+```xml
 <meta-data
   android:name="pdftron_license_key"
   android:value="${pdftronLicenseKey}"/>
@@ -90,7 +90,7 @@ Add license key placeholder, activity declarations to `AndroidManifest.xml` file
 
 Finally, add style to `res/values/styles.xml`:
 
-```
+```xml
 <style name="CustomAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="colorPrimary">@color/app_color_primary</item>
     <item name="colorPrimaryDark">@color/app_color_primary_dark</item>
@@ -102,7 +102,7 @@ Finally, add style to `res/values/styles.xml`:
 ```
 
 To open Simple Reader demo, use:
-```
+```java
 import com.pdftron.demo.app.SimpleReaderActivity;
 ...
 SimpleReaderActivity.open(this);
@@ -113,7 +113,7 @@ You will see:
 ![](img/simple_reader_demo.png "SimpleReader")
 
 To open Complete Reader demo, use:
-```
+```java
 import com.pdftron.demo.app.CompleteReaderActivity;
 ...
 CompleteReaderActivity.open(this);

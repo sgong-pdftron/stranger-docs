@@ -1,0 +1,1 @@
+# Page thumbnails dialog fragment

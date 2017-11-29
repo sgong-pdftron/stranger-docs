@@ -20,6 +20,10 @@
 - header: Basics
 - title: PDFNet document locking
   link: /android/guides/doc-lock
+- title: Quick menu
+  link: /android/guides/tools/quick-menu
+- title: Quick menu item
+  link: /android/guides/tools/quick-menu-item
 - title: Annotations list
   link: /android/guides/dialog/annotation
 - title: Outline list
@@ -28,6 +32,8 @@
   link: /android/guides/dialog/user_bookmarks
 - title: Bookmark dialog
   link: /android/guides/dialog/bookmarks
+- title: Page thumbnails dialog
+  link: /android/guides/dialog/thumbnails_view
 - title: Reflow
   link: /android/guides/controls/reflow
 - title: Undo and redo
@@ -39,7 +45,6 @@
   link: /android/guides/tools/custom-tool
 - title: Custom tool style
   link: /android/guides/tools/customize-tool-style
-- title: Quick menu
-  link: /android/guides/tools/quick-menu
-- title: Quick menu item
-  link: /android/guides/tools/quick-menu-item
+- header: FAQ
+- title:  Run project in Android Studio
+  link: /android/guides/faq/run-in-android-studio
