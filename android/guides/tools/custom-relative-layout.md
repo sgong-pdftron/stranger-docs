@@ -69,7 +69,7 @@ Screenshot:
 ![screenshot](./img/custom_layout.PNG)
 
 ## Programming example
-```
+```java
 public void addCustomeLayout(PDFViewCtrl pdfViewCtrl) {
   // initialize custom layout
   CustomRelativeLayout customLayout= new CustomRelativeLayout(pdfViewCtrl.getContext());
