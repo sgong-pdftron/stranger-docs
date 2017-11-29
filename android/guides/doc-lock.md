@@ -9,8 +9,9 @@ PDFNet uses a recursive read/write locking system. Multiple threads can hold a r
 ```java
 PDFDoc d = new PDFDoc("foo.pdf");
 d.lock();
-d.lock();
+d.unlock();
 d.lockRead();
+d.unlockRead();
 ```
 
 However, a **thread cannot acquire a write lock while holding a read lock**. Because one can only acquire a write lock when no read locks are held, this situation would inevitably lead to a deadlock. To avoid this scenario, PDFNet will throw a runtime exception whenever the situation occurs.
