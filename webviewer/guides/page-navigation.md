@@ -4,7 +4,7 @@ title: Page Navigation
 
 ## Navigating pages through UI
   
-![Page navigation UI](../../../static/webviewer-page-navigation-ui.png)
+![Page navigation UI](./img/page-navigation-ui.png)
   
 - The page navigation UI is found on top tool bar
 - Left/right buttons navigate to previous/next pages respectively
