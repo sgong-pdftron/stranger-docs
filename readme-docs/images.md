@@ -14,11 +14,3 @@ title: Images
 ```
 
 ![PDFTron logo](../../static/logo.png)
-
-### Example 2
-
-```
-![WebViewer print button](../../static/webviewer-print-button.png)
-```
-
-![WebViewer print button](../../static/webviewer-print-button.png)

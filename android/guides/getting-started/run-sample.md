@@ -4,7 +4,7 @@ PDFNet ships with three sample projects each containing examples that you could 
 
 ### CompleteReader app
 
-<img src="./img/complete_reader_app.png" width="250">
+![](img/complete_reader_app.png "CompleteReader")
 
 This app can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 

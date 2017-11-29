@@ -1,32 +1,34 @@
 # Undo/Redo Support 
 
-PDFTron supports undo/redo for any manipulation on the document. For convenience reasons, we have provided a class called UndoRedoManger to facilitate undo/redo. This class is by default attached to ToolManager class. In other words, if you are using ToolManger you don't need to do anything to make undo/redo enabled. Just ensure you raise the appropriate events existing in ToolManager when you manipulate the document:
+PDFTron supports undo/redo for any manipulation on the document. For convenience reasons, we have provided a class called `UndoRedoManger` to facilitate undo/redo. This class is by default attached to `ToolManager` class. In other words, if you are using `ToolManger` you don't need to do anything to make undo/redo work. Just ensure you raise the appropriate events existing in `ToolManager` when you manipulate the document:
 
-- `void raiseAnnotationsAddedEvent(Map<Annot,Integer>)`
+- `void raiseAnnotationsAddedEvent(Map<Annot,Integer>)`: Call this function when annotations have been added to the document.
 
-- `void raiseAnnotationsPreModifyEvent(Map<Annot,Integer>)`
+- `void raiseAnnotationsPreModifyEvent(Map<Annot,Integer>)`: Call this function before annotations in the document are modified.
 
-- `void raiseAnnotationsModifiedEvent(Map<Annot,Integer>)`
+- `void raiseAnnotationsModifiedEvent(Map<Annot,Integer>)`: Call this function when annotations in the document have been modified.
 
-- `void raiseAnnotationsPreRemoveEvent(Map<Annot,Integer>)`
+- `void raiseAnnotationsPreRemoveEvent(Map<Annot,Integer>)`: Call this function before annotations are removed from the document.
 
-- `void raiseAnnotationsRemovedEvent(Map<Annot,Integer>)`
+- `void raiseAnnotationsRemovedEvent(Map<Annot,Integer>)`: Call this function when annotations have been removed from the document.
 
-- `void raiseAllAnnotationsRemovedEvent()`
+- `void raiseAnnotationsRemovedEvent(int)`: Call this function when all annotations in the specified page have been removed from the document.
 
-- `void raiseAnnotationActionEvent()`
+- `void raiseAllAnnotationsRemovedEvent()`: Call this function when all annotations in the document have been removed.
 
-- `void raiseBookmarkModified()`
+- `void raiseAnnotationActionEvent()`: Call this function when an action has taken place that changes the document.
 
-- `void raisePagesCropped()`
+- `void raiseBookmarkModified()`: Call this function when document bookmark has been modified.
 
-- `void raisePagesAdded(List<Integer>)`
+- `void raisePagesCropped()`: Call this function when pages of the document have been cropped.
 
-- `void raisePagesDeleted(List<Integer>)`
+- `void raisePagesAdded(List<Integer>)`: Call this function when new pages have been added to the document.
 
-- `void raisePagesRotated(List<Integer>)`
+- `void raisePagesDeleted(List<Integer>)`: Call this function when pages have been deleted from the document.
 
-- `void raisePageMoved(int, int)`
+- `void raisePagesRotated(List<Integer>)`: Call this function when pages in the document have been rotated.
+
+- `void raisePageMoved(int, int)`: Call this function when a page in the document have been moved to a new position.
 
 To do undo/redo operation simply call
 
@@ -37,24 +39,52 @@ or
 ``` android
 String redoInfo = mToolManager.getUndoRedoManger().redo()
 ```
+undoInfo/redoInfo contains the information about the action that has been undone/redone; for example, it can be something like this when the action was undoing/redoing annotation addition which is in JSON format:
+
+`{"Action":"Add Text Box","Annot Info":"{\"Page Numbers\":\"1 \",\"Rects\":\"197 511 307 534 \"}"}`
+
+This information can be later used, for example, in jumping to the last modification which will be explained in the next section.
 
 ## Jump to Undo/Redo
-Additionally, if you are in the PDF view and like the view to jump to the undo/redo changes you can call
+If you are in the PDF view and like the view to jump to the undo/redo changes you can call
 ``` android
 mToolManager.getUndoRedoManger().jumpToUndoRedo(PDFViewCtrl, String, boolean)
 ```
-This function will show the transition with an animation.
+This function will show the transition with an animation. The second input argument is the attached information to undo action, and the third argument specifies if the action was undo or redo.
 
-## Next Undo/Redo actions
+## Information about Undo/Redo action
 There area several facility functions provided in UndoRedoManger to see the action you can undo/redo, including
 
-- `canUndo()`
+- `boolean canUndo()`: determines if there is any action to undo in the stack of undo/redo.
 
-- `canRedo()`
+- `boolean canRedo()`: determines if there is any action to redo in the stack of undo/redo.
 
-- `getNextUndoAction()`
+- `String getNextUndoAction()`: gets the information attached to the next undo action
 
-- `getNextRedoAction()`
+- `String getNextRedoAction()`: gets the information attached to the next redo action
+
+- `boolean isNextUndoEditPageAction()`: checks if the next undo action is an edit to page(s)
+
+- `boolean isNextRedoEditPageAction()`: checks if the next redo action is an edit to page(s)
+
+The information attached to the undo/redo action can be used to determine the type of action:
+
+- `boolean isAddPagesAction(Context, String)`: checks if the information attached to an undo is related to adding pages
+
+- `boolean isDeletePagesAction(Context, String)`: checks if the information attached to an undo is related to deleting pages
+
+- `boolean isRotatePagesAction(Context, String)`: checks if the information attached to an undo is related to rotating pages
+
+- `boolean isMovePageAction(Context, String)`: checks if the information attached to an undo is related to moving a page
+
+- `boolean isMovePageAction(Context, String)`: checks if the information attached to an undo is related to editing (adding, deleting, rotating, moving) pages
+
+- `boolean isMovePageAction(Context, String)`: checks if the information attached to an undo is related to adding annotations
+
+- `boolean isModifyAnnotationAction(Context, String)`: checks if the information attached to an undo is related to modifying annotations
+
+- `boolean isRemoveAnnotationAction(Context, String)`: checks if the information attached to an undo is related to removing annotations
+
 
 ## `Caution`
 We highly recommend to call `UndoRedoManger.takeUndoSnapshotForSafety()` before saving the document in case any manipulation to the document has not been raised in ToolManager class; otherwise, the document may be corrupted.
@@ -62,11 +92,11 @@ We highly recommend to call `UndoRedoManger.takeUndoSnapshotForSafety()` before 
 # Build your own Undo/Redo Manager
 If you don't use ToolManger or you'd like to have you own undo/redo control you need to enable undo/redo as the first step:
 ``` android
-mPdfViewCtrl.enableUndoRedo()
+mPdfViewCtrl.enableUndoRedo();
 ```
 You can see if the undo/redo is enabled in the PDF view using:
 ``` android
-mPdfViewCtrl.isUndoRedoEnabled()
+boolean isUndoRedoEnabled = mPdfViewCtrl.isUndoRedoEnabled();
 ```
 
 ## Undo/Redo Snapshots
@@ -74,7 +104,7 @@ After enabling undo/redo, you should determine the snapshots for undo/redo opera
 
 ``` android
 try {
-    mPDFViewCtrl.takeUndoSnapshot(info);
+    mPdfViewCtrl.takeUndoSnapshot(info);
 } catch (Exception e) {
     e.printStackTrace();
 }
@@ -85,7 +115,7 @@ If you have at least one undo snapshot you can back to the last modification usi
 ``` android
 try {
     mPdfViewCtrl.cancelRendering();
-    info = mPDFViewCtrl.undo();
+    info = mPdfViewCtrl.undo();
 } catch (Exception e) {
     e.printStackTrace();
 }
@@ -96,7 +126,7 @@ Or, if you have any undo in the stack you can redo the last undo by
 ``` android
 try {
     mPdfViewCtrl.cancelRendering();
-    info = mPDFViewCtrl.redo();
+    info = mPdfViewCtrl.redo();
 } catch (Exception e) {
     e.printStackTrace();
 }
@@ -108,16 +138,16 @@ Again, don't forget to take an undo snapshot before saving the document:
 ``` android
 boolean shouldUnlock = false;
 try {
-    mPDFViewCtrl.docLock(false);
+    mPdfViewCtrl.docLock(false);
     shouldUnlock = true;
-    if (pdfDoc.hasChangesSinceSnapshot()) {
-        mPDFViewCtrl.takeUndoSnapshot("Safety");
+    if (mPdfViewCtrl.getDoc().hasChangesSinceSnapshot()) {
+        mPdfViewCtrl.takeUndoSnapshot("Safety");
     }
 } catch (PDFNetException | JSONException e) {
     e.printStackTrace();
 } finally {
     if (shouldUnlock) {
-        mPDFViewCtrl.docUnlock();
+        mPdfViewCtrl.docUnlock();
     }
 }
 ```

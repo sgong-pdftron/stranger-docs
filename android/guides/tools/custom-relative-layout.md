@@ -34,7 +34,7 @@ Specifies the height of the view, it has to be **exact number**.
 
 ## XML example
 
-```
+```xml
 <com.pdftron.pdf.PDFViewCtrl
     android:id="@+id/pdfviewctrl"
     android:layout_width="match_parent"

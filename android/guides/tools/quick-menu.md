@@ -1,14 +1,18 @@
+----
 # Quick menu
+----
 
 A menu Layout that can be shown in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFDoc.html). It shows a small menu layout with maximum two rows, and a overflow menu list.
 
-![quick menu main layout](./img/quick-menu-main-layout.png) ![quick menu overflow layout](./img/quick-menu-overflow-layout.png)
+![quick menu main layout](./img/quick-menu-main-layout.png)
 
-With a given anchor rectangle view, quick menu will auto adjust position so it will be shown in either at the top of the anchor view or at the bottom of the anchor view:
+![quick menu overflow layout](./img/quick-menu-overflow-layout.png)
+
+With a given anchor rectangle view, quick menu will auto adjust position, it will be shown in either at the top of the anchor view or at the bottom of the anchor view:
 
 ![quick-menu-layout](./img/quick-menu-layout.jpg)
 
-## Basic example:
+## Add Quick Menu
 
 ```
 public void showMenu(Context context, PDFViewCtrl pdfViewCtrl, RectF anchor_rect) {

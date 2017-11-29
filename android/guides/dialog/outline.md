@@ -2,7 +2,7 @@
 
 This class shows a a document outline (bookmarks) that can be used to navigate through the document being viewed by a PDFViewCtrl.
 
-<p align="center"><img src="img/outline.png?raw=true" width="32%"></p>
+![](img/outline.png "Outline dialog fragment")
 
 user_bookmarks
 To create a new instance of the outline dialog fragment call `newInstance()` and set the PDFViewCtrl: 
