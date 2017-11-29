@@ -48,13 +48,13 @@ This function will show the transition with an animation.
 ## Next Undo/Redo actions
 There area several facility functions provided in UndoRedoManger to see the action you can undo/redo, including
 
-- `canUndo()`
+- `boolean canUndo()`
 
-- `canRedo()`
+- `boolean canRedo()`
 
-- `getNextUndoAction()`
+- `String getNextUndoAction()`
 
-- `getNextRedoAction()`
+- `String getNextRedoAction()`
 
 ## `Caution`
 We highly recommend to call `UndoRedoManger.takeUndoSnapshotForSafety()` before saving the document in case any manipulation to the document has not been raised in ToolManager class; otherwise, the document may be corrupted.
