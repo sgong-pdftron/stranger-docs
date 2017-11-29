@@ -8,7 +8,7 @@ BookmarksDialogFragment provides a horizontal layout to display the following it
 
    * annotations
 
-<p align="center"><img src="gif/bookmarks.gif?raw=true" width="32%"></p>
+![](https://raw.githubusercontent.com/sgong-pdftron/stranger-docs/master/android/guides/dialog/gif/bookmarks.gif "Bookmarks dialog fragment")
 
 To create a new instance of the bookmarks dialog fragment call
 ```android

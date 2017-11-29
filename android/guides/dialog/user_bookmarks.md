@@ -2,7 +2,7 @@
 
 This class shows a list of user-defined bookmarks that can be used to navigate through the document. The user-defined bookmarks are PDFTron specific features that may not be shown in other PDF viewers apps. If you want to manage PDF bookmarks so that they can be processed in other standard PDF viewers, see OutlineDialogFragment.
 
-<p align="center"><img src="img/user_bookmarks.png?raw=true" width="32%"></p>
+![](img/user_bookmarks.png "User bookmark dialog fragment")
 
 To create a new instance of the user bookmark dialog fragment call `newInstance()` and set the PDFViewCtrl: 
 ```android
