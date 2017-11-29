@@ -76,6 +76,7 @@ public void onBookmarksDialogDismissed(int tabIndex) {
 public void onUserBookmarkClick(int pageNum) {
     // a user bookmark was clicked
 }
+
 @Override
 public void onOutlineClicked(Bookmark parent, Bookmark bookmark) {
     // an outline was clicked

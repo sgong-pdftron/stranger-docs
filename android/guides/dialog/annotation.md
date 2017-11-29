@@ -17,7 +17,4 @@ AnnotationDialogFragment showAnnotationDialog(FragmentManager fragmentManager, P
 
 You should set a listener via `setAnnotationDialogListener(AnnotationDialogListener)` to be notified when an annotation item is clicked, or when document annotations are exported to a PDF doc when users click on the export floating action button.
 
-If the document has write access, users can delete existing annotations by long-pressing on the annotation. To specify whether the document is read-only call 
-```android
-setReadOnly(boolean)
-```
+If the document has write access, users can delete existing annotations by long-pressing on the annotation. To specify whether the document is read-only call `setReadOnly(boolean)`.
