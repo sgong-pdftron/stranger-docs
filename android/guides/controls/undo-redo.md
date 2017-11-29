@@ -62,11 +62,11 @@ We highly recommend to call `UndoRedoManger.takeUndoSnapshotForSafety()` before 
 # Build your own Undo/Redo Manager
 If you don't use ToolManger or you'd like to have you own undo/redo control you need to enable undo/redo as the first step:
 ``` android
-mPdfViewCtrl.enableUndoRedo()
+mPdfViewCtrl.enableUndoRedo();
 ```
 You can see if the undo/redo is enabled in the PDF view using:
 ``` android
-mPdfViewCtrl.isUndoRedoEnabled()
+boolean isUndoRedoEnabled = mPdfViewCtrl.isUndoRedoEnabled();
 ```
 
 ## Undo/Redo Snapshots
@@ -74,7 +74,7 @@ After enabling undo/redo, you should determine the snapshots for undo/redo opera
 
 ``` android
 try {
-    mPDFViewCtrl.takeUndoSnapshot(info);
+    mPdfViewCtrl.takeUndoSnapshot(info);
 } catch (Exception e) {
     e.printStackTrace();
 }
@@ -85,7 +85,7 @@ If you have at least one undo snapshot you can back to the last modification usi
 ``` android
 try {
     mPdfViewCtrl.cancelRendering();
-    info = mPDFViewCtrl.undo();
+    info = mPdfViewCtrl.undo();
 } catch (Exception e) {
     e.printStackTrace();
 }
@@ -96,7 +96,7 @@ Or, if you have any undo in the stack you can redo the last undo by
 ``` android
 try {
     mPdfViewCtrl.cancelRendering();
-    info = mPDFViewCtrl.redo();
+    info = mPdfViewCtrl.redo();
 } catch (Exception e) {
     e.printStackTrace();
 }
@@ -108,16 +108,16 @@ Again, don't forget to take an undo snapshot before saving the document:
 ``` android
 boolean shouldUnlock = false;
 try {
-    mPDFViewCtrl.docLock(false);
+    mPdfViewCtrl.docLock(false);
     shouldUnlock = true;
-    if (pdfDoc.hasChangesSinceSnapshot()) {
-        mPDFViewCtrl.takeUndoSnapshot("Safety");
+    if (mPdfViewCtrl.getDoc().hasChangesSinceSnapshot()) {
+        mPdfViewCtrl.takeUndoSnapshot("Safety");
     }
 } catch (PDFNetException | JSONException e) {
     e.printStackTrace();
 } finally {
     if (shouldUnlock) {
-        mPDFViewCtrl.docUnlock();
+        mPdfViewCtrl.docUnlock();
     }
 }
 ```
