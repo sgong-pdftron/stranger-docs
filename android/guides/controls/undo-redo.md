@@ -30,6 +30,8 @@ PDFTron supports undo/redo for any manipulation on the document. For convenience
 
 - `void raisePageMoved(int, int)`: Call this function when a page in the document have been moved to a new position.
 
+## Undo/Redo operation
+
 To do undo/redo operation simply call
 
 ``` android

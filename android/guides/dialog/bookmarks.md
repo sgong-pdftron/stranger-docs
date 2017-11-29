@@ -1,6 +1,6 @@
 # Bookmarks dialog fragment
 
-BookmarksDialogFragment provides a horizontal layout to display the following items in separate tabs:
+`BookmarksDialogFragment` provides a horizontal layout to display the following items in separate tabs:
 
    * user-defined bookmarks
 
