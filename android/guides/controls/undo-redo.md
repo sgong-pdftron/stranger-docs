@@ -30,6 +30,8 @@ PDFTron supports undo/redo for any manipulation on the document. For convenience
 
 - `void raisePageMoved(int, int)`: Call this function when a page in the document have been moved to a new position.
 
+## Undo/Redo operation
+
 To do undo/redo operation simply call
 
 ``` android
@@ -39,11 +41,11 @@ or
 ``` android
 String redoInfo = mToolManager.getUndoRedoManger().redo()
 ```
-undoInfo/redoInfo contains the information about the action that has been undone/redone; for example, it can be something like this when the action was undoing/redoing annotation addition which is in JSON format:
+The `undoInfo`/`redoInfo` contains the information about the action that has been undone/redone; for example, it can be something like this when the undo/redo action is corresponding to annotation addition:
 
 `{"Action":"Add Text Box","Annot Info":"{\"Page Numbers\":\"1 \",\"Rects\":\"197 511 307 534 \"}"}`
 
-This information can be later used, for example, in jumping to the last modification which will be explained in the next section.
+From this you can understand the action was adding a text box in page 1 at the rectangle (197 511 307 534). This information can be used later, for example, in jumping to the last modification which will be explained in the next section.
 
 ## Jump to Undo/Redo
 If you are in the PDF view and like the view to jump to the undo/redo changes you can call
@@ -63,11 +65,13 @@ There area several facility functions provided in UndoRedoManger to see the acti
 
 - `String getNextRedoAction()`: gets the information attached to the next redo action
 
-- `boolean isNextUndoEditPageAction()`: checks if the next undo action is an edit to page(s)
-
-- `boolean isNextRedoEditPageAction()`: checks if the next redo action is an edit to page(s)
-
 The information attached to the undo/redo action can be used to determine the type of action:
+
+- `boolean isAddAnnotationAction(Context, String)`: checks if the information attached to an undo is related to adding annotations
+
+- `boolean isModifyAnnotationAction(Context, String)`: checks if the information attached to an undo is related to modifying annotations
+
+- `boolean isRemoveAnnotationAction(Context, String)`: checks if the information attached to an undo is related to removing annotations
 
 - `boolean isAddPagesAction(Context, String)`: checks if the information attached to an undo is related to adding pages
 
@@ -77,14 +81,7 @@ The information attached to the undo/redo action can be used to determine the ty
 
 - `boolean isMovePageAction(Context, String)`: checks if the information attached to an undo is related to moving a page
 
-- `boolean isMovePageAction(Context, String)`: checks if the information attached to an undo is related to editing (adding, deleting, rotating, moving) pages
-
-- `boolean isMovePageAction(Context, String)`: checks if the information attached to an undo is related to adding annotations
-
-- `boolean isModifyAnnotationAction(Context, String)`: checks if the information attached to an undo is related to modifying annotations
-
-- `boolean isRemoveAnnotationAction(Context, String)`: checks if the information attached to an undo is related to removing annotations
-
+- `boolean isEditPageAction(Context, String)`: checks if the information attached to an undo is related to editing (adding, deleting, rotating, moving) pages
 
 ## `Caution`
 We highly recommend to call `UndoRedoManger.takeUndoSnapshotForSafety()` before saving the document in case any manipulation to the document has not been raised in ToolManager class; otherwise, the document may be corrupted.
