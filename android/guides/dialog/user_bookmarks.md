@@ -17,7 +17,4 @@ UserBookmarkDialogFragment showUserBookmarkDialog(FragmentManager fragmentManage
 
 You should set a listener via `setUserBookmarkListener(UserBookmarkDialogListener)` to be notified when a user bookmark is clicked.
 
-If the document has write access, users can add new user bookmarks using floating action button. To specify whether the document is read-only call 
-```android
-setReadOnly(boolean)
-```
+If the document has write access, users can add new user bookmarks using floating action button. To specify whether the document is read-only call `android setReadOnly(boolean)`.
