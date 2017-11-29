@@ -1,4 +1,4 @@
-# Getting started with PDFNet document locking
+# PDFNet document locking
 
 As computing devices become more parallel in nature, PDFNet is evolving to allow developers to leverage this power in new and exciting ways. PDFNet version 6.0 introduces new locking semantics which allow for concurrent access of a [`PDFDoc`](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFDoc.html) instance. This was done to improve performance during interactive viewing (simultaneous rendering, text extraction, etc.), as well as to open up the possibility for new use cases (parallel rendering). This article introduces the locking system, and will get you on your way to developing parallel applications with PDFNet SDK.
 
@@ -6,8 +6,8 @@ As computing devices become more parallel in nature, PDFNet is evolving to allow
 
 PDFNet uses a recursive read/write locking system. Multiple threads can hold a read lock on the document, **but only one thread can hold a write lock at any given time**. A thread can acquire an equivalent or weaker lock as many times as it likes without causing a deadlock. In other words, the following is valid:
 
-```
-PDFDoc d("foo.pdf");
+```java
+PDFDoc d = new PDFDoc("foo.pdf");
 d.lock();
 d.lock();
 d.lockRead();
@@ -25,7 +25,7 @@ In general, the parts of our library that manage the UI will maintain document l
 
 PDFNet provides the following APIs for locking the document:
 
-```
+```java
 void PDFDoc.lock()
 bool PDFDoc.tryLock(int milliseconds)
 void PDFDoc.unlock()
@@ -36,7 +36,7 @@ void PDFDoc.unlockRead()
 
 For convenience, [`PDFViewCtrl`](http://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) expose similar methods, which will be applied to the document currently associated with the control. Additionally, the [`PDFViewCtrl.docLock()`](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html#docLock(boolean)) method takes a `cancel_threads` parameter, which will interrupt all worker threads currently accessing the document. This allows you to acquire the write lock as fast as possible:
 
-```
+```java
 void PDFViewCtrl.docLock(bool cancel_threads)
 bool PDFViewCtrl.docTryLock(int milliseconds)
 void PDFViewCtrl.docUnlock()
@@ -45,7 +45,7 @@ bool PDFViewCtrl.docTryLockRead(int milliseconds)
 void PDFViewCtrl.docUnlockRead()
 ```
 
-## Filters
+## Filters (TODO change to android's specific filter)
 
 At the low level, a [`PDFDoc`](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFDoc.html) uses an `input filter` to access its PDF data. this data could be stored on the file system, in a memory buffer, or over a network. Now that PDFNet supports concurrent access of PDFDocs across many threads, these input filters must also be made thread-safe. StdFile, which was not a thread-safe filter, is no longer available. Instead, you should now use the new [`MappedFile`](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/filters/MappedFile.html) filter, which provides thread-safe and efficient read access on a file. Custom user filters are still supported, although they are now wrapped in an internal filter that guarantees thread safety.
 
@@ -60,7 +60,7 @@ Conversely, if you are happy with the existing *'one document, one thread'* mode
 ## API calls which can acquire a write lock
 
 ### PDFViewCtrl
-```
-void com.pdftron.pdf.PDFViewCtrl.closeDoc()
-void com.pdftron.pdf.PDFViewCtrl.setDoc()
+```java
+void PDFViewCtrl.closeDoc()
+void PDFViewCtrl.setDoc()
 ```
