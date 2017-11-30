@@ -1,95 +1,73 @@
-# Creating custom tool
+# Tool
+public class [Tool](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Tool.html) \
+implements [ToolManager.Tool](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/ToolManager.Tool.html)
 
-You can create your own customized tool based on the fundamental tool: [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html). [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html) is responsible for creating annotations, or handling annotations when user interacts with [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). This tutorial helps you create a customized tool.
+## Quick start creating an annotation creator tool
 
-## Subclass a tool
-All of the tool classes defined in PDFViewCtrlTools extend [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html). Your custom tool can also extend `Tool` directly, or you can save time by extending one of the existing tool subclasses, such as [FreehandCreate](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/FreehandCreate.html)
+### Creates a subclass of Tool
+If you are going to creates a tool that is going to creates an annotation by drawing on the page, you can creates a subclass tool listed as following and then overrides [`TextMarkupCreate.createMarkup(PDFDoc, Rect bbox)`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextMarkupCreate.html#createMarkup-com.pdftron.pdf.PDFDoc-com.pdftron.pdf.Rect-) and [`Tool.getMode()`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Tool.html#getMode--) method: 
 
+#### [`TextMarkupCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextMarkupCreate.html)
+
+It selects text and draw  a text loupe first and then creates an annotation.
+
+#### [`RectCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/RectCreate.html)
+
+It draws a rectangle on document first, and then creates an annotation
+
+#### [`LineCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/LineCreate.html)
+
+It draws a line on document first, and then creates an annotation
+
+#### [`OvalCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/OvalCreate.html)
+
+It draws an oval on document first, and then creates an annotaiton
+
+##### Example [SignatureFieldCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/SignatureFieldCreate.html)
 ```java
-class CustomTool extends Tool {
-  public static int MODE = 1234;
-  public CustomTool(PDFViewCtrl ctrl) {
-    super(ctrl);
-  }
 
-  @Override
-  public int getMode() {
-    // assign a unique mode number to this tool
-    return MODE;
-  }
-}
-```
+/**
+ * This class is for creating a signature field annotation
+ */
+@Keep
+public class SignatureFieldCreate extends RectCreate {
 
-## Add custom tool to ToolManager
-When creating toolManager, add the custom tool to [ToolManager](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.ToolManager.html) so when the next tool mode is the custom tool mode, it can auto generate custom tool class.
-
-```java
-PDFViewCtrl pdfView = findViewById(R.id.pdfviewctrl);
-ToolManager toolManager = new ToolManager(pdfView);
-// add custom tool to toolManager
-toolManager.addCustomizedTool(new CustomTool(pdfView));
-pdfView.setToolManager(toolManager);
-```
-
-### Add custom constructor parameter to tool manager
-Generally, tools are using [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) as their contructor parameter. If your custom tool requires other parameters, you can add your customized parameter as following:
-
-```java
-toolManager.addCustomizedTool(new CustomTool(pdfView), param1, param2);
-```
-
-### Set custom tool as default tool in ToolManager
-If your custom tool is a subclass of [Pan](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Pan.html) tool and you want to replace the original [Pan](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Pan.html) tool to be the default tool in tool manager, you can set it as the following:
-
-```java
-toolManager.setDefaultToolCLass(CustomTool.class);
-```
-
-## Switching between tools
-To use Custom tools, you can use [ToolManager.setTool](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/ToolManager.html#setTool(com.pdftron.pdf.tools.ToolManager.Tool)) to switch to Custom Tool:
-
-```java
-Button button = findViewById(R.id.button);
-button.setOnClickListener(new View.OnClickListener() {
-  @Override
-  public void onClick(View v) {
-    mToolManager.setTool(mToolManager.createTool(CustomTool.MODE, mToolManager.getTool()));
-  }
-});
-```
-
-Alternatively, if your current tool is an instance of [Tool](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/Tool.html), you can also use `Tool.setNextToolModeHelper` to set next tool to be custom tool, and also easily switch to the other tools.
-
-```java
-((Tool) mToolManager.getTool()).setNextToolModeHelper(CustomTool.MODE);
-```
-
-## Example
-
-##### Custom Tool:
-
-```java
-public class CustomTool extends Tool {
-
-    public static int MODE = 1234;
-
-    public CustomTool(PDFViewCtrl ctrl) {
+    /**
+     * Class constructor
+     */
+    public SignatureFieldCreate(@NonNull PDFViewCtrl ctrl) {
         super(ctrl);
     }
 
+    /**
+     * The overload implementation of {@link RectCreate#getMode()}}.
+     */
     @Override
     public int getMode() {
-        return MODE;
+        return ToolManager.e_signature_field;
     }
 
+    /**
+     * The overload implementation of {@link RectCreate#createMarkup(PDFDoc, Rect)}}.
+     */
     @Override
-    public boolean onDown(MotionEvent e) {
-        Toast.makeText(mPDFView.getContext(), "Custom Tool onDown called", Toast.LENGTH_LONG).show();
-        return super.onDown(e);
+    protected Annot createMarkup(PDFDoc doc, Rect bbox) throws PDFNetException {
+        Annot annot =  Widget.create(doc, bbox, doc.fieldCreate("signature", Field.e_signature));
+        annot.getSDFObj().putString(PDFTRON_ID, "");
+        return annot;
     }
 }
+
 ```
-##### Main Activity:
+### Register the tool to [ToolManager](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/ToolManager.html)
+
+All tools are controlled in [ToolManager](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/ToolManager.html). You can add the custom tool to [ToolManager](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/ToolManager.html) by calling [`ToolManager.addCustomizedTool(Tool)`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/ToolManager.html#addCustomizedTool-com.pdftron.pdf.tools.Tool-)
+
+### Switched to a different tool:
+In [ToolManager](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/ToolManager.html), you can switch to another tool by calling [`ToolManager.setTool(ToolManager.Tool)`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/ToolManager.Tool.html)
+
+##### Example
+MainActivity:
 
 ```java
 PDFViewCtrl mPDFView = (PDFViewCtrl) findViewById(R.id.pdfviewctrl);
@@ -110,47 +88,82 @@ button.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-## Additional tips
-If your custom tool is going to create a new annotation by drawing a shape on page, your custom tool can extend [SimpleShapeCreate]() or one its subclasses that best match your desired behaviour. After that, you can simply override the `createMarkup(PDFDoc doc, Rect bbox)` function for creating your custom annotation.
+### Switching tool during motion events (e.g. [`onDown(MotionEvent)`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Tool.html#onDown-android.view.MotionEvent-), [`onDoubleTap(MotionEvent)`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Tool.html#onDown-android.view.MotionEvent-))
 
-For instance, If you want to draw a rectangle on page first, and then using that rectangle area to create a signature field. You can create a custom tool by extending [RectCreate]():
+In motion event functions, if one tool set a different tool to be the next tool, that motion event will continue to the next tool.
 
+Here is how [ToolManager](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/ToolManager.html) controls tool changes in `onDoubleTap` event
 ```java
-/**
- * This class is for creating a signature field annotation
- */
-public class SignatureFieldCreate extends RectCreate {
-    public SignatureFieldCreate(PDFViewCtrl ctrl) {
-        super(ctrl);
-    }
+  @Override
+    public boolean onDoubleTap(MotionEvent e) {
+        boolean handled = false;
 
-    @Override
-    public int getMode() {
-        return ToolManager.e_signature_field; // return a unique tool mode
-    }
+        if (mTool != null) {
+            int prev_tm = mTool.getMode(), next_tm;
+            do {
+                handled = mTool.onDoubleTap(e);
+                next_tm = mTool.getNextToolMode();
+                if (prev_tm != next_tm) {
+                    mTool = createTool(next_tm, mTool);
+                    prev_tm = next_tm;
+                } else {
+                    break;
+                }
+            } while (true);
+        }
 
-    // Override this function to return a Widget annotation with field type Field.e_sigature
-    @Override
-    protected Annot createMarkup(PDFDoc doc, Rect bbox) throws PDFNetException {
-        Annot annot =  Widget.create(doc, bbox, doc.fieldCreate("signature", Field.e_signature));
-        return annot;
+        return handled;
     }
-}
 ```
 
-The following creation tools may help you create custom annotations more easily:
+So if your tool want to switch to the other tool during motion event, you can set next tool by calling [`Tool.safeSetNextToolMode(int)`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Tool.html#safeSetNextToolMode-int-).
 
-#### [SimeleShapeCreate]():
-The subclasses will draw something on page first, and then creates an annotation.
+For example, in [`Pan.onSingleTapConfirmed(MotionEvent)`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Pan.html#onSingleTapConfirmed-android.view.MotionEvent-), it sets next tool to be [`LinkAction`](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/LinkAction.html) tool as following:
 
-Helpful tools for drawing on page: [RectCreate](), [OvalCreate](), [LineCreate](), [ArrowCreate]()
+```java
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent e) {
+        // ... do something
+        if (mAnnot.getType() == Annot.e_Link) {
+            // Link navigation
+            mNextToolMode = safeSetNextToolMode(ToolManager.e_link_action);
+        }
+        return false;
+    }
+```
 
-Example tool: [SignatureFieldCreate]()
+## Subclasses hierachy
 
-#### [TextMarkupCreate]()
-It will select the text first, and then creates an annotation. If the annotation created is not [TextMarkup](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/TextMarkup.html), it will creates a rectangle surrounding the selected text.
-
-Example tool: [TextLinkCreate](), [TextUnderlineCreate](https://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/tools/TextUnderlineCreate.html)
-
-
+- [AnnotEdit](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/AnnotEdit.html)
+- [AnnotEditLine](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/AnnotEditLine.html)
+- [DigitalSignature](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/DigitalSignature.html)
+- [FormFill](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/FormFill.html)
+- [FreeTextCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/FreeTextCreate.html)
+- [LinkAction](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/LinkAction.html)
+- [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Pan.html)
+- [RichMedia](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/RichMedia.html)
+- [Signature](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Signature.html)
+- [SimpleShapeCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/SimpleShapeCreate.html)
+  - [ArrowCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/ArrowCreate.html)
+  - [RectCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/RectCreate.html)
+    - [CheckboxFieldCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/CheckboxFieldCreate.html)
+    - [RadioGroupFieldCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/RadioGroupFieldCreate.html)
+    - [RectLinkCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/RectLinkCreate.html)
+    - [SignatureFieldCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/SignatureFieldCreate.html)
+    - [TextFieldCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextFieldCreate.html)
+  - [Eraser](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Eraser.html)
+  - [FreehandCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/FreehandCreate.html)
+  - [LineCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/LineCreate.html)
+  - [OvalCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/OvalCreate.html)
+  - [StickyNoteCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/StickyNoteCreate.html)
+- [Stamper](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/Stamper.html)
+- [TextHighlighter](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextHighlighter.html)
+- [TextMarkupCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextMarkupCreate.html)
+  - [TextHighlightCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextHighlightCreate.html)
+  - [TextSquigglyCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextSquigglyCreate.html)
+  - [TextStrikeoutCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextStrikeoutCreate.html)
+  - [TextUnderlineCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextUnderlineCreate.html)
+  - [TextLinkCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextLinkCreate.html)
+- [TextSelect](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/TextSelect.html)
+  - [AnnotEditTextMarkup](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/AnnotEditTextMarkup.html)
 
