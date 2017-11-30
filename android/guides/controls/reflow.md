@@ -4,7 +4,7 @@ Reflow makes the document more flexible and easier to read, especially on small 
 # How to show Reflow Pager
 ReflowControl is a [ViewPager](https://developer.android.com/reference/android/support/v4/view/ViewPager.html) that allows the user to flip left and right through reflowable layout of pages in a certain PDF document.
 
-<p align="center"><img src="gif/reflow_pager.gif?raw=true" width="32%"></p>
+![](https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/controls/gif/reflow_pager.gif?raw=true "Reflow")
 
 ## Implementation
 To set up your layout with [ReflowControl](http://www.pdftron.com/pdfnet/mobile/docs/Android/tools/javadoc/reference/com/pdftron/pdf/controls/ReflowControl.html), add a `<ReflowControl>` element to your XML layout. For example, if each page in the swipe view should consume the entire layout, then your layout looks like this:

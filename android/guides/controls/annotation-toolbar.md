@@ -1,7 +1,7 @@
 # Annotation toolbar
 With annotation toolbar users are able to conveniently create and switch between different tools. 
 
-![](gif/annotation-toolbar.gif "Annotation toolbar")
+![](![](https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/controls/gif/annotation-toolbar.gif?raw=true "Annotation toolbar")
 
 # How to show annotation toolbar
 Annotation toolbar lets user to easily select their tools when adding annotations to the document. 
