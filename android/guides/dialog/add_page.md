@@ -119,7 +119,7 @@ try {
                     doc.pageInsert(doc.getPageIterator(newPageNum), pages[i - 1]);
                 }
 
-                // For undo/redo support:
+                // For undo/redo support when tool manager is attached to the PDFViewCtrl
                 ToolManager toolManager = (ToolManager) mPdfViewCtrl.getToolManager();
                 if (toolManager != null) {
                     toolManager.raisePagesAdded(pageList);
@@ -145,7 +145,7 @@ try {
     });
     addPageDialog.show(getActivity().getSupportFragmentManager(), "add_page_dialog");
 } catch (Exception e) {
-    AnalyticsHandlerAdapter.getInstance().sendException(e);
+    e.printStackTrace();
 } finally {
     if (shouldUnlockRead) {
         mPdfViewCtrl.docUnlockRead();
