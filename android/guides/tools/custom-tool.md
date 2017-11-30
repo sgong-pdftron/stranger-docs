@@ -26,35 +26,34 @@ It draws an oval on document first, and then creates an annotaiton
 ##### Example [SignatureFieldCreate](http://neon.pdftron.local:8000/www/qliu/android/api/com/pdftron/pdf/tools/SignatureFieldCreate.html)
 ```java
 
+
 /**
- * This class is for creating a signature field annotation
+ * This class is for creating text underline annotation.
  */
 @Keep
-public class SignatureFieldCreate extends RectCreate {
+public class TextUnderlineCreate extends TextMarkupCreate {
 
     /**
      * Class constructor
      */
-    public SignatureFieldCreate(@NonNull PDFViewCtrl ctrl) {
-        super(ctrl);
+    public TextUnderlineCreate(@NonNull PDFViewCtrl ctrl) {
+        super(ctrl, ToolManager.e_text_underline);
     }
 
     /**
-     * The overload implementation of {@link RectCreate#getMode()}}.
+     * The overload implementation of {@link TextMarkupCreate#getMode()}}.
      */
     @Override
     public int getMode() {
-        return ToolManager.e_signature_field;
+        return ToolManager.e_text_underline;
     }
 
     /**
-     * The overload implementation of {@link RectCreate#createMarkup(PDFDoc, Rect)}}.
+     * The overload implementation of {@link TextMarkupCreate#createMarkup(PDFDoc, Rect)}}.
      */
     @Override
-    protected Annot createMarkup(PDFDoc doc, Rect bbox) throws PDFNetException {
-        Annot annot =  Widget.create(doc, bbox, doc.fieldCreate("signature", Field.e_signature));
-        annot.getSDFObj().putString(PDFTRON_ID, "");
-        return annot;
+    public Annot createMarkup(PDFDoc doc, Rect bbox) throws PDFNetException {
+        return Underline.create(doc, bbox);
     }
 }
 
