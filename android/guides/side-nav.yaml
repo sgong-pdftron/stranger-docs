@@ -32,6 +32,8 @@
   link: /android/guides/dialog/bookmarks
 - title: Page thumbnails dialog
   link: /android/guides/dialog/thumbnails_view
+- title: Add page dialog  
+  link: /android/guides/dialog/add_page
 - title: Reflow
   link: /android/guides/controls/reflow
 - title: Annotation toolbar

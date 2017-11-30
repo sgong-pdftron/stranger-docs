@@ -8,7 +8,7 @@
 
    * annotations
 
-![Bookmarks dialog fragment](gif/bookmarks.gif)
+![Bookmarks dialog fragment](https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/dialog/gif/bookmarks.gif?raw=true)
 
 To create a new instance of the bookmarks dialog fragment call
 ```java
