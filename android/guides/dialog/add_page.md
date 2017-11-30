@@ -9,14 +9,16 @@ Add Page dialog allows users either to add new pages to an existing document or 
 # Page options
 There are three options for pages to be created:
 
-### page type: Currently 5 different types of page are supported in this dialog:
+### page type
+Currently 5 different types of page are supported in this dialog:
 - Black
 - Lined
 - Grid
 - Graph
 - Music
 
-### page size: Currently the following page sizes are supported in this dialog:
+### page size
+Currently the following page sizes are supported in this dialog:
 - Same as last
 - Letter
 - Legal
@@ -26,7 +28,8 @@ There are three options for pages to be created:
 
 Note that "Same as last" option is only available when new pages should be added to an existing PDF document but not when new document should be created. In this case the size of new pages is obtained from the existing document.
 
-### page color: Three colors can be selected for the page background:
+### page color 
+Three colors can be selected for the page background:
 - White
 - Yellow
 - Blueprint
