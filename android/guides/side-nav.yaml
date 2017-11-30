@@ -34,6 +34,8 @@
   link: /android/guides/dialog/thumbnails_view
 - title: Reflow
   link: /android/guides/controls/reflow
+- title: Annotation toolbar
+  link: /android/guides/controls/annotation-toolbar
 - title: Undo and redo
   link: /android/guides/controls/undo-redo
 - header: Advanced 
