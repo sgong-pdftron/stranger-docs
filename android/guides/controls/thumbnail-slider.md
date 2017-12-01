@@ -150,7 +150,7 @@ See more details about [`ThumbnailSlider.OnThumbnailSliderTrackingListener`](htt
 ## Styles
 You can change the style of thumbnail slider by setting the `colorPrimary` in `CustomAppTheme` for API < 21, and setting `colorPrimary` in your app default theme for API >= 21. Alternatively, you can also override the following style resources.
 
-### Thumbnail slider style attribute: `R.style.ThumbnailSlider`
+### Overall style attribute: `R.style.ThumbnailSlider`
 
 ```xml
 <style name="ThumbnailSlider">
@@ -159,7 +159,7 @@ You can change the style of thumbnail slider by setting the `colorPrimary` in `C
 </style>
 ```
 
-### Thumbanil slider seekbar style attribute: `R.style.ThumbnailSlider.Seekbar`
+### Seekbar style attribute: `R.style.ThumbnailSlider.Seekbar`
 
 API < 21:
 ```xml
@@ -187,15 +187,15 @@ API >= 21:
 </style>
 ```
 
-### Thumbnail slider seekbar track drawable attribute: `R.drawable.seek_track_material`
+### Seekbar track drawable attribute: `R.drawable.seek_track_material`
 
 Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+) )
 
-### Thumbnail slider seekbar thumb drawable attribute: `R.drawable.seek_thumb`
+### Seekbar thumb drawable attribute: `R.drawable.seek_thumb`
 
 Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+) )
 
-### Thumbnail slider layout attribute: `R.layout.controls_thumbnail_slider`
+### Layout attribute: `R.layout.controls_thumbnail_slider`
 
 Please note: if you want to override `R.layout.controls_thumbnail_slider`, please add the following views and the id of each view should be the same as following
 
