@@ -1,6 +1,6 @@
 # Add page dialog
 
-Add Page dialog allows users either to add new pages to an existing document or to create a new document with new pages. The new pages can have various page options including page type, page size and page color.
+Add page dialog allows users either to add new pages to an existing document or to create a new document with new pages. The new pages can have various page options including page type, page size and page color.
 
 ![](img/add_page_1.png "Create document)")
 
