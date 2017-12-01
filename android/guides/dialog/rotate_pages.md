@@ -12,6 +12,6 @@ To create a new instance of the rotate pages dialog fragment call `newInstance()
 void openRotatePagesDialog(@NonNull FragmentManager fragmentManager, @NonNull PDFViewCtrl pdfViewCtrl) {
     RotateDialogFragment.newInstance()
         .setup(pdfViewCtrl, pdfViewCtrl.getCurrentPage())
-        .show(fragmentManager, "rotate_dialog");
+        .show(fragmentManager, "rotate_pages_dialog");
 }
 ```
