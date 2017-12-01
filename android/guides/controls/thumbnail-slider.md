@@ -31,7 +31,7 @@ Specifies left menu item color
 
 Format: color
 
-Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/15/1a9bcb/000000?text=+)
+Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+)
 
 
 #### `app:right_menu_item_color`
@@ -40,7 +40,7 @@ Specifies right menu item color
 
 Format: color
 
-Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/15/1a9bcb/000000?text=+)
+Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+)
 
 ## Add thumbnail slider in your xml layout
 
@@ -57,7 +57,7 @@ Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/15/1a9bcb/000000?text=
 
 After thumbnail slider is added to the view, you need to set [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) to [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html) so thumbnail slider can interact page changes of [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). You can either add [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by adding attribute [`app:pdfviewctrl_id`](#apppdfviewctrl_id) to [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html), or alternatively you can do it programmably by calling [`setPdfViewCtrl(PDFViewCtrl)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html#setPdfViewCtrl(com.pdftron.pdf.PDFViewCtrl))
 
-#### XML Example:
+XML Example:
 
 ```xml
 <com.pdftron.pdf.controls.ThumbnailSlider
@@ -69,7 +69,7 @@ After thumbnail slider is added to the view, you need to set [PDFViewCtrl](https
 />
 ```
 
-#### Programming Example:
+Programming Example:
 
 ```java
 ThumbnailSlider mSeekBar = stub.findViewById(R.id.thumbseekbar);
@@ -144,3 +144,100 @@ mSeekBar.setThumbSliderListener(new ThumbnailSlider.OnThumbnailSliderTrackingLis
 ```
 
 See more details about [`ThumbnailSlider.OnThumbnailSliderTrackingListener`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.OnThumbnailSliderTrackingListener.html)
+
+
+
+## Styles
+You can change the style of thumbnail slider by setting the `colorPrimary` in `CustomAppTheme` for API < 21, and setting `colorPrimary` in your app default theme for API >= 21. Alternatively, you can also override the following style resources.
+
+### Thumbnail slider style attribute: `R.style.ThumbnailSlider`
+
+```xml
+<style name="ThumbnailSlider">
+    <item name="left_menu_item_color">?attr/colorPrimary</item>
+    <item name="right_menu_item_color">?attr/colorPrimary</item>
+</style>
+```
+
+### Thumbanil slider seekbar style attribute: `R.style.ThumbnailSlider.Seekbar`
+
+API < 21:
+```xml
+<style name="ThumbnailSlider.Seekbar" parent="Widget.AppCompat.SeekBar" >
+    <!-- add paddingTop and paddingBottom for api < 21 here for avoiding seekbar becomes too thick-->
+    <item name="android:paddingTop">16dp</item>
+    <item name="android:paddingBottom">16dp</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:minHeight">2dp</item>
+    <item name="android:maxHeight">2dp</item>
+</style>
+```
+
+API >= 21:
+
+```xml
+<style name="ThumbnailSlider.Seekbar" parent="Widget.AppCompat.SeekBar">
+    <item name="android:progressTint">?android:attr/colorPrimary</item>
+    <item name="android:progressBackgroundTint">?android:attr/colorPrimary</item>
+    <item name="android:colorControlActivated">?android:attr/colorPrimary</item>
+    <item name="android:colorControlHighlight">?android:attr/colorPrimary</item>
+    <item name="android:minHeight">2dp</item>
+    <item name="android:maxHeight">2dp</item>
+    <item name="android:layout_gravity">center</item>
+</style>
+```
+
+### Thumbnail slider seekbar track drawable attribute: `R.drawable.seek_track_material`
+
+![⚠](https://placehold.it/12?text=⚠) Please note that for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+) )
+
+### Thumbnail slider seekbar thumb drawable attribute: `R.drawable.seek_thumb`
+
+Please note that for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+) )
+
+### Thumbnail slider layout attribute: `R.layout.controls_thumbnail_slider`
+
+Please note: if you want to override `R.layout.controls_thumbnail_slider`, please add the following views and the id of each view should be the same as following
+
+```xml
+<LinearLayout
+    android:id="@+id/controls_thumbnail_slider_scrubberview"
+    android:paddingLeft="@dimen/thumbnail_slider_padding"
+    android:paddingRight="@dimen/thumbnail_slider_padding"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/quick_menu_button_size"
+    android:orientation="horizontal"
+    android:background="@color/white">
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/controls_thumbnail_slider_left_menu_button"
+        android:layout_width="@dimen/quick_menu_button_size"
+        android:layout_height="@dimen/quick_menu_button_size"
+        android:theme="@style/Widget.AppCompat.Button.Borderless"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="@dimen/icon_min_padding"
+        android:visibility="gone"
+        />
+
+    <com.pdftron.pdf.controls.MirrorSeekBar
+        android:id="@+id/controls_thumbnail_slider_scrubberview_seekbar"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:progressDrawable="@drawable/seek_track_material"
+        android:thumb="@drawable/seek_thumb"
+        android:theme="@style/ThumbnailSlider.Seekbar"/>
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/controls_thumbnail_slider_right_menu_button"
+        android:layout_width="@dimen/quick_menu_button_size"
+        android:layout_height="@dimen/quick_menu_button_size"
+        android:theme="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="@dimen/icon_min_padding"
+        android:visibility="gone"
+        />
+</LinearLayout>
+```
