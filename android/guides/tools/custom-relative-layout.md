@@ -67,7 +67,7 @@ Specifies the height of the view, it has to be **exact number**.
 
 Screenshot:
 
-![screenshot](./img/custom_layout.PNG)
+![screenshot](./img/custom_layout.png)
 
 ## Adding Custom layout programmably
 
