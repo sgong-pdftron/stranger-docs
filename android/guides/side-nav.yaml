@@ -42,6 +42,8 @@
   link: /android/guides/controls/annotation-toolbar
 - title: Undo and redo
   link: /android/guides/controls/undo-redo
+- title: Thumbnail Slider
+  link: /android/guides/controls/thumbnail-slider
 - header: Advanced 
 - title: Custom relative layout
   link: /android/guides/tools/custom-relative-layout
