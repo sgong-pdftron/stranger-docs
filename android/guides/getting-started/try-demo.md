@@ -27,7 +27,6 @@ allprojects {
                 secretKey AWS_SECRET_KEY
             }
         }
-        maven { url 'https://jitpack.io' }
     }
 }
 ```
@@ -41,6 +40,10 @@ android {
         vectorDrawables.useSupportLibrary = true
         manifestPlaceholders = [pdftronLicenseKey:PDFTRON_LICENSE_KEY]
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     configurations.all {
         resolutionStrategy.force "com.android.support:appcompat-v7:26.1.0"
         resolutionStrategy.force "com.android.support:support-v4:26.1.0"
@@ -51,7 +54,7 @@ dependencies {
     ...
     implementation "com.pdftron:pdfnet:6.8.0"
     implementation "com.pdftron:tools:6.8.0"
-    implementation "com.pdftron:demo:1.0.0"
+    implementation "com.pdftron:demo:6.8.0"
 }
 ```
 

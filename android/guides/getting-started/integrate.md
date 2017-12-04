@@ -52,6 +52,10 @@ android {
         vectorDrawables.useSupportLibrary = true
         manifestPlaceholders = [pdftronLicenseKey:PDFTRON_LICENSE_KEY]
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -64,5 +68,5 @@ dependencies {
 To use activities and fragments shown in the CompleteReader sample project, also include:
 
 ```groovy
-implementation "com.pdftron:demo:1.0.0"
+implementation "com.pdftron:demo:6.8.0"
 ```
