@@ -24,6 +24,8 @@
   link: /android/guides/basics/tools
 - title: Quick menu
   link: /android/guides/basics/quick-menu
+- title: Annotation toolbar
+  link: /android/guides/basics/annotation-toolbar
 - title: Annotations list
   link: /android/guides/basics/annotations
 - title: Outline list
@@ -40,8 +42,6 @@
   link: /android/guides/basics/rotate_pages
 - title: Reflow
   link: /android/guides/basics/reflow
-- title: Annotation toolbar
-  link: /android/guides/basics/annotation-toolbar
 - title: Undo and redo
   link: /android/guides/basics/undo-redo
 - title: Thumbnail Slider
