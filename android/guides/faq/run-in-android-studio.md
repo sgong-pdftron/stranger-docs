@@ -1,1 +1,1 @@
-## How to run project with source code in Android Studio
+## How to run existing project with source code in Android Studio
