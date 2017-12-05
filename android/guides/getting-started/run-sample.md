@@ -1,15 +1,30 @@
 ## Run sample projects
 
-PDFNet ships with three sample projects each containing examples that you could use in your project.
+PDFNet ships with two sample projects each containing examples that you could use in your project.
 
-All the samples follow the same steps to run in Android Studio. See steps here:
+You can run any of the sample projects via command line or via Android Studio.
+
+To deploy via command line, simply navigate to the sample's root folder of interest (i.e. `CompleteReader`, or `MiscellaneousSamples`), and run:
+
+Windows:
+```shell
+.\gradlew.bat appStart
+```
+
+Linux:
+```shell
+gradle appStart
+```
+
+To run in Android Studio. See steps here:
 [Run existing project in Android Studio](/android/guides/faq/run-in-android-studio)
 
 ### CompleteReader app
 
 ![](img/complete_reader_app.png "CompleteReader")
 
-This app can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
+This sample is included in the download package.
+In addition, this sample can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 
 This app contains two document viewing and editing Activities, `SimpleReaderActivity` and `CompleteReaderActivity`.
 
@@ -34,12 +49,7 @@ Features:
 
 ### MiscellaneousSamples app
 
-This app can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
+This sample is included in the download package.
+In addition, this sample can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 
 This app shows the functionalities of the PDFNet SDK and includes the samples found in the [sample code](http://www.pdftron.com/pdfnet/samplecode.html) page. Inspect its source code to learn how to use some of the main classes and features of the SDK, or just run the sample and check the results.
-
-### PDFDrawDemo app
-
-This app can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
-
-This app is a simple example that shows how PDFDraw can be used to make a simple PDF viewer. Tap top (bottom) half of the viewer to turn pages backward (forward).
