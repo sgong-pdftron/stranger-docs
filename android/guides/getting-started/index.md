@@ -4,24 +4,32 @@ PDFNet ships with two sample projects each containing examples that you could us
 
 You can run any of the sample projects both via command line or via Android Studio.
 
-Preparation:
-First, add your PDFNet license key in your project's `gradle.properties` file:
+First, add your PDFNet license key into `gradle.properties` file in the root folder of the sample project of interest (i.e. `\samples\CompleteReader\gradle.properties` or `\samples\MiscellaneousSamples\gradle.properties`):
 
 ```
 PDFTRON_LICENSE_KEY=YOUR_PDFNET_LICENSE_KEY_GOES_HERE
 ```
 
-Then, to deploy via command line, simply navigate to the root folder of the sample project of interest (i.e. `CompleteReader`, or `MiscellaneousSamples`), have one device or emulator running, then run the following command:
+### Via command line
+
+To deploy via command line, simply navigate to the root folder of the sample project of interest (i.e. `\samples\CompleteReader`, or `\samples\MiscellaneousSamples`), have one device or emulator running, then run the following command:
 
 Windows:
 ```shell
 .\gradlew.bat appStart
 ```
 
-Linux:
+Mac:
 ```shell
 gradle appStart
 ```
+
+If encountered any error, please make sure you have gradle installed and its version is above `Gradle 4.1`, if not:
+```shell
+brew update && brew install gradle && brew update gradle
+```
+
+### Via Android Studio
 
 To deploy via Android Studio. See steps here:
 [Run existing project in Android Studio](/android/guides/faq/run-in-android-studio).
