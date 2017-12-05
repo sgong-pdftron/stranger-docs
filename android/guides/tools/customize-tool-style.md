@@ -106,7 +106,7 @@ The color picker board styles are located in `res/values/arrays.xml`, you can cu
 ### Standard colors
 Used in the color picker **Basic** page.
 
-![color-picker](./img/color-picker.PNG)
+![color-picker](./img/color-picker.png)
 
 resource name: `R.array.standard_colors`
 
@@ -127,7 +127,7 @@ resource name: `R.array.icon_colors`
 ### Signature colors
 Used for changing colors for [Signature]() tool.
 
-![color-picker](./img/signature-color-picker.PNG)
+![color-picker](./img/signature-color-picker.png)
 
 resource name: `R.array.signature_colors`
 
