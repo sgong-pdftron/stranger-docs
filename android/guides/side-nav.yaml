@@ -24,6 +24,9 @@
   link: /android/guides/basics/tools
 - title: Quick menu
   link: /android/guides/basics/quick-menu
+  childLinks:
+    - title: Show quick menu
+      link: /android/guides/basics/quick-menu#show-quick-menu
 - title: Annotation toolbar
   link: /android/guides/basics/annotation-toolbar
 - title: Annotations list
