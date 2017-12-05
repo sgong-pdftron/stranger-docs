@@ -4,7 +4,14 @@ PDFNet ships with two sample projects each containing examples that you could us
 
 You can run any of the sample projects both via command line or via Android Studio.
 
-To deploy via command line, simply navigate to the root folder of the sample project of interest (i.e. `CompleteReader`, or `MiscellaneousSamples`), have one device or emulator running, then run the following command:
+Preparation:
+First, add your PDFNet license key in your project's `gradle.properties` file:
+
+```
+PDFTRON_LICENSE_KEY=YOUR_PDFNET_LICENSE_KEY_GOES_HERE
+```
+
+Then, to deploy via command line, simply navigate to the root folder of the sample project of interest (i.e. `CompleteReader`, or `MiscellaneousSamples`), have one device or emulator running, then run the following command:
 
 Windows:
 ```shell
@@ -16,7 +23,7 @@ Linux:
 gradle appStart
 ```
 
-To run in Android Studio. See steps here:
+To deploy via Android Studio. See steps here:
 [Run existing project in Android Studio](/android/guides/faq/run-in-android-studio).
 
 ### CompleteReader app
@@ -32,18 +39,18 @@ This app contains two document viewing and editing Activities, `SimpleReaderActi
 `CompleteReaderActivity` has everything in `SimpleReaderActivity`, plus file browsers for local and SD card files. It has example for how you can implement recent and favorite files. It also demonstrates how to use document thumbnails. In addition, it supports file merging, new file creation from styles such as lined, grid, graph and music sheet.
 
 Features:
-- [User bookmarks](/android/guides/dialog/user_bookmarks)
-- [Outline](/android/guides/dialog/outline)
-- [Annotations list](/android/guides/dialog/annotations)
+- [User bookmarks](/android/guides/basics/user_bookmarks)
+- [Outline](/android/guides/basics/outline)
+- [Annotations list](/android/guides/basics/annotations)
 - Sephia mode, night mode and custom color mode
 - [Multi-tab viewing](/android/guides/getting-started/using_fragment)
 - Page cropping
-- [Reflow](/android/guides/controls/reflow)
+- [Reflow](/android/guides/basics/reflow)
 - Full text search
 - Annotation creation and form filling
 - PDF creation
 - PDF merging, splitting
-- [Page thumbnails plus adding, removing, re-organizing, and rotating pages](/android/guides/dialog/thumbnails_view)
+- [Page thumbnails plus adding, removing, re-organizing, and rotating pages](/android/guides/basics/thumbnails_view)
 - Localization
 
 ### MiscellaneousSamples app
