@@ -77,5 +77,5 @@ dependencies {
 To use PDFNet initialize helper, add the following to `onCreate` of your `MainApplication.java` or `MainActivity.java`:
 
 ```java
-com.pdftron.pdf.utils.AppUtils.initializePDFNetApplication(this);
+com.pdftron.pdf.utils.AppUtils.initializePDFNetApplication(getApplicationContext());
 ```
