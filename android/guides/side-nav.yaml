@@ -2,9 +2,9 @@
 - title: Run sample
   link: /android/guides/getting-started
   childLinks:
-    - title: Command line
+    - title: Via command line
       link: /android/guides/getting-started#via-command-line
-    - title: Android Studio
+    - title: Via Android Studio
       link: /android/guides/getting-started#via-android-studio
     - title: CompleteReader
       link: /android/guides/getting-started#completereader-app
