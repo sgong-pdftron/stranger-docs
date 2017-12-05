@@ -47,18 +47,23 @@ This app contains two document viewing and editing Activities, `SimpleReaderActi
 `CompleteReaderActivity` has everything in `SimpleReaderActivity`, plus file browsers for local and SD card files. It has example for how you can implement recent and favorite files. It also demonstrates how to use document thumbnails. In addition, it supports file merging, new file creation from styles such as lined, grid, graph and music sheet.
 
 Features:
-- [User bookmarks](/android/guides/basics/user_bookmarks)
-- [Outline](/android/guides/basics/outline)
-- [Annotations list](/android/guides/basics/annotations)
-- Sephia mode, night mode and custom color mode
 - [Multi-tab viewing](/android/guides/getting-started/using_fragment)
-- Page cropping
+- [Annotation creation and form filling](/android/guides/basics/tools)
+- [Quick menu](/android/guides/basics/quick-menu)
+- [Annotation toolbar](/android/guides/basics/annotation-toolbar)
+- [Thumbnail slider](/android/guides/basics/thumbnail-slider)
+- [Annotations list](/android/guides/basics/annotations)
+- [Outline list](/android/guides/basics/outline)
+- [User bookmarks list](/android/guides/basics/user_bookmarks)
+- [Page thumbnails with add, duplicate, remove, re-organize, rotate and export pages](/android/guides/basics/thumbnails_view)
+- [PDF page creation](/android/guides/basics/add_page)
+- [PDF page rotation](/android/guides/basics/rotate_pages)
 - [Reflow](/android/guides/basics/reflow)
+- [Undo and redo](/android/guides/basics/undo-redo)
+- Sephia mode, night mode and custom color mode
+- Page cropping
 - Full text search
-- Annotation creation and form filling
-- PDF creation
-- PDF merging, splitting
-- [Page thumbnails plus adding, removing, re-organizing, and rotating pages](/android/guides/basics/thumbnails_view)
+- PDF merging
 - Localization
 
 ### MiscellaneousSamples app
