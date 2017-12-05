@@ -6,7 +6,7 @@ A menu Layout that can be shown in [PDFViewCtrl](https://www.pdftron.com/pdfnet/
 
 With a given anchor rectangle view, quick menu will auto adjust position, it will be shown in either at the top of the anchor view or at the bottom of the anchor view:
 
-![quick-menu-layout](./img/quick-menu-layout.png)
+<img alt='quick-menu-layout image' src='img/quick-menu-layout.png' width='300' />
 
 ## Add quick menu resource in `res/menu` folder
 By default, all menu items are placed in the first row, if you want to specifies where the menu item is, you can simply put the menu items inside a group with the following group id.
@@ -98,7 +98,7 @@ When quick menu item is clicked, it will dismiss the quick menu popup. You can s
 
 #### *Additional Tips:*
 ##### 
-- If your quick menu is controlled by your [custom tool](/android/guides/tools/custom-tool), you can simply overriding [`Tool.onQuickMenuClicked(QuickMenuItem)`]() in your custom tool to listen to quick menu click event.
+- If your quick menu is controlled by your [custom tool](/android/guides/advanced/custom-tool), you can simply overriding [`Tool.onQuickMenuClicked(QuickMenuItem)`]() in your custom tool to listen to quick menu click event.
 ##### 
 - If you overrides existing Tool quick menu resource, you can either:
     - If you are using PdfViewCtrlTabFragment for showing pdf, then add quick menu listener by calling: [`PdfViewCtrlTabFragment.addQuickMenuListener(ToolManager.QuickMenuListener)`]().
@@ -147,7 +147,7 @@ If you only want to show free text and signature selection in first row when [Pa
 Please note: add `@+id/qm_free_text` and `@+id/qm_floating_sig` ids to the quick menu so [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool can recognize them when quick menu item is clicked.
 
 ### Show customized items in quick menu
-If you want to add your own quick menu item when [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool long pressing event is triggered, after you override `R.menu.qm_pan` with your item, you can add your quick menu click event as described [here](http://localhost:8000/android/guides/tools/quick-menu#-1)
+If you want to add your own quick menu item when [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool long pressing event is triggered, after you override `R.menu.qm_pan` with your item, you can add your quick menu click event as described [here](/android/guides/basics/quick-menu#-1)
 
 Example:
 R.menu.qm_pan:
