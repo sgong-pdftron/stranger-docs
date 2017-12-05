@@ -4,24 +4,32 @@ PDFNet ships with two sample projects each containing examples that you could us
 
 You can run any of the sample projects both via command line or via Android Studio.
 
-Preparation:
-First, add your PDFNet license key in your project's `gradle.properties` file:
+First, add your PDFNet license key into `gradle.properties` file in the root folder of the sample project of interest (i.e. `\samples\CompleteReader\gradle.properties` or `\samples\MiscellaneousSamples\gradle.properties`):
 
 ```
 PDFTRON_LICENSE_KEY=YOUR_PDFNET_LICENSE_KEY_GOES_HERE
 ```
 
-Then, to deploy via command line, simply navigate to the root folder of the sample project of interest (i.e. `CompleteReader`, or `MiscellaneousSamples`), have one device or emulator running, then run the following command:
+### Via command line
+
+To deploy via command line, simply navigate to the root folder of the sample project of interest (i.e. `\samples\CompleteReader`, or `\samples\MiscellaneousSamples`), have one device or emulator running, then run the following command:
 
 Windows:
 ```shell
 .\gradlew.bat appStart
 ```
 
-Linux:
+Mac:
 ```shell
 gradle appStart
 ```
+
+If encountered any errors, please make sure you have [Homebrew](https://brew.sh/) and gradle installed and its version is above `Gradle 4.1`, if not:
+```shell
+brew update && brew install gradle
+```
+
+### Via Android Studio
 
 To deploy via Android Studio. See steps here:
 [Run existing project in Android Studio](/android/guides/faq/run-in-android-studio).
@@ -39,18 +47,23 @@ This app contains two document viewing and editing Activities, `SimpleReaderActi
 `CompleteReaderActivity` has everything in `SimpleReaderActivity`, plus file browsers for local and SD card files. It has example for how you can implement recent and favorite files. It also demonstrates how to use document thumbnails. In addition, it supports file merging, new file creation from styles such as lined, grid, graph and music sheet.
 
 Features:
-- [User bookmarks](/android/guides/basics/user_bookmarks)
-- [Outline](/android/guides/basics/outline)
-- [Annotations list](/android/guides/basics/annotations)
-- Sephia mode, night mode and custom color mode
 - [Multi-tab viewing](/android/guides/getting-started/using_fragment)
-- Page cropping
+- [Annotation creation and form filling](/android/guides/basics/tools)
+- [Quick menu](/android/guides/basics/quick-menu)
+- [Annotation toolbar](/android/guides/basics/annotation-toolbar)
+- [Thumbnail slider](/android/guides/basics/thumbnail-slider)
+- [Annotations list](/android/guides/basics/annotations)
+- [Outline list](/android/guides/basics/outline)
+- [User bookmarks list](/android/guides/basics/user_bookmarks)
+- [Page thumbnails with add, duplicate, remove, re-organize, rotate and export pages](/android/guides/basics/thumbnails_view)
+- [PDF page creation](/android/guides/basics/add_page)
+- [PDF page rotation](/android/guides/basics/rotate_pages)
 - [Reflow](/android/guides/basics/reflow)
+- [Undo and redo](/android/guides/basics/undo-redo)
+- Sephia mode, night mode and custom color mode
+- Page cropping
 - Full text search
-- Annotation creation and form filling
-- PDF creation
-- PDF merging, splitting
-- [Page thumbnails plus adding, removing, re-organizing, and rotating pages](/android/guides/basics/thumbnails_view)
+- PDF merging
 - Localization
 
 ### MiscellaneousSamples app
