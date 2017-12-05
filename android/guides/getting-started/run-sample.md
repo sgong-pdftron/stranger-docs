@@ -23,7 +23,6 @@ To run in Android Studio. See steps here:
 
 <img alt='CompleteReader image' src='img/complete_reader_app.png' width='250' />
 
-
 This sample can also be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 
 This app contains two document viewing and editing Activities, `SimpleReaderActivity` and `CompleteReaderActivity`.
