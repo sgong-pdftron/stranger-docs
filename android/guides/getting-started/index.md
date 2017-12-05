@@ -24,9 +24,9 @@ Mac:
 gradle appStart
 ```
 
-If encountered any error, please make sure you have gradle installed and its version is above `Gradle 4.1`, if not:
+If encountered any errors, please make sure you have [Homebrew](https://brew.sh/) and gradle installed and its version is above `Gradle 4.1`, if not:
 ```shell
-brew update && brew install gradle && brew upgrade gradle
+brew update && brew install gradle
 ```
 
 ### Via Android Studio
