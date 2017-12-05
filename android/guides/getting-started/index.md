@@ -26,7 +26,7 @@ gradle appStart
 
 If encountered any error, please make sure you have gradle installed and its version is above `Gradle 4.1`, if not:
 ```shell
-brew update && brew install gradle && brew update gradle
+brew update && brew install gradle && brew upgrade gradle
 ```
 
 ### Via Android Studio
