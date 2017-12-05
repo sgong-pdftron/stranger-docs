@@ -51,6 +51,8 @@
   link: /android/guides/tools/custom-tool
 - title: Custom tool style
   link: /android/guides/tools/customize-tool-style
+- title: Annotation syncing
+  link: /android/guides/annotation-syncing
 - header: FAQ
 - title:  Run project in Android Studio
   link: /android/guides/faq/run-in-android-studio
