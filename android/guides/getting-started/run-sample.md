@@ -1,10 +1,10 @@
 ## Run sample projects
 
-PDFNet ships with two sample projects each containing examples that you could use in your project.
+PDFNet ships with two sample projects each containing examples that you could use in your project. Both samples are included in the download package under `\samples` folder.
 
-You can run any of the sample projects via command line or via Android Studio.
+You can run any of the sample projects both via command line or via Android Studio.
 
-To deploy via command line, simply navigate to the sample's root folder of interest (i.e. `CompleteReader`, or `MiscellaneousSamples`), and run:
+To deploy via command line, simply navigate to the root folder of the sample project of interest (i.e. `CompleteReader`, or `MiscellaneousSamples`), have one device or emulator running, then run the following command:
 
 Windows:
 ```shell
@@ -17,14 +17,14 @@ gradle appStart
 ```
 
 To run in Android Studio. See steps here:
-[Run existing project in Android Studio](/android/guides/faq/run-in-android-studio)
+[Run existing project in Android Studio](/android/guides/faq/run-in-android-studio).
 
 ### CompleteReader app
 
 <img alt='CompleteReader image' src='img/complete_reader_app.png' width='250' />
 
-This sample is included in the download package.
-In addition, this sample can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
+
+This sample can also be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 
 This app contains two document viewing and editing Activities, `SimpleReaderActivity` and `CompleteReaderActivity`.
 
@@ -49,7 +49,6 @@ Features:
 
 ### MiscellaneousSamples app
 
-This sample is included in the download package.
-In addition, this sample can be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
+This sample can also be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 
 This app shows the functionalities of the PDFNet SDK and includes the samples found in the [sample code](http://www.pdftron.com/pdfnet/samplecode.html) page. Inspect its source code to learn how to use some of the main classes and features of the SDK, or just run the sample and check the results.
