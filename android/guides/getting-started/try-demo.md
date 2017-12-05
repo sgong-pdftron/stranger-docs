@@ -113,7 +113,7 @@ SimpleReaderActivity.open(this);
 
 You will see:
 
-![](img/simple_reader_demo.png "SimpleReader")
+<img alt='SimpleReader image' src='img/simple_reader_demo.png' width='300' />
 
 To open Complete Reader demo, use:
 ```java
@@ -124,4 +124,4 @@ CompleteReaderActivity.open(this);
 
 You will see:
 
-![](img/complete_reader_demo.png "CompleteReader")
+<img alt='CompleteReader image' src='img/complete_reader_demo.png' width='300' />

@@ -1,5 +1,5 @@
 ---
-title: Run sample
+title: PDFNet Android Tutorials
 ---
 
-Run Android sample!
+[Click here to try PDFNet in your application](/android/guides/getting-started/try-demo)!

@@ -65,8 +65,11 @@ dependencies {
 }
 ```
 
-To use activities and fragments shown in the CompleteReader sample project, also include:
+To use activities shown in the CompleteReader sample project, also include:
 
 ```groovy
-implementation "com.pdftron:demo:6.8.0"
+dependencies {
+    ...
+    implementation "com.pdftron:demo:6.8.0"
+}
 ```

@@ -1,6 +1,6 @@
 - header: Getting started
 - title: Run sample
-  link: /android/guides/getting-started/run-sample
+  link: /android/guides/getting-started
 - title: Try demo in your project
   link: /android/guides/getting-started/try-demo
 - title: Integrate to your project
@@ -20,6 +20,8 @@
 - title: Document locking
   link: /android/guides/doc-lock
 - header: Basics
+- title: Tools
+  link: /android/guides/tools
 - title: Quick menu
   link: /android/guides/tools/quick-menu
 - title: Annotations list
@@ -28,7 +30,7 @@
   link: /android/guides/dialog/outline
 - title: User bookmarks list
   link: /android/guides/dialog/user_bookmarks
-- title: Bookmark dialog
+- title: Bookmarks dialog
   link: /android/guides/dialog/bookmarks
 - title: Page thumbnails dialog
   link: /android/guides/dialog/thumbnails_view
@@ -51,6 +53,8 @@
   link: /android/guides/tools/custom-tool
 - title: Custom tool style
   link: /android/guides/tools/customize-tool-style
+- title: Annotation syncing
+  link: /android/guides/annotation-syncing
 - header: FAQ
 - title:  Run project in Android Studio
   link: /android/guides/faq/run-in-android-studio
