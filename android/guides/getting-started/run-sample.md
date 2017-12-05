@@ -21,7 +21,7 @@ To run in Android Studio. See steps here:
 
 ### CompleteReader app
 
-<img alt='CompleteReader image' src='img/complete_reader_app.png' width='250' />
+<img alt='CompleteReader image' src='img/complete_reader_app.png' width='300' />
 
 This sample can also be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 
