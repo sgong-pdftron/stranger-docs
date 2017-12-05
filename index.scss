@@ -6,6 +6,11 @@
     display: flex;
     justify-content: center;
 
+    @media (max-width: 799px) {
+      align-items: center;
+      flex-direction: column;
+    }
+
     .col {
       display: flex;
       flex-direction: column;
@@ -16,7 +21,10 @@
       border-radius: 10px;
       margin: 10px;
       padding-bottom: 10px;
+
+      @media (max-width: 799px) {
+        width: 100%;
+      }
     }
   }
-
 }
