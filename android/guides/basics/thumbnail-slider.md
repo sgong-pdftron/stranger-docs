@@ -2,7 +2,7 @@
 
 [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html) is a toolbar that contains a left image button, a seekbar for changing pages, and a right image button. When sliding the seekbar, it will show a small page preview popup on top of the thumbnail slider.
 
-![thumbnail slider](https://i.imgur.com/ruqlxCB.gif)
+<img alt='thumbnail-slider'  src='https://i.imgur.com/bchlpDc.gif' width=300 />
 
 ## XML attributes
 [CustomRelativeLayout]() lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
@@ -31,7 +31,7 @@ Specifies left menu item color
 
 Format: color
 
-Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+)
+Default value:  `#1a9bcb`
 
 
 #### `app:right_menu_item_color`
@@ -40,7 +40,7 @@ Specifies right menu item color
 
 Format: color
 
-Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+)
+Default value:  `#1a9bcb`
 
 ## Show thumbnail slider
 
@@ -176,11 +176,11 @@ API >= 21:
 
 ### Seekbar track drawable attribute: `R.drawable.seek_track_material`
 
-Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+) )
+Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb )
 
 ### Seekbar thumb drawable attribute: `R.drawable.seek_thumb`
 
-Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+) )
+Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb )
 
 ### Layout attribute: `R.layout.controls_thumbnail_slider`
 
