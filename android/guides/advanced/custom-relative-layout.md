@@ -2,6 +2,8 @@
 
 [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) is a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html) that can be nested and displayed in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by a given page position and page number. Therefore all child views of [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) are displayed in PDF view.
 
+<img alt='custom layout' src='./img/custom_layout.png' width='300' />
+
 ## XML attributes
 
 ####`app:posX`
@@ -64,13 +66,8 @@ You can add [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/andro
 </com.pdftron.pdf.PDFViewCtrl>
 ```
 
-Screenshot:
-
-![screenshot](./img/custom_layout.png)
-
 Alternatively, you can also add custom layout programmatically like a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html).
 
-##### Example:
 ```java
 public void addCustomeLayout(PDFViewCtrl pdfViewCtrl) {
   // initialize custom layout
