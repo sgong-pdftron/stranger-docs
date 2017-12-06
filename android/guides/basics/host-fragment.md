@@ -11,11 +11,11 @@ PdfViewCtrlTabHostFragment mPdfViewCtrlTabHostFragment;
 
 void startTabHostFragment(Bundle args) {
 	if (mPdfViewCtrlTabHostFragment == null) {
-	    mPdfViewCtrlTabHostFragment = PdfViewCtrlTabHostFragment.newInstance(args);
+		mPdfViewCtrlTabHostFragment = PdfViewCtrlTabHostFragment.newInstance(args);
 	}
-    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-    ft.replace(R.id.fragment_container, mPdfViewCtrlTabHostFragment, null);
-    ft.commit();
+	FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+	ft.replace(R.id.fragment_container, mPdfViewCtrlTabHostFragment, null);
+	ft.commit();
 }
 ```
 
