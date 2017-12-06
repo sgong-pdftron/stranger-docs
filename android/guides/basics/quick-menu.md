@@ -2,11 +2,11 @@
 
 A menu Layout that can be shown in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFDoc.html). It shows a small menu layout with maximum two rows, and a overflow menu list. 
 
-![quick-menu](https://i.imgur.com/vDsxQBu.gif)
+<img alt='custom layout' src='https://i.imgur.com/vDsxQBu.gif' width=300 />
 
 With a given anchor rectangle view, quick menu will auto adjust position, it will be shown in either at the top of the anchor view or at the bottom of the anchor view:
 
-<img alt='quick-menu-layout image' src='img/quick-menu-layout.png' width='300' />
+<img alt='quick-menu-layout image' src='img/quick-menu-layout.png' height='400' />
 
 ## Add quick menu resource in `res/menu` folder
 By default, all menu items are placed in the first row, if you want to specifies where the menu item is, you can simply put the menu items inside a group with the following group id.
@@ -70,7 +70,7 @@ Alternatively, If you want to change menu items before quick menu initialize the
     quickMenu.initMenuEntries();
 ```
 
-After quick menu inflated, you can set position of screen position of quick menu abd show quick menu by calling [`quickMenu.setAnchorRect(RectF)`](), and [`quickMenu.show()`]().
+After quick menu initialized, you can set position of screen position of quick menu abd show quick menu by calling [`quickMenu.setAnchorRect(RectF)`](), and [`quickMenu.show()`]().
 
 ```java
     quickMenu.setAnchorRect(anchor_rect);
@@ -144,7 +144,7 @@ Please note: add `@+id/qm_free_text` and `@+id/qm_floating_sig` ids to the quick
 ### Show customized items in quick menu
 If you want to add your own quick menu item when [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool long pressing event is triggered.
 
-R.menu.qm_pan:
+`R.menu.qm_pan`:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
