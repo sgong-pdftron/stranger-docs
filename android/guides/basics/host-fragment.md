@@ -30,7 +30,7 @@ void openDocument(Uri fileUri, String password) {
 	String title = getUriDisplayName(fileUri);
 	String extension = getUriExtension(fileUri);
 	Bundle tabHostBundle;	
-    if (ContentResolver.SCHEME_CONTENT.equals(fileUri.getScheme())) {
+	if (ContentResolver.SCHEME_CONTENT.equals(fileUri.getScheme())) {
 		// If scheme is a content
 		tabHostBundle = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(
 			fileUri.toString(), title, extension, password, FileInfo.FILE_TYPE_EXTERNAL);
