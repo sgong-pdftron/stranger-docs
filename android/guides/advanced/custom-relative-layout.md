@@ -1,11 +1,8 @@
 # Custom relative layout
 
-[CustomRelativeLayout]() is a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html) that can be nested and displayed in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by a given page position and page number. Therefore all child views of [CustomRelativeLayout]() are displayed in PDF view.
+[CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) is a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html) that can be nested and displayed in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by a given page position and page number. Therefore all child views of [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) are displayed in PDF view.
 
-## Add CustomRelativeLayout in xml layout resource
-
-### XML attributes
-[CustomRelativeLayout]() lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
+## XML attributes
 
 ####`app:posX`
 Specifies the x coordinates in page point.
@@ -34,15 +31,16 @@ Specifies the width of the view, it has to be **exact number**.
 ####`android:layout_height`
 Specifies the height of the view, it has to be **exact number**.
 
-##### Example
+## Show CustomRelativeLayout
+
+You can add [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) under [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) in xml layout resource
+
 ```xml
 <com.pdftron.pdf.PDFViewCtrl
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pdfviewctrl"
     android:layout_width="match_parent"
     android:layout_height="0dp"
-    app:layout_constraintVertical_weight="1"
-    app:layout_constraintTop_toBottomOf="@id/annotationToolbar"
-    app:layout_constraintBottom_toBottomOf="parent"
     android:scrollbars="vertical|horizontal" >
     <com.pdftron.pdf.tools.CustomRelativeLayout
         android:layout_width="50dp"
@@ -51,6 +49,7 @@ Specifies the height of the view, it has to be **exact number**.
         app:posY="150"
         app:pageNum="3"
         app:zoomWithParent="true">
+        <!--Child views under CustomRelativeLayout-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -69,16 +68,14 @@ Screenshot:
 
 ![screenshot](./img/custom_layout.png)
 
-## Adding Custom layout programmably
-
-Alternatively, you can also add custom layout programmably like a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html).
+Alternatively, you can also add custom layout programmatically like a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html).
 
 ##### Example:
 ```java
 public void addCustomeLayout(PDFViewCtrl pdfViewCtrl) {
   // initialize custom layout
   CustomRelativeLayout customLayout= new CustomRelativeLayout(pdfViewCtrl.getContext());
-  // set page position
+  // set page position and page
   customLayout.setPagePosition(100, 100, 3);
   // set layout width and height
   LayoutParams lp = new LayoutParams(100, 100);

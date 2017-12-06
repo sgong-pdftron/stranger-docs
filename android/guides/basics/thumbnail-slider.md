@@ -42,25 +42,12 @@ Format: color
 
 Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+)
 
-## Add thumbnail slider in your xml layout
+## Show thumbnail slider
 
+Add thumbnail slider to your layout, If [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) is in the same layout, you can set it to thumbnail slider by adding attribute: [`app:pdfviewctrl_id`](#apppdfviewctrl_id).
 ```xml
-<com.pdftron.pdf.controls.ThumbnailSlider
-    android:id="@+id/thumbnail_slider"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-/>
-```
-
-## Set [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) to [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html)
-
-After thumbnail slider is added to the view, you need to set [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) to [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html) so thumbnail slider can interact page changes of [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). You can either add [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by adding attribute [`app:pdfviewctrl_id`](#apppdfviewctrl_id) to [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html), or alternatively you can do it programmably by calling [`setPdfViewCtrl(PDFViewCtrl)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html#setPdfViewCtrl(com.pdftron.pdf.PDFViewCtrl))
-
-XML Example:
-
-```xml
-<com.pdftron.pdf.controls.ThumbnailSlider
+<com.pdftron.pdf.controls.ThumbnailSlider 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/thumbnail_slider"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -69,7 +56,7 @@ XML Example:
 />
 ```
 
-Programming Example:
+If [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) is **NOT** in the same layout, you can set it to thumbnail slider programmatically by calling [`ThumbnailSlider.setPdfViewCtrl(PDFViewCtrl)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html#setPdfViewCtrl(com.pdftron.pdf.PDFViewCtrl))
 
 ```java
 ThumbnailSlider mSeekBar = stub.findViewById(R.id.thumbseekbar);
