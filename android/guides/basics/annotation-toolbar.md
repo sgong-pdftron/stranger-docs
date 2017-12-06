@@ -25,7 +25,7 @@ annotationToolbar.setup(anchorView, toolManager);
 annotationToolbar.show(toolbarHeight);
 ```
 
-The `anchorView` is used as an anchor for annotation property popup windows. To close the annotation toolbar call:
+The  given `anchorView` is used as an anchor for annotation property popup windows shown when user wants to see or change the property of an annotation. To close the annotation toolbar call:
 ```java
 annotationToolbar.close();
 ```
