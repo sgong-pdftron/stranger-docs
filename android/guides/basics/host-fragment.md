@@ -127,14 +127,14 @@ The following example replaces the default navigation icon, and only keeps the a
 ```java
 private void startTabHostFragment(Bundle args) {
 	if (mPdfViewCtrlTabHostFragment == null) {
-	    args.putInt(PdfViewCtrlTabHostFragment.BUNDLE_TAB_HOST_NAV_ICON, R.drawable.ic_arrow_back_white_24dp);
-        args.putInt(PdfViewCtrlTabHostFragment.BUNDLE_TAB_HOST_TOOLBAR_MENU, R.menu.fragment_viewer_simple);
-    	mPdfViewCtrlTabHostFragment = PdfViewCtrlTabHostFragment.newInstance(args);
+		args.putInt(PdfViewCtrlTabHostFragment.BUNDLE_TAB_HOST_NAV_ICON, R.drawable.ic_arrow_back_white_24dp);
+		args.putInt(PdfViewCtrlTabHostFragment.BUNDLE_TAB_HOST_TOOLBAR_MENU, R.menu.fragment_viewer_simple);
+		mPdfViewCtrlTabHostFragment = PdfViewCtrlTabHostFragment.newInstance(args);
 	}
 	mPdfViewCtrlTabHostFragment.addHostListener(this);
-    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-    ft.replace(R.id.container, mPdfViewCtrlTabHostFragment, null);
-    ft.commit();
+	FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+	ft.replace(R.id.container, mPdfViewCtrlTabHostFragment, null);
+	ft.commit();
 }
 
 @Override
