@@ -47,16 +47,16 @@ void openDocument(Uri fileUri, String password) {
 	startTabHostFragment(tabHostBundle);
 }
 
-String getUriDisplayName(@NonNull Uri contentUri) {
+String getUriDisplayName(@NonNull Uri uri) {
 	String displayName = null;
 	String[] projection = {OpenableColumns.DISPLAY_NAME};
 
-	if (ContentResolver.SCHEME_FILE.equalsIgnoreCase(contentUri.getScheme())) {
-		return contentUri.getLastPathSegment();
+	if (ContentResolver.SCHEME_FILE.equalsIgnoreCase(uri.getScheme())) {
+		return uri.getLastPathSegment();
 	}
 	Cursor cursor = null;
 	try {
-		cursor = getContentResolver().query(contentUri, projection, null, null, null);
+		cursor = getContentResolver().query(uri, projection, null, null, null);
 		if (cursor != null && cursor.moveToFirst() && cursor.getColumnCount() > 0 && cursor.getCount() > 0) {
 			int nameIndex = cursor.getColumnIndexOrThrow(projection[0]);
 			if (nameIndex >= 0) {
