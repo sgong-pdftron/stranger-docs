@@ -2,9 +2,9 @@
 
 Add page dialog allows users either to add new pages to an existing document or to create a new document with new pages with ease. The new pages can have various page options including page type, page size and page color.
 
-![](img/add_page_1.png "Create document)")
+![](img/add-page-1.png "Create document)")
 
-![](img/add_page_2.png "Add page")
+![](img/add-page-2.png "Add page")
 
 # Page options
 There are three options for pages to be created:
