@@ -124,6 +124,8 @@ mPdfViewCtrlTabHostFragment = PdfViewCtrlTabHostFragment.newInstance(args);
 
 The following example replaces the default navigation icon, and only keeps the annotation toolbar icon in the toolbar menu while adds two new menu items for opening a file form device storage and opening a file from URL:
 
+![](https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/basics/gif/simple-host-fragment.gif?raw=true "Simple Host Fragment")
+
 ```java
 private void startTabHostFragment(Bundle args) {
 	if (mPdfViewCtrlTabHostFragment == null) {
