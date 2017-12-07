@@ -31,6 +31,9 @@
 - header: Basics
 - title: Tools
   link: /android/guides/basics/tools
+  childLinks:
+    - title: Styles
+      link: /android/guides/basics/tools/tool-style
 - title: Quick menu
   link: /android/guides/basics/quick-menu
   childLinks:
@@ -41,7 +44,7 @@
     - title: Quick menu item OnClick
       link: /android/guides/basics/quick-menu#get-quick-menu-clicked-menu-item
     - title: Override tool menu
-      link: /android/guides/basics/quick-menu#override-tool-quick-menu-resource
+      link: /android/guides/basics/quick-menu#overriding-existing-tool-quick-menu-resource
     - title: Styles
       link: /android/guides/basics/quick-menu#styles
 - title: Annotation toolbar
