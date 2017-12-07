@@ -1,9 +1,9 @@
-# Customize tool style
-When creating annotations, each annotation creator tool has default color and presets. These defaults can be easily customized by overriding the styles.
+# Tool styles
+When creating annotations, each annotation has default color and styles which is defined by the creator tool. These default colors can be easily override.
 
 ## Default styles attributes
 ####`annot_color`
-default color when creating annotation
+default color when creating annotation. For annotation that has [`annot_fill_color`](#annot_fill_color), it represents stroke color.
 
 format: color
 
@@ -24,6 +24,12 @@ format: color
 
 #### `annot_color_5`
 default color option 5, often used in color presets
+
+format: color
+
+#### `annot_fill_color`
+
+default annotation fill color, used for annotations that has fill color: [Square](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Square.html) and [Circle](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Square.html)
 
 format: color
 
@@ -68,19 +74,18 @@ The following table are default exisitng styles for corresponding tool:
 
 | Tool                                | style resource                       |
 |-------------------------------------|--------------------------------------|
-| [`ToolManager.e_text_highlight`]()    | `R.style.HighlightAnnotationProperty`  |
-| [`ToolManager.e_text_underline`]()    | `R.style.TextMarkupAnnotationProperty` |
-| [`ToolManager.e_text_strikeout`]()    | `R.style.TextMarkupAnnotationProperty` |
-| [`ToolManager.e_text_squiggly`]()     | `R.style.TextMarkupAnnotationProperty` |
-| [`ToolManager.e_rect_link`]()         | `R.style.TextMarkupAnnotationProperty` |
-| [`ToolManager.e_text_create`]()       | `R.style.FreeTextAnnotationProperty`   |
-| [`ToolManager.e_text_annot_create`]() | `R.style.NoteAnnotationProperty`       |
-| [`ToolManager.e_signature`]()         | `R.style.SignaturetAnnotationProperty` |
-| [`ToolManager.e_ink_create`]()        | `R.style.FreehandAnnotationProperty`   |
+| [TextHighlightCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextHighlightCreate.html)    | `R.style.HighlightAnnotationProperty`  |
+| [TextUnderlineCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextUnderlineCreate.html)     | `R.style.TextMarkupAnnotationProperty` |
+|  [TextStrikeoutCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextStrikeoutCreate.html)    | `R.style.TextMarkupAnnotationProperty` |
+| [TextSquigglyCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextSquigglyCreate.html)     | `R.style.TextMarkupAnnotationProperty` |
+| [RectLinkCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/RectLinkCreate.html)         | `R.style.TextMarkupAnnotationProperty` |
+| [FreeTextCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/FreeTextCreate.html)      | `R.style.FreeTextAnnotationProperty`   |
+| [StickyNoteCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/StickyNoteCreate.html) | `R.style.NoteAnnotationProperty`       |
+| [Signature](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Signature.html)        | `R.style.SignaturetAnnotationProperty` |
+| [FreehandCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/FreehandCreate.html)       | `R.style.FreehandAnnotationProperty`   |
 | other                               | `R.style.ShapeAnnotationProperty`      |
 
-#### Example:
-This example will override the color presets for [`ToolManager.e_ink_create`]() tool
+The following example will override the color presets for [FreehandCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/FreehandCreate.html) tool
 
 ```xml
 <style name="FreehandAnnotationProperty" parent="ShapeAnnotationProperty">
@@ -93,7 +98,7 @@ This example will override the color presets for [`ToolManager.e_ink_create`]() 
 ```
 
 ### Add customize tool default style
-You can also add your customized tool default style resource to [ToolStyleConfig]() as following:
+Alternatively, You can also add your customized tool default style resource by calling [`ToolStyleConfig.getInstance().addDefaultStyleMap(int, @StyleRes int)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/config/ToolStyleConfig.html#addDefaultStyleMap(int,%20int)):
 
 ```java
 ToolStyleConfig.getInstance().addDefaultStyleMap(ToolManager.e_rect_create, R.style.rectangle_style);

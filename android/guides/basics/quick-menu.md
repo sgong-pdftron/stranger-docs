@@ -2,11 +2,11 @@
 
 A menu Layout that can be shown in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFDoc.html). It shows a small menu layout with maximum two rows, and a overflow menu list. 
 
-![quick-menu](https://i.imgur.com/vDsxQBu.gif)
+<img alt='custom layout' src='https://i.imgur.com/vDsxQBu.gif' width=300 />
 
 With a given anchor rectangle view, quick menu will auto adjust position, it will be shown in either at the top of the anchor view or at the bottom of the anchor view:
 
-<img alt='quick-menu-layout image' src='img/quick-menu-layout.png' width='300' />
+<img alt='quick-menu-layout image' src='img/quick-menu-layout.png' height='400' />
 
 ## Add quick menu resource in `res/menu` folder
 By default, all menu items are placed in the first row, if you want to specifies where the menu item is, you can simply put the menu items inside a group with the following group id.
@@ -49,10 +49,9 @@ Example
 </menu>
 
 ```
-## Inflate quick menu resource to quick menu
+## Show quick menu
 After creating a quick menu, quick menu can simply inflate menu resource and initialize menu items by calling [`quickMenu.initMenuEntries(@MenuRes int)`]().
 
-Example
 ```java
     QuickMenu quickMenu = new QuickMenu(mPdfViewCtrl);
     quickMenu.initMenuEntries(R.menu.qm_resources);
@@ -60,7 +59,6 @@ Example
 
 Alternatively, If you want to change menu items before quick menu initialize them, you can call [`quickMenu.inflate(@MenuRes int)`](), so it won't auto initialize menu items. After adjusting menu items, you can call [`quickMenu.initMenuEntries()`]() to initialize menu items.
 
-Example
 ```java
     QuickMenu quickMenu = new QuickMenu(mPdfViewCtrl);
     quickMenu.inflate(R.menu.annot_simple_shape);
@@ -72,11 +70,8 @@ Example
     quickMenu.initMenuEntries();
 ```
 
-## Show quick menu
+After quick menu initialized, you can set position of screen position of quick menu abd show quick menu by calling [`quickMenu.setAnchorRect(RectF)`](), and [`quickMenu.show()`]().
 
-To set position of screen position of quick menu, call [`quickMenu.setAnchorRect(RectF)`](), and then call [`quickMenu.show()`]() to show the quick menu.
-
-Example
 ```java
     quickMenu.setAnchorRect(anchor_rect);
 
@@ -105,7 +100,7 @@ When quick menu item is clicked, it will dismiss the quick menu popup. You can s
     - Or you can call [`ToolManager.setQuickMenuListener(ToolManager.QuickMenuListener)`]()
 
 
-## Override [tool](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Tool.html) quick menu resource
+## Overriding existing [tool](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Tool.html) quick menu resource
 
 Some [tools](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Tool.html) shows quick menu after some motion event. For instance, in [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool, when [`onLongPress(MotionEvent)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Tool.html#onLongPress(android.view.MotionEvent)) is called, it shows a quick menu with many selections. You can overrides the following quick menu resources so the corresponding tools will show different quick menu
 
@@ -130,7 +125,7 @@ Some [tools](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/p
 | `R.qm_sig` | [Signature](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Signature.html) | If a custom signature already exsits, show quick menu when creating a signature or when single tapped on a signature field |
 
 
-### Only show quick menu exsiting certain items:
+### Only show quick menu with exist items:
 If you only want to show free text and signature selection in first row when [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool long pressing event is triggered, you just need to override `R.menu.qm_pan` in your own project as following:
 
 ```xml
@@ -147,10 +142,9 @@ If you only want to show free text and signature selection in first row when [Pa
 Please note: add `@+id/qm_free_text` and `@+id/qm_floating_sig` ids to the quick menu so [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool can recognize them when quick menu item is clicked.
 
 ### Show customized items in quick menu
-If you want to add your own quick menu item when [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool long pressing event is triggered, after you override `R.menu.qm_pan` with your item, you can add your quick menu click event as described [here](/android/guides/basics/quick-menu#-1)
+If you want to add your own quick menu item when [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool long pressing event is triggered.
 
-Example:
-R.menu.qm_pan:
+`R.menu.qm_pan`:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
@@ -159,8 +153,9 @@ R.menu.qm_pan:
         android:icon="@drawable/item1_drawable" />
 </menu>
 ```
+After you override `R.menu.qm_pan` with your item, you can add your quick menu click event as described [here](/android/guides/basics/quick-menu#-1)
 
-Main Activity if using [PdfViewCtrlTabHostFragment](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabHostFragment.html) for showing pdf:
+If your activity is using [PdfViewCtrlTabHostFragment](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabHostFragment.html) for showing pdf:
 
 ```java
 mPdfViewCtrlTabHostFragment.getCurrentPDFViewCtrlFragment()
@@ -186,7 +181,7 @@ mPdfViewCtrlTabHostFragment.getCurrentPDFViewCtrlFragment()
     });
 ```
 
-Main Activity if **NOT** using [PdfViewCtrlTabHostFragment](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabHostFragment.html) for showing pdf:
+Otherwise you can set quick menu click listener by [ToolManager.setQuickMenuListener(.ToolManager.QuickMenuListener)](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/ToolManager.html#setQuickMenuListener(com.pdftron.pdf.tools.ToolManager.QuickMenuListener))
 
 ```java
 mToolManager.setQuickMenuListener(new ToolManager.QuickMenuListener() {

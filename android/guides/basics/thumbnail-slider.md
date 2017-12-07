@@ -2,7 +2,7 @@
 
 [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html) is a toolbar that contains a left image button, a seekbar for changing pages, and a right image button. When sliding the seekbar, it will show a small page preview popup on top of the thumbnail slider.
 
-![thumbnail slider](https://i.imgur.com/ruqlxCB.gif)
+<img alt='thumbnail-slider'  src='https://i.imgur.com/bchlpDc.gif' width=300 />
 
 ## XML attributes
 [CustomRelativeLayout]() lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
@@ -31,7 +31,7 @@ Specifies left menu item color
 
 Format: color
 
-Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+)
+Default value:  `#1a9bcb`
 
 
 #### `app:right_menu_item_color`
@@ -40,27 +40,14 @@ Specifies right menu item color
 
 Format: color
 
-Default value:  `#1a9bcb` ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+)
+Default value:  `#1a9bcb`
 
-## Add thumbnail slider in your xml layout
+## Show thumbnail slider
 
+Add thumbnail slider to your layout, If [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) is in the same layout, you can set it to thumbnail slider by adding attribute: [`app:pdfviewctrl_id`](#apppdfviewctrl_id).
 ```xml
-<com.pdftron.pdf.controls.ThumbnailSlider
-    android:id="@+id/thumbnail_slider"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-/>
-```
-
-## Set [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) to [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html)
-
-After thumbnail slider is added to the view, you need to set [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) to [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html) so thumbnail slider can interact page changes of [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). You can either add [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by adding attribute [`app:pdfviewctrl_id`](#apppdfviewctrl_id) to [ThumbnailSlider](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html), or alternatively you can do it programmably by calling [`setPdfViewCtrl(PDFViewCtrl)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html#setPdfViewCtrl(com.pdftron.pdf.PDFViewCtrl))
-
-XML Example:
-
-```xml
-<com.pdftron.pdf.controls.ThumbnailSlider
+<com.pdftron.pdf.controls.ThumbnailSlider 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/thumbnail_slider"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -69,7 +56,7 @@ XML Example:
 />
 ```
 
-Programming Example:
+If [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) is **NOT** in the same layout, you can set it to thumbnail slider programmatically by calling [`ThumbnailSlider.setPdfViewCtrl(PDFViewCtrl)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/ThumbnailSlider.html#setPdfViewCtrl(com.pdftron.pdf.PDFViewCtrl))
 
 ```java
 ThumbnailSlider mSeekBar = stub.findViewById(R.id.thumbseekbar);
@@ -189,11 +176,11 @@ API >= 21:
 
 ### Seekbar track drawable attribute: `R.drawable.seek_track_material`
 
-Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+) )
+Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb )
 
 ### Seekbar thumb drawable attribute: `R.drawable.seek_thumb`
 
-Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb ![#1a9bcb](https://placehold.it/12/1a9bcb/000000?text=+) )
+Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb )
 
 ### Layout attribute: `R.layout.controls_thumbnail_slider`
 
