@@ -62,7 +62,6 @@ BookmarksDialogFragment showBookmarksDialog(FragmentManager fragmentManager, PDF
         .setDialogFragmentTabs(dialogFragmentTabs)
         .setBookmarksDialogListener(this)
         .setBookmarksTabsListener(this);
-    bookmarksDialog.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomAppTheme);
     bookmarksDialog.show(fragmentManager, "bookmarks_dialog");
     return bookmarksDialog;
 }
