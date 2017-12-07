@@ -15,17 +15,17 @@
 - title: Integrate to your project
   link: /android/guides/getting-started/integrate
 - title: Manual & nightly integration
-  link: /android/guides/getting-started/integrate_manual
+  link: /android/guides/getting-started/integrate-manual
 - title: Upgrading
   link: /android/guides/getting-started/upgrading
 - title: Adding PDFNet License Key
-  link: /android/guides/getting-started/add_license
+  link: /android/guides/getting-started/add-license
 - title: Using ProGuard
   link: /android/guides/getting-started/proguard
 - title: Using an Activity
-  link: /android/guides/getting-started/using_activity
+  link: /android/guides/getting-started/using-activity
 - title: Using a Fragment
-  link: /android/guides/getting-started/using_fragment
+  link: /android/guides/getting-started/using-fragment
 - title: Document locking
   link: /android/guides/doc-lock
 - header: Basics
@@ -45,15 +45,15 @@
 - title: Outline list
   link: /android/guides/basics/outline
 - title: User bookmarks list
-  link: /android/guides/basics/user_bookmarks
+  link: /android/guides/basics/user-bookmarks
 - title: Bookmarks dialog
   link: /android/guides/basics/bookmarks
 - title: Page thumbnails dialog
-  link: /android/guides/basics/thumbnails_view
+  link: /android/guides/basics/thumbnails-view
 - title: Add page dialog  
-  link: /android/guides/basics/add_page
+  link: /android/guides/basics/add-page
 - title: Rotate pages dialog  
-  link: /android/guides/basics/rotate_pages
+  link: /android/guides/basics/rotate-pages
 - title: Reflow
   link: /android/guides/basics/reflow
 - title: Undo and redo
