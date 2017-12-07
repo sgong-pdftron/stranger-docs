@@ -2,7 +2,7 @@
 
 PDFNet ships with two sample projects each containing examples that you could use in your project. Both samples are included in the download package under `\samples` folder.
 
-You can run any of the sample projects both via command line or via Android Studio.
+You can run any of the sample projects both via command line and/or via Android Studio.
 
 First, add your PDFNet license key into `gradle.properties` file in the root folder of the sample project of interest (i.e. `\samples\CompleteReader\gradle.properties` or `\samples\MiscellaneousSamples\gradle.properties`):
 
@@ -40,11 +40,11 @@ To deploy via Android Studio. See steps here:
 
 This sample can also be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 
-This app contains two document viewing and editing Activities, `SimpleReaderActivity` and `CompleteReaderActivity`.
+This app contains two document viewing and editing activities, `SimpleReaderActivity` and `CompleteReaderActivity`.
 
-`SimpleReaderActivity` is an all-in-one document reader and PDF editor. In addition to PDF files, it also supports viewing of many file extensions such as `.docx`, `.doc`, `.pptx`, `.xlsx`, `.md`, `.cbz` and various image formats. It allows stream conversion of these non-pdf documents to PDF format so you can view the document while conversion happens. In this app, you can read, annotate, sign, share and fill in PDF forms.
+`SimpleReaderActivity` is an all-in-one document reader and PDF editor. In addition to PDF files, it also supports viewing of other file extensions such as `.docx`, `.doc`, `.pptx`, `.xlsx`, `.md`, `.cbz` and various image formats. It allows stream conversion of these non-pdf documents to PDF format so you can view the document while conversion happens. In this app, you can read, annotate, sign, fill in PDF forms and more. See detailed features list below.
 
-`CompleteReaderActivity` has everything in `SimpleReaderActivity`, plus file browsers for local and SD card files. It has example for how you can implement recent and favorite files. It also demonstrates how to use document thumbnails. In addition, it supports file merging, new file creation from styles such as lined, grid, graph and music sheet.
+`CompleteReaderActivity` has everything in `SimpleReaderActivity`, plus file browsers for local and SD card files. It has example for how you can implement recent and favorite files. It also demonstrates how to use document thumbnails. In addition, it supports file merging, new file creation from styles such as lined, grid, graph and music sheet. See detailed features list below.
 
 Features:
 - [Multi-tab viewing](/android/guides/getting-started/using_fragment)
@@ -60,7 +60,7 @@ Features:
 - [PDF page rotation](/android/guides/basics/rotate_pages)
 - [Reflow](/android/guides/basics/reflow)
 - [Undo and redo](/android/guides/basics/undo-redo)
-- Sephia mode, night mode and custom color mode
+- Night mode, sephia mode and custom color mode
 - Page cropping
 - Full text search
 - PDF merging

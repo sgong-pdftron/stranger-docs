@@ -47,6 +47,7 @@ android {
     configurations.all {
         resolutionStrategy.force "com.android.support:appcompat-v7:26.1.0"
         resolutionStrategy.force "com.android.support:support-v4:26.1.0"
+        resolutionStrategy.force "android.arch.lifecycle:runtime:1.0.3"
     }
 }
 

@@ -23,7 +23,7 @@ For MiscellaneousSamples:
 
 <img alt='android_studio_import_2 image' src='img/android_studio_import_2.png' />
 
-4. Clean the project by clicking **Build > Clean Project**
+4. Clean the project by clicking **Build > Clean Project**.
 
 <img alt='android_studio_clean image' src='img/android_studio_clean.png' />
 
