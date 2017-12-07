@@ -1,4 +1,4 @@
-## How to run existing project with source code in Android Studio
+## How to run existing project with source code in Android Studio?
 
 If you don't have it, [download Android Studio](https://developer.android.com/studio/index.html). If you do have Android Studio, verify that it is the latest stable release by clicking **Help > Check for Updates** (on Mac, **Android Studio > Check for Updates**).
 
