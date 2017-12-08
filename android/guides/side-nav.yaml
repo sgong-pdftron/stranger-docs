@@ -34,6 +34,8 @@
   childLinks:
     - title: Styles
       link: /android/guides/basics/tools/tool-style
+    - title: Tool Subclasses
+      link: /android/guides/basics/tools/tool-subclasses
 - title: Quick menu
   link: /android/guides/basics/quick-menu
   childLinks:

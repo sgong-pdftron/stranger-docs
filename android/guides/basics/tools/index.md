@@ -4,11 +4,11 @@
 
 ![tool-flow](./img/tool-flow.png)
 
-[ToolManager](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/ToolManager.html) uses [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool as the default tool where handles almost all user events such as tapping on an annotation, long press to show quick menu, etc. When user tapped on an annotation, [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool changed to the other annotation handler tool so that tool can handle the tap event. For example, if Pan tool tapped on a [Link](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Link.html) annotation in [`Pan.onSingleTapConfirmed(MotionEvent)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html#onSingleTapConfirmed(android.view.MotionEvent)) event, then Pan tool will set the next tool to be [LinkAction](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/LinkAction.html) tool. The link annotaiton will be handled by LinkAction tool in [`LinkAction.onSingleTapConfirmed(MotionEvent)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/LinkAction.html#onSingleTapConfirmed(android.view.MotionEvent)) function. Besides gesture event defined in [ToolManager.Tool](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/ToolManager.Tool.html) follows the above flow, ToolManager functions also follows the above flow inlcudes: [ToolManager.onQuickMenuClicked(QuickMenuItem)](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/ToolManager.html#onQuickMenuClicked(com.pdftron.pdf.tools.QuickMenuItem)).
+[ToolManager](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/ToolManager.html) uses [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool as the default tool which handles almost all user events such as tapping on an annotation, long press to show quick menu, etc. When user tapped on an annotation, [Pan](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html) tool switched to the other corresponding tool so that tool can continue handle the tap event. For example, if Pan tool tapped on a [Link](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Link.html) annotation in [`Pan.onSingleTapConfirmed(MotionEvent)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html#onSingleTapConfirmed(android.view.MotionEvent)) event, then Pan tool will set the next tool to be [LinkAction](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/LinkAction.html) tool. The link annotaiton will therefore be handled by LinkAction tool in [`LinkAction.onSingleTapConfirmed(MotionEvent)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/LinkAction.html#onSingleTapConfirmed(android.view.MotionEvent)) function. Besides gesture event defined in [ToolManager.Tool](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/ToolManager.Tool.html) follows the above flow, functions of ToolManager that also follows the above flow inlcudes: [ToolManager.onQuickMenuClicked(QuickMenuItem)](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/ToolManager.html#onQuickMenuClicked(com.pdftron.pdf.tools.QuickMenuItem)).
 
 ## Initialize ToolManager
 
-To initialize ToolManager for controling tools, you can build it easily through [ToolManagerBuilder](). [ToolManagerBuilder]() is a helper class for constructing ToolManager with xml configuration and also sets ToolManager to PDFViewCtrl. By default, ToolManagerBuilder reads configuration from settings first, if you want to set configuration explicitly, you can add style with the following configuration attributes and put style in ToolManagerBuilder.
+To initialize ToolManager for controling tools, you can build it easily through [ToolManagerBuilder](). [ToolManagerBuilder]() is a helper class for constructing ToolManager with style resource configuration, it also sets ToolManager to PDFViewCtrl. By default, ToolManagerBuilder reads configuration from settings first, if you want to set configuration explicitly, you can add style with the following configuration attributes and then put style in ToolManagerBuilder.
 
 #### `edit_ink_annots`
 
@@ -126,11 +126,10 @@ Example about [PdfViewCtrlTabFragment](http://neon.pdftron.local:8000/www/qliu/a
 </style>
 ```
 
-Here is how [PdfViewCtrlTabFragment](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabFragment.html) set toolmanager in [`onViewCreated(View, Bundle)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabFragment.html#onViewCreated(android.view.View,%20android.os.Bundle)) function:
+Here is how [PdfViewCtrlTabFragment](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabFragment.html) initialize toolmanager in [`onViewCreated(View, Bundle)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabFragment.html#onViewCreated(android.view.View,%20android.os.Bundle)):
 
 ```java
-ToolManager mToolManager = ToolManagerBuilder.from(this, R.style.TabFragmentToolManager)
-            .build();
+ToolManager mToolManager = ToolManagerBuilder.from(this, R.style.TabFragmentToolManager).build();
 ```
 
 
@@ -151,44 +150,3 @@ If there are tools that you want to disable in ToolManager so the ToolManager wi
 ```java
 mToolManager.disableToolMode(new int[]{ToolManager.e_link_action, ToolManager.e_text_highlight});
 ```
-
-## Tool Subclasses hierachy
-
-- [`AnnotEdit`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/AnnotEdit.html): Responsible for editing a selected annotation, e.g., moving and resizing. 
-- [`AnnotEditLine`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/AnnotEditLine.html): Responsible for editing a selected line or arrow, e.g., moving and resizing. 
-- [`DigitalSignature`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/DigitalSignature.html): The purpose of this tool is to demonstrate how to digitally sign a document by using one of its signature fields. 
-- [`FormFill`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/FormFill.html): Responsible for filling forms. 
-- [`FreeTextCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/FreeTextCreate.html): Responsible for creating [FreeText](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/FreeText.html) annotation
-- [`LinkAction`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/LinkAction.html): Responsible for jumping to corresponding link if single tapped on [Link](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Link.html) annotation
-- [`Pan`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Pan.html): Pan tool implements the following functions: 1. Select the hit annotation and switch to annotation edit tool on single tap event; 2. Bring up annotation creation menu upon long press event. 
-- [`RichMedia`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/RichMedia.html): Responsible for play video when tap on the annotation with [RichMedia](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/Annot.html#e_RichMedia) annotation.
-- [`Signature`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Signature.html): Responsible for creating [Signature](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/Annot.html#e_Stamp) annotation. 
-- [`SimpleShapeCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/SimpleShapeCreate.html): The base class for several shape creation classes, e.g., LineCreate, OvalCreate, etc. 
-    - [`ArrowCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/ArrowCreate.html): 	This class is for creating an arrow. 
-    - [`RectCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/RectCreate.html): This class is for creating a rectangle annotation. 
-        - [`CheckboxFieldCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CheckboxFieldCreate.html): This class is for creating [checkbox field](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/Field.html#e_check)
-        - [`RectLinkCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/RectLinkCreate.html): Used for creating rectangle [Link](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Link.html) annotation
-        - [`SignatureFieldCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/SignatureFieldCreate.html): This class is for creating a [signature field](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/Field.html#e_signature) annotation  
-        - [`TextFieldCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextFieldCreate.html): 	This class is for creating [text field](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/Field.html#e_textt) 
-    - [`Eraser`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Eraser.html): 	This class is for erasing [Ink](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Ink.html) annotation. 
-    - [`FreehandCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/FreehandCreate.html): 	This class is for creating an [Ink](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Ink.html) annotation. 
-    - [`LineCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/LineCreate.html): 	This class is for creating a [line](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Line.html) annotation. 
-    - [`OvalCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/OvalCreate.html): 	This class is for creating a [circle](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Circle.html) annotation. 
-    - [`StickyNoteCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/StickyNoteCreate.html): This class is for creating a [sticky note](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Text.html) annotation. 
-    - [`Stamper`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/Stamper.html): Responsible for creating [Stamper](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/Annot.html#e_Stamp) annotation. 
-- [`TextHighlighter`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextHighlighter.html): This class can be used to highlight all search results. 
-- [`TextMarkupCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextMarkupCreate.html): This class is the base class for all text markup creation tools. 
-    - [`TextHighlightCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextHighlightCreate.html)
-    - [`TextSquigglyCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextSquigglyCreate.html): This class is for creating [text highlight](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Highlight.html) annotation. 
-    - [`TextStrikeoutCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextStrikeoutCreate.html): This class is for creating [text strikeout](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/StrikeOut.html) annotation. 
-    - [`TextUnderlineCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextUnderlineCreate.html): This class is for creating [text underline](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Underline.html) annotation. 
-    - [`TextLinkCreate`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextLinkCreate.html): This class is for creating [Link](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Link.html) annotation based on selected text bounding box.
-- [`TextSelect`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/TextSelect.html): This class selects text on pages. 
-  - [`AnnotEditTextMarkup`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/AnnotEditTextMarkup.html): This class is responsible for editing text markup: highlight/strikeout/underline, e.g., moving and resizing. 
-
-
-
-
-
-
-
