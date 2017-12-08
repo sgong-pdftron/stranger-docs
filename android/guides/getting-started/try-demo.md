@@ -47,6 +47,7 @@ android {
     configurations.all {
         resolutionStrategy.force "com.android.support:appcompat-v7:26.1.0"
         resolutionStrategy.force "com.android.support:support-v4:26.1.0"
+        resolutionStrategy.force "android.arch.lifecycle:runtime:1.0.3"
     }
 }
 
@@ -113,7 +114,7 @@ SimpleReaderActivity.open(this);
 
 You will see:
 
-<img alt='SimpleReader image' src='img/simple_reader_demo.png' width='300' />
+<img alt='SimpleReader image' src='img/simple-reader-demo.png' width='300' />
 
 To open Complete Reader demo, use:
 ```java
@@ -124,4 +125,4 @@ CompleteReaderActivity.open(this);
 
 You will see:
 
-<img alt='CompleteReader image' src='img/complete_reader_demo.png' width='300' />
+<img alt='CompleteReader image' src='img/complete-reader-demo.png' width='300' />

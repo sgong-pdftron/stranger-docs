@@ -66,7 +66,13 @@ You can add [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/andro
 </com.pdftron.pdf.PDFViewCtrl>
 ```
 
-Alternatively, you can also add custom layout programmatically like a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html).
+Screenshot:
+
+![screenshot](./img/custom-layout.png)
+
+## Adding Custom layout programmably
+
+Alternatively, you can also add custom layout programmably like a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html).
 
 `R.layout.custom_layout_textview`:
 ```xml
