@@ -4,7 +4,7 @@ All activities related to the PDF viewer is handled through the PdfViewCtrlTabHo
 
 <p align="center"><img alt='Host Fragment' src ="https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/basics/gif/host-fragment.gif?raw=true" width='300'/></p>
 
-<!-- ![](https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/getting-started/gif/host-fragment.gif?raw=true "Host Fragment") -->
+<!-- ![](https://raw.githubusercontent.com/sgong-pdftron/stranger-docs/master/android/guides/getting-started/gif/host-fragment.gif "Host Fragment") -->
 
 Showing the Host fragment in an activity is straightforward, like any other fragment make an instance of the class and attach it to the activity. To create an instance of the host fragment you need pass in a bundle that can be created using `createBasicPdfViewCtrlTabBundle`. The bundle specifies the document that should be shown when the host fragment is visible. For example, to open a document in the host fragment when you know the URI of the file and its password if the file is password protected you can call:
 
@@ -53,7 +53,7 @@ If you want to interact with the host fragment you should call `addHostListener(
 
 Here's an example that replaces the default navigation icon, and only keeps the annotation toolbar icon in the toolbar menu while adds a new menu item to show a toast when selected:
 
-<!-- ![](https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/getting-started/gif/simple-host-fragment.gif?raw=true "Simple Host Fragment") -->
+<!-- ![](https://raw.githubusercontent.com/sgong-pdftron/stranger-docs/master/android/guides/getting-started/gif/simple-host-fragment.gif "Simple Host Fragment") -->
 
 ```java
 ...
