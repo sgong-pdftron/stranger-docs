@@ -103,5 +103,3 @@ The `fragment_viewer_simple.xml` should be placed in menu resource folder and co
         app:showAsAction="never" />
 </menu>
 ```
-
-In the above example, we overrides 
