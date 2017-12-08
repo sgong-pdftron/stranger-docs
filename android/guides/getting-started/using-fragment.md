@@ -19,15 +19,16 @@ ft.commit();
 Note that since we use support version of android fragment, your activity must extend `FragmentActivity` and must call `getSupportFragmentManager()` to get the `FragmentManager`.
 
 ## Toolbar menu
-The default toolbar menu consists of menu items for
-- searching text in the current document [icon]
-- sharing the current document [icon]
-- setting up viewing mode [icon]
-- showing/hiding annotation toolbar [icon]
-- editing pages [icon]
-- printing the current document [icon]
 
 <p align="center"><img alt='Default toolbar menu' src ="img/default-toolbar-menu.png" width='300'/></p>
+
+The default toolbar menu consists of menu items for
+- searching text in the current document [#1]
+- sharing the current document [#2]
+- setting up viewing mode [#3]
+- showing/hiding annotation toolbar [#4]
+- editing pages [in overflow menu]
+- printing the current document [in overflow menu]
 
 However, you can fully customize and control the toolbar menu as well as the navigation icon. 
 
