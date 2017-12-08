@@ -27,9 +27,7 @@ The default toolbar menu consists of menu items for
 - editing pages [icon]
 - printing the current document [icon]
 
-![](img/default-toolbar-menu.png "Default toolbar menu")
-
-<div style="text-align:center"><img alt='Default toolbar menu' src ="img/default-toolbar-menu.png" width='300'/></div>
+<p align="center"><img alt='Default toolbar menu' src ="img/default-toolbar-menu.png" width='300'/></p>
 
 However, you can fully customize and control the toolbar menu as well as the navigation icon. 
 
