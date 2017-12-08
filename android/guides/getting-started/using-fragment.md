@@ -34,7 +34,6 @@ The default toolbar menu consists of menu items for
 
 ![](img/default-toolbar-menu.png "Default toolbar menu")
 
-
 However, you can fully customize and control the toolbar menu as well as the navigation icon. 
 
 ### Customize toolbar menu
