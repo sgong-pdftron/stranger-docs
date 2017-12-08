@@ -50,7 +50,8 @@ To change the navigation icon, similar to toolbar menu, you need to pass the des
 args.putInt(PdfViewCtrlTabHostFragment.BUNDLE_TAB_HOST_NAV_ICON, R.drawable.ic_arrow_back_white_24dp);
 ```
 
-If you want to interact with the host fragment you should call `addHostListener(TabHostListener)` and override those methods that you are interested in. For example, you may want to override `onToolbarOptionsItemSelected(MenuItem)` when you add a new menu item, so when the item is clicked you can get a callback. As another example, you can get the callback when the navigation icon is clicked if you override `onNavButtonPressed`.
+# Interact with fragment
+If you want to interact with the host fragment you should call `addHostListener(TabHostListener)` and override those methods that you are interested in. For example, you may want to override `onToolbarOptionsItemSelected(MenuItem)` when you add a new menu item, so when the item is clicked you can get a callback. As another example, you can get the callback when the navigation icon is clicked if you override `onNavButtonPressed()`.
 
 Here's an example that replaces the default navigation icon, and only keeps the annotation toolbar icon in the toolbar menu while adds a new menu item to show a toast when selected:
 
