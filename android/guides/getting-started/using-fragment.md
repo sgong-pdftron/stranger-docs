@@ -63,7 +63,7 @@ mPdfViewCtrlTabHostFragment.addHostListener(this);
 @Override
 public boolean onToolbarOptionsItemSelected(MenuItem item) {
 	if (item.getItemId() == R.id.action_show_toast) {
-        Toast.makeText(this, "Show toast is clicked!", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Show toast is clicked!", Toast.LENGTH_SHORT).show();
 	}
 	return false;
 }
