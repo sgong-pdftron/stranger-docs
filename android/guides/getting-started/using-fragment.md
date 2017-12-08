@@ -1,12 +1,12 @@
 # Using a Fragment
 
-All activities related to the PDF viewer is handled through the PdfViewCtrlTabHostFragment fragment. This host fragment extends `android.support.v4.app.Fragment` and is responsible for showing document tabs.
+All actions related to the PDF viewer are handled through the `PdfViewCtrlTabHostFragment` fragment. This fragment extends `android.support.v4.app.Fragment` and is responsible for showing document in tabs.
 
 <p align="center"><img alt='Host Fragment' src ="https://raw.githubusercontent.com/sgong-pdftron/stranger-docs/master/android/guides/getting-started/gif/host-fragment.gif" width='300'/></p>
 
 <!-- ![](https://raw.githubusercontent.com/sgong-pdftron/stranger-docs/master/android/guides/getting-started/gif/host-fragment.gif "Host Fragment") -->
 
-Showing the Host fragment in an activity is straightforward, like any other fragment make an instance of the class and attach it to the activity. To create an instance of the host fragment you need pass in a bundle that can be created using `createBasicPdfViewCtrlTabBundle`. The bundle specifies the document that should be shown when the host fragment is visible. For example, to open a document in the host fragment when you know the URI of the file and its password if the file is password protected you can call:
+Showing the `PdfViewCtrlTabHostFragment` in an activity is straightforward, like any other fragment make an instance of the class and attach it to the activity. To create an instance of the host fragment you need pass in a bundle that can be created using `createBasicPdfViewCtrlTabBundle`. The bundle specifies the document that should be shown when the host fragment is visible. For example, to open a document in the host fragment when you know the URI of the file and its password if the file is password protected you can call:
 
 ```java
 PdfViewCtrlTabHostFragment mPdfViewCtrlTabHostFragment;

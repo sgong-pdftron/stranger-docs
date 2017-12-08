@@ -88,3 +88,5 @@
 - header: FAQ
 - title:  Run project in Android Studio
   link: /android/guides/faq/run-in-android-studio
+- title: PDFNet full vs. standard
+  link: /android/guides/faq/full-vs-standard
