@@ -2,7 +2,7 @@
 
 All activities related to the PDF viewer is handled through the PdfViewCtrlTabHostFragment fragment. This host fragment extends `android.support.v4.app.Fragment` and is responsible for showing document tabs.
 
-<p align="center"><img alt='Host Fragment' src ="https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/basics/gif/host-fragment.gif?raw=true" width='300'/></p>
+<p align="center"><img alt='Host Fragment' src ="https://raw.githubusercontent.com/sgong-pdftron/stranger-docs/master/android/guides/getting-started/gif/host-fragment.gif" width='300'/></p>
 
 <!-- ![](https://raw.githubusercontent.com/sgong-pdftron/stranger-docs/master/android/guides/getting-started/gif/host-fragment.gif "Host Fragment") -->
 
@@ -53,7 +53,7 @@ If you want to interact with the host fragment you should call `addHostListener(
 
 Here's an example that replaces the default navigation icon, and only keeps the annotation toolbar icon in the toolbar menu while adds a new menu item to show a toast when selected:
 
-<!-- ![](https://raw.githubusercontent.com/sgong-pdftron/stranger-docs/master/android/guides/getting-started/gif/simple-host-fragment.gif "Simple Host Fragment") -->
+<p align="center"><img alt='Host Fragment' src ="https://raw.githubusercontent.com/sgong-pdftron/stranger-docs/master/android/guides/getting-started/gif/simple-host-fragment.gif" width='300'/></p>
 
 ```java
 ...
