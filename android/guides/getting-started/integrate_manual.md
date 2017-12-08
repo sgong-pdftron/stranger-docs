@@ -6,7 +6,7 @@ In addition to integrating via gradle [maven package manager](/android/guides/ge
 2. Copy either `full/pdfnet.aar` or `standard/pdfnet.aar` file into your project's `libs` directory. See differences between the two versions [here](/android/guides/faq/full-vs-standard).
 3. Copy `floatingactionbutton.aar`, `pagecropper.aar`, and `tools.aar` files into your project's `libs` directory.
 4. (Optional) Copy `demo.aar` file into your project's `libs` directory.
-5. Add `libs` directory in your project's `build.gradle` repositories section.
+5. Add the following in your project's `build.gradle` repositories section.
 
 ```groovy
 repositories {
@@ -16,3 +16,34 @@ repositories {
     }
 }
 ```
+
+6. Include PDFNet as a dependency in your project.
+
+```groovy
+dependencies {
+    ...
+    implementation "com.pdftron:pdfnet:6.8.0@aar"
+    implementation "com.pdftron:tools:6.8.0@aar"
+    implementation "com.pdftron:floatingactionbutton:1.0.0@aar"
+    implementation "com.pdftron:pagecropper:1.0.0@aar"
+
+    implementation "com.android.support:support-v4:26.1.0"
+    implementation "com.android.support:appcompat-v7:26.1.0"
+    implementation "com.android.support:recyclerview-v7:26.1.0"
+    implementation "com.android.support:design:26.1.0"
+    implementation "com.android.support.constraint:constraint-layout:1.1.0-beta3"
+    implementation "android.arch.lifecycle:extensions:1.0.0-rc1"
+}
+```
+
+If you added  `demo.aar`, then also add:
+
+```groovy
+dependencies {
+    ...
+    implementation "com.pdftron:demo:6.8.0@aar"
+    implementation 'com.facebook.fresco:fresco:1.2.0'
+}
+```
+
+And you are ready to start!
