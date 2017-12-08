@@ -22,78 +22,15 @@ void startTabHostFragment(Bundle args) {
 The `args` specifies the document that should be shown when the host fragment is visible. You are encouraged to use `createBasicPdfViewCtrlTabBundle` for creating the host bundle. For example, to open a document in the host fragment when you know the URI of the file and its password if the file is password protected you should call `openDocument()`:
 
 ```java
-void openDocument(Uri fileUri, String password) {
-	if (fileUri == null) {
-		return;
-	}
-
-	String title = getUriDisplayName(fileUri);
-	String extension = getUriExtension(fileUri);
-	Bundle tabHostBundle;	
-	if (ContentResolver.SCHEME_CONTENT.equals(fileUri.getScheme())) {
-		// If scheme is a content
-		tabHostBundle = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(
-			fileUri.toString(), title, extension, password, FileInfo.FILE_TYPE_EXTERNAL);
-	} else if (URLUtil.isHttpUrl(fileUri.toString()) || URLUtil.isHttpsUrl(fileUri.toString())) {
-		title = fileUri.getLastPathSegment();
-		tabHostBundle = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(
-			fileUri.toString(), title, extension, "", FileInfo.FILE_TYPE_OPEN_URL);
-	} else {
-		// If scheme is a File
-		tabHostBundle = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(
-			fileUri.getPath(), title, extension, password, FileInfo.FILE_TYPE_FILE);
-	}
-
+void openDocument(@NonNull Uri fileUri, String password) {
+	Bundle tabHostBundle = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(this, fileUri, password);
 	startTabHostFragment(tabHostBundle);
 }
-
-String getUriDisplayName(@NonNull Uri uri) {
-	String displayName = null;
-	String[] projection = {OpenableColumns.DISPLAY_NAME};
-
-	if (ContentResolver.SCHEME_FILE.equalsIgnoreCase(uri.getScheme())) {
-		return uri.getLastPathSegment();
-	}
-	Cursor cursor = null;
-	try {
-		cursor = getContentResolver().query(uri, projection, null, null, null);
-		if (cursor != null && cursor.moveToFirst() && cursor.getColumnCount() > 0 && cursor.getCount() > 0) {
-			int nameIndex = cursor.getColumnIndexOrThrow(projection[0]);
-			if (nameIndex >= 0) {
-				displayName = cursor.getString(nameIndex);
-			}
-		}
-	} catch (Exception e) {
-		displayName = null;
-	} finally {
-		if (cursor != null) {
-			cursor.close();
-		}
-	}
-	return displayName;
-}
-
-String getUriExtension(@NonNull Uri uri) {
-	String extension;
-
-	// Check uri format
-	if (ContentResolver.SCHEME_CONTENT.equals(uri.getScheme())) {
-		// If scheme is a content
-		final MimeTypeMap mime = MimeTypeMap.getSingleton();
-		extension = mime.getExtensionFromMimeType(getContentResolver().getType(uri));
-	} else {
-		// If scheme is a File
-		extension = MimeTypeMap.getFileExtensionFromUrl(Uri.fromFile(new File(uri.getPath())).toString());
-	}
-
-	return extension;
-}
 ```
-
 or you can have a specific function for opening files existing in internal storage:
 
 ```java
-void openInternalDocument(final File file, String password) {
+void openInternalDocument(@NonNull File file, String password) {
 	String tag = file.getAbsolutePath();
 	String title = file.getName();
 	String fileExtension = FilenameUtils.getExtension(tag);
@@ -159,7 +96,6 @@ public boolean onToolbarOptionsItemSelected(MenuItem item) {
 				openDocument(fileUri, "");
 			}
 		});
-		dialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomAppTheme);
 		dialogFragment.show(fragmentManager, "file_picker_dialog_fragment");
 	} else if (id == R.id.action_open_url) {
 		DialogOpenUrl dialogOpenUrl = new DialogOpenUrl(this, new DialogOpenUrl.DialogOpenUrlListener() {

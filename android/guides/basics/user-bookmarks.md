@@ -9,7 +9,6 @@ To create a new instance of the user bookmark dialog fragment call `newInstance(
 UserBookmarkDialogFragment showUserBookmarkDialog(FragmentManager fragmentManager, PDFViewCtrl pdfViewCtrl) {
     UserBookmarkDialogFragment userBookmarkDialogFragment = UserBookmarkDialogFragment.newInstance();
     userBookmarkDialogFragment.setPdfViewCtrl(pdfViewCtrl);
-    userBookmarkDialogFragment.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomAppTheme);
     userBookmarkDialogFragment.show(fragmentManager, "user_bookmarks_dialog");
     return userBookmarkDialogFragment;
 }

@@ -9,7 +9,6 @@ To create a new instance of the outline dialog fragment call `newInstance()` and
 OutlineDialogFragment showOutlineDialog(FragmentManager fragmentManager, PDFViewCtrl pdfViewCtrl) {
     OutlineDialogFragment outlineDialogFragment = OutlineDialogFragment.newInstance();
     outlineDialogFragment.setPdfViewCtrl(pdfViewCtrl);
-    outlineDialogFragment.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomAppTheme);
     outlineDialogFragment.show(fragmentManager, "outline_dialog");
     return outlineDialogFragment;
 }

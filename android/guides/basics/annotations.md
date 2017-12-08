@@ -9,7 +9,6 @@ To create a new instance of the annotation dialog fragment call `newInstance()` 
 AnnotationDialogFragment showAnnotationDialog(FragmentManager fragmentManager, PDFViewCtrl pdfViewCtrl) {
     AnnotationDialogFragment annotationDialogFragment = AnnotationDialogFragment.newInstance();
     annotationDialogFragment.setPdfViewCtrl(pdfViewCtrl);
-    annotationDialogFragment.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomAppTheme);
     annotationDialogFragment.show(fragmentManager, "outline_dialog");
     return annotationDialogFragment;
 }
