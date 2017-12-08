@@ -2,7 +2,7 @@
 
 [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) is a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html) that can be nested and displayed in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by a given page position and page number. Therefore all child views of [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) are displayed in PDF view.
 
-<img alt='custom layout' src='./img/custom_layout.png' width='300' />
+<img alt='custom layout' src='/img/custom_layout.png' width='300' />
 
 ## XML attributes
 
@@ -68,17 +68,33 @@ You can add [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/andro
 
 Alternatively, you can also add custom layout programmatically like a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html).
 
+`R.layout.custom_layout_textview`:
+```xml
+<com.pdftron.pdf.tools.CustomRelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:posX="50"
+        app:posY="150"
+        app:pageNum="3"
+        app:zoomWithParent="true">
+        <!--Child views under CustomRelativeLayout-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Custom Layout Text View"
+            android:textSize="24dp"
+            android:elevation="2dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+    </com.pdftron.pdf.tools.CustomRelativeLayout>
+```
+MainActivity:
 ```java
 public void addCustomeLayout(PDFViewCtrl pdfViewCtrl) {
-  // initialize custom layout
-  CustomRelativeLayout customLayout= new CustomRelativeLayout(pdfViewCtrl.getContext());
-  // set page position and page
-  customLayout.setPagePosition(100, 100, 3);
-  // set layout width and height
-  LayoutParams lp = new LayoutParams(100, 100);
-  customLayout.setLayoutParams(lp);
-  // add custom layout to pdfViewCtrl
-  pdfViewCtrl.addView(customLayout);
+  LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+  View view = inflater.inflate(R.layout.custom_layout_textview, pdfViewCtrl);
 
 }
 ```
