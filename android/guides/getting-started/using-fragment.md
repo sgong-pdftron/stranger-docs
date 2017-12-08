@@ -2,37 +2,35 @@
 
 All activities related to the PDF viewer is handled through the PdfViewCtrlTabHostFragment fragment. This host fragment extends `android.support.v4.app.Fragment` and is responsible for showing document tabs.
 
-![](https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/basics/gif/host-fragment.gif?raw=true "Host Fragment")
+<p align="center"><img alt='Host Fragment' src ="https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/basics/gif/host-fragment.gif?raw=true" width='300'/></p>
 
-Showing the Host fragment in an activity is straightforward, just like any other fragment make an instance of the class and attach it to the activity:
+<!-- ![](https://github.com/sgong-pdftron/stranger-docs/blob/master/android/guides/basics/gif/host-fragment.gif?raw=true "Host Fragment") -->
+
+Showing the Host fragment in an activity is straightforward, like any other fragment make an instance of the class and attach it to the activity. To create an instance of the host fragment you need pass in a bundle that can be created using `createBasicPdfViewCtrlTabBundle`. The bundle specifies the document that should be shown when the host fragment is visible. For example, to open a document in the host fragment when you know the URI of the file and its password if the file is password protected you can call:
 
 ```java
 PdfViewCtrlTabHostFragment mPdfViewCtrlTabHostFragment;
 
+Bundle args = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(this, fileUri, password);
 mPdfViewCtrlTabHostFragment = PdfViewCtrlTabHostFragment.newInstance(args);
 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 ft.replace(R.id.fragment_container, mPdfViewCtrlTabHostFragment, null);
 ft.commit();
 ```
 
-where `args` specifies the document that should be shown when the host fragment is visible. You are encouraged to use `createBasicPdfViewCtrlTabBundle` for creating the host bundle. For example, to open a document in the host fragment when you know the URI of the file and its password if the file is password protected you can build `args` as:
-
-```java
-Bundle args = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(this, fileUri, password);
-```
-
 Note that since we use support version of android fragment, your activity must extend `FragmentActivity` and must call `getSupportFragmentManager()` to get the `FragmentManager`.
 
 ## Toolbar menu
-The default toolbar menu consists of menu items for
-- searching text in the current document [icon]
-- sharing the current document [icon]
-- setting up viewing mode [icon]
-- showing/hiding annotation toolbar [icon]
-- editing pages [icon]
-- printing the current document [icon]
 
-![](img/default-toolbar-menu.png "Default toolbar menu")
+<p align="center"><img alt='Default toolbar menu' src ="img/default-toolbar-menu.png" width='300'/></p>
+
+The default toolbar menu consists of menu items for
+- searching text in the current document [#1]
+- sharing the current document [#2]
+- setting up viewing mode [#3]
+- showing/hiding annotation toolbar [#4]
+- editing pages [in overflow menu]
+- printing the current document [in overflow menu]
 
 However, you can fully customize and control the toolbar menu as well as the navigation icon. 
 
@@ -50,7 +48,7 @@ To change the navigation icon, similar to toolbar menu, you need to pass the des
 args.putInt(PdfViewCtrlTabHostFragment.BUNDLE_TAB_HOST_NAV_ICON, R.drawable.ic_arrow_back_white_24dp);
 ```
 
-# Interact with fragment
+### Interact with fragment
 If you want to interact with the host fragment you should call `addHostListener(TabHostListener)` and override those methods that you are interested in. For example, you may want to override `onToolbarOptionsItemSelected(MenuItem)` when you add a new menu item, so when the item is clicked you can get a callback. As another example, you can get the callback when the navigation icon is clicked if you override `onNavButtonPressed()`.
 
 Here's an example that replaces the default navigation icon, and only keeps the annotation toolbar icon in the toolbar menu while adds a new menu item to show a toast when selected:
@@ -68,7 +66,7 @@ mPdfViewCtrlTabHostFragment.addHostListener(this);
 @Override
 public boolean onToolbarOptionsItemSelected(MenuItem item) {
 	if (item.getItemId() == R.id.action_show_toast) {
-        Toast.makeText(this, "Show toast is clicked!", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Show toast is clicked!", Toast.LENGTH_SHORT).show();
 	}
 	return false;
 }
