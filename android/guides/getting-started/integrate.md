@@ -65,7 +65,7 @@ dependencies {
 }
 ```
 
-To use activities shown in the CompleteReader sample project, also include:
+To use activities shown in the [CompleteReader sample project](/android/guides/getting-started/try-demo), also include:
 
 ```groovy
 dependencies {
@@ -74,8 +74,4 @@ dependencies {
 }
 ```
 
-To use PDFNet initialize helper, add the following to `onCreate` of your `MainApplication.java` or `MainActivity.java`:
-
-```java
-com.pdftron.pdf.utils.AppUtils.initializePDFNetApplication(getApplicationContext());
-```
+And you are ready to start! Now time to open a [document in an Activity](/android/guides/getting-started/using-activity).
