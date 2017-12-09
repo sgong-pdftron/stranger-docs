@@ -12,7 +12,7 @@
       link: /android/guides/getting-started#miscellaneoussamples-app
 - title: Try demo in your project
   link: /android/guides/getting-started/try-demo
-- title: Integrate to your project
+- title: Integrating PDFNet
   link: /android/guides/getting-started/integrate
 - title: Manual & nightly integration
   link: /android/guides/getting-started/integrate-manual
