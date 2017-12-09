@@ -53,7 +53,9 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:26.1.0"
     implementation "com.android.support:design:26.1.0"
     implementation "com.android.support.constraint:constraint-layout:1.1.0-beta3"
-    implementation "android.arch.lifecycle:extensions:1.0.0-rc1"
+    implementation "android.arch.lifecycle:extensions:1.0.0"
+    implementation "commons-io:commons-io:2.4"
+    implementation "com.google.code.gson:gson:2.8.0"
 }
 ```
 
@@ -64,6 +66,17 @@ dependencies {
     ...
     implementation "com.pdftron:demo:6.8.0@aar"
     implementation 'com.facebook.fresco:fresco:1.2.0'
+}
+```
+
+7. PDFNet takes advantage of [Java 8](https://developer.android.com/studio/write/java8-support.html) features that are backwards compatible on older devices. Add the following in your module Gradle file (usually `app/build.gradle`).
+
+```groovy
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 ```
 
