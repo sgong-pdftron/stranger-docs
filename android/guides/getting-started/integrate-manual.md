@@ -14,6 +14,16 @@ Now your `libs` folder will look like this:
 5. Add the following in your root-level `build.gradle` repositories section.
 
 ```groovy
+buildscript {
+    repositories {
+        ...
+        mavenCentral()
+    }
+    dependencies {
+        ...
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+    }
+}
 allprojects {
     repositories {
         ...
@@ -56,6 +66,8 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:1.0.0"
     implementation "commons-io:commons-io:2.4"
     implementation "com.google.code.gson:gson:2.8.0"
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
 ```
 
