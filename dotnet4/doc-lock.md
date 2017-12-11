@@ -6,7 +6,7 @@ As computing devices become more parallel in nature, PDFNet is evolving to allow
 
 PDFNet uses a recursive read/write locking system. Multiple threads can hold a read lock on the document, **but only one thread can hold a write lock at any given time**. A thread can acquire an equivalent or weaker lock as many times as it likes without causing a deadlock. In other words, the following is valid:
 
-```
+```csharp
 PDFDoc d = new PDFDoc("foo.pdf");
 d.Lock();
 d.Lock();
@@ -25,7 +25,7 @@ In general, the parts of our library that manage the UI will maintain document l
 
 PDFNet provides the following APIs for locking the document:
 
-```
+```csharp
 void PDFDoc.Lock()
 bool PDFDoc.TryLock(int milliseconds)
 void PDFDoc.Unlock()
@@ -36,7 +36,7 @@ void PDFDoc.UnlockRead()
 
 For convenience, [`PDFViewCtrl`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/T_pdftron_PDF_PDFViewCtrl.htm) and [`PDFViewWPF`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/T_pdftron_PDF_PDFViewWPF.htm) expose similar methods, which will be applied to the document currently associated with the control. Additionally, the [`PDFViewCtrl.DocLock()`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/M_pdftron_PDF_PDFViewCtrl_DocLock.htm) and [`PDFViewWPF.DocLock()`](http://www.pdftron.com/pdfnet/docs/PDFNet/?topic=html/M_pdftron_PDF_PDFViewWPF_DocLock.htm) methods take a `cancel_threads` parameter, which will interrupt all worker threads currently accessing the document. This allows you to acquire the write lock as fast as possible:
 
-```
+```csharp
 void PDFViewCtrl.DocLock(bool cancel_threads)
 bool PDFViewCtrl.DocTryLock(int milliseconds)
 void PDFViewCtrl.DocUnlock()
@@ -67,7 +67,7 @@ Conversely, if you are happy with the existing *'one document, one thread'* mode
 ## API calls which can acquire a write lock
 
 ### PDFViewCtrl
-```
+```csharp
 void pdftron.PDF.PDFViewCtrl.AddWatermark()
 void pdftron.PDF.PDFViewCtrl.CropPages()
 void pdftron.PDF.PDFViewCtrl.DeletePages()
@@ -84,7 +84,7 @@ void pdftron.PDF.PDFViewCtrl.SetDoc()
 ```
 
 ### PDFViewWPF
-```
+```csharp
 void pdftron.PDF.PDFViewWPF.CloseDoc()
 void pdftron.PDF.PDFViewWPF.SetDoc()
 ```
