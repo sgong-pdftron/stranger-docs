@@ -63,5 +63,5 @@ Conversely, if you are happy with the existing *'one document, one thread'* mode
 ### PDFViewCtrl
 ```java
 void PDFViewCtrl.closeDoc()
-void PDFViewCtrl.setDoc()
+void PDFViewCtrl.setDoc(PDFDoc)
 ```

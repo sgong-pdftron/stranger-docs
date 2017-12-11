@@ -1,5 +1,7 @@
 ## Integrating PDFNet
 
+**If you have not yet received an access token for PDFNet's Maven repository, please first [obtain an access token here](https://www.pdftron.com/pdfnet/mobile/request_trial.html) before proceeding to the next step.**
+
 PDFNet supports Android devices with API 16 and newer, targeting the latest stable Android version Oreo, API 26. PDFNet uses Android support libraries with backwards compatibility for older devices.
 
 To integrate PDFNet libraries into one of your own projects, here are a few simple steps to prepare your Android Studio project.
@@ -29,20 +31,6 @@ AWS_ACCESS_KEY=YOUR_ACCESS_KEY_GOES_HERE
 AWS_SECRET_KEY=YOUR_SECRET_KEY_GOES_HERE
 ```
 
-To use PDFNet initialize helper, also include the following in the same file:
-
-```
-PDFTRON_LICENSE_KEY=YOUR_PDFNET_LICENSE_KEY_GOES_HERE
-```
-
-To use PDFNet initialize helper, add license key placeholder to `AndroidManifest.xml` file inside the `<application/>` tag:
-
-```xml
-<meta-data
-  android:name="pdftron_license_key"
-  android:value="${pdftronLicenseKey}"/>
-```
-
 Then, in your module Gradle file (usually `app/build.gradle`), add:
 
 ```groovy
@@ -50,7 +38,6 @@ android {
     defaultConfig {
         ...
         vectorDrawables.useSupportLibrary = true
-        manifestPlaceholders = [pdftronLicenseKey:PDFTRON_LICENSE_KEY]
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -74,4 +61,5 @@ dependencies {
 }
 ```
 
-And you are ready to start! Now time to open a [document in an Activity](/android/guides/getting-started/using-activity).
+And you are ready to start! Now time to [add PDFNet license key](/android/guides/getting-started/add-license) to your application and [open a document in an Activity](/android/guides/getting-started/using-activity).
+

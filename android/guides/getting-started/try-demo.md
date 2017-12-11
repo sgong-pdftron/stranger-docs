@@ -73,8 +73,8 @@ Add license key placeholder, activity declarations to `AndroidManifest.xml` file
 
 ```xml
 <meta-data
-  android:name="pdftron_license_key"
-  android:value="${pdftronLicenseKey}"/>
+    android:name="pdftron_license_key"
+    android:value="${pdftronLicenseKey}"/>
 
 <activity android:name="com.pdftron.demo.app.SimpleReaderActivity"
     android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
