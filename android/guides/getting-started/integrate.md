@@ -61,4 +61,4 @@ dependencies {
 }
 ```
 
-And you are ready to start! Now time to [add PDFNet license key](/android/guides/getting-started/add-license) to your application and [open a document in an Activity](/android/guides/getting-started/using-activity).
+And you are set to go! Now time to [add PDFNet license key](/android/guides/getting-started/add-license) to your application and [open a document in an Activity](/android/guides/getting-started/using-activity).
