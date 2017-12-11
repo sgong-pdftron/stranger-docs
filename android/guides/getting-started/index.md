@@ -1,6 +1,6 @@
 ## Run sample projects
 
-**If you are interested in trying out the sample activities in your application directly, check out [this article](/android/guides/getting-started/try-demo) instead.**
+**If you are interested in trying out the sample activities in your application directly, please check out [this article](/android/guides/getting-started/try-demo) instead.**
 
 PDFNet ships with two sample projects each containing examples that you could use in your project. Both samples are included in the download package under `\samples` folder.
 

@@ -1,10 +1,12 @@
 # Adding PDFNet License Key
 
-Starting from PDFNet v6.8.+, PDFNet no longer supports empty license key for evaluation purpose. You will instead receive a demo license key. If you have not yet received a license key, please first [obtain a license key here](https://www.pdftron.com/pdfnet/mobile/request_trial.html) before proceeding to the next step.
+Starting from PDFNet v6.8.+, PDFNet no longer supports empty license key for evaluation purpose. You will instead need a demo license key.
+
+**If you have not yet received a license key, please first [obtain a license key here](https://www.pdftron.com/pdfnet/mobile/request_trial.html) before proceeding to the next step.**
 
 It is important that you initialize PDFNet library with a valid license key before using any PDFNet classes.
 
-There are a few different ways to include license key in your application.
+There are two ways to include license key in your application.
 
 **Options 1: define in `gradle.properties` where you can [inject build variables into the manifest](https://developer.android.com/studio/build/manifest-build-variables.html).**
 
