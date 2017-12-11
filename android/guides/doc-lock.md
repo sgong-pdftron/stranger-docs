@@ -46,7 +46,7 @@ bool PDFViewCtrl.docTryLockRead(int milliseconds)
 void PDFViewCtrl.docUnlockRead()
 ```
 
-## Filters (TODO change to android's specific filter)
+## Filters
 
 At the low level, a [`PDFDoc`](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFDoc.html) uses an `input filter` to access its PDF data. this data could be stored on the file system, in a memory buffer, or over a network. Now that PDFNet supports concurrent access of PDFDocs across many threads, these input filters must also be made thread-safe. StdFile, which was not a thread-safe filter, is no longer available. Instead, you should now use the new [`MappedFile`](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/filters/MappedFile.html) filter, which provides thread-safe and efficient read access on a file. Custom user filters are still supported, although they are now wrapped in an internal filter that guarantees thread safety.
 
