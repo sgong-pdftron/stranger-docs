@@ -11,7 +11,7 @@ Another way to switch tools is to right-click on the document which will bring u
 Once you've switched to an annotation tool then it varies a bit depending on which tool you're using but you'll be able to click or click + drag to create the annotation.
 
 ### Creating annotations programmatically
-Most of the time your users will create annotations using the built in tools but it's also possible to create them programmatically. Here is an example of creating a rectangle annotation, but creating other types of annotations is similar. You can find the properties and functions that are available on each type of annotation in the [annotation documentation](https://www.pdftron.com/webviewer/demo/lib/html5/doc/symbols/Annotations.html).
+Most of the time your users will create annotations using the built in tools but it's also possible to create them programmatically. Here is an example of creating a rectangle annotation, but creating other types of annotations is similar. Note that this code should be run inside a WebViewer config file. You can find the properties and functions that are available on each type of annotation in the [annotation documentation](https://www.pdftron.com/webviewer/demo/lib/html5/doc/symbols/Annotations.html).
 
 ```javascript
 var annotManager = readerControl.docViewer.getAnnotationManager();
