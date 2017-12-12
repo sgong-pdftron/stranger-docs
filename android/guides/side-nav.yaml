@@ -32,6 +32,12 @@
 - title: Tools
   link: /android/guides/basics/tools
   childLinks:
+    - title: Initialize ToolManager
+      link: /android/guides/basics/tools/initialize-toolmanager
+    - title: Set tool to ToolManager
+      link: /android/guides/basics/tools/set-tool-to-toolmanager
+    - title: Disable tool
+      link: /android/guides/basics/tools/disable-tool-in-toolmanager
     - title: Styles
       link: /android/guides/basics/tools/tool-style
     - title: Tool Subclasses
