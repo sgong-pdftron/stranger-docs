@@ -18,7 +18,7 @@ title: Code
 ### Example 2
 
 ```
-```js
+```javascript
 var i = 1;
 i++;
 <span>`</span><span>`</span><span>`</span>
@@ -27,19 +27,21 @@ i++;
 ```javascript
 var i = 1;
 i++;
-
 ```
 
 ## List of language alias
 
 Languages | Alias
 -----|-----
+C | `c`
+C# | `csharp`
+C++ | `cpp`
 Android/Java | `java`
 Objective-C | `objectivec`
 Swift | `swift`
 HTML/Markup | `markup`
 CSS | `css`
-JavaScript | `javascript` or `js`
+JavaScript | `javascript`
 React JSX | `jsx`
 JSON | `json`
 
