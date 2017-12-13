@@ -44,7 +44,7 @@ This sample can also be downloaded from `GITHUB-CLONE-LINK-GOES-HERE`.
 
 This app contains two document viewing and editing activities, `SimpleReaderActivity` and `CompleteReaderActivity`.
 
-`SimpleReaderActivity` is an all-in-one document reader and PDF editor. In addition to PDF files, it also supports viewing of other file extensions such as `.docx`, `.doc`, `.pptx`, `.xlsx`, `.md`, `.cbz` and various image formats. It allows stream conversion of these non-pdf documents to PDF format so you can view the document while conversion happens. In this app, you can read, annotate, sign, fill in PDF forms and more. See detailed features list below.
+`SimpleReaderActivity` is an all-in-one document reader and PDF editor. In addition to PDF files, it also supports viewing of other file extensions such as `.docx`, `.doc`, `.pptx`, `.xlsx`, `.md`, `.cbz` and various image formats. It allows stream conversion of these non-pdf documents to PDF format so you can view the document while conversion happens. In this activity, you can read, annotate, sign, fill in PDF forms and more. See detailed features list below.
 
 `CompleteReaderActivity` has everything in `SimpleReaderActivity`, plus file browsers for local and SD card files. It has example for how you can implement recent and favorite files. It also demonstrates how to use document thumbnails. In addition, it supports file merging, new file creation from styles such as lined, grid, graph and music sheet. See detailed features list below.
 
