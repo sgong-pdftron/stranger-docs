@@ -38,6 +38,8 @@
       link: /android/guides/basics/tools/set-tool-to-toolmanager
     - title: Disable tool
       link: /android/guides/basics/tools/disable-tool-in-toolmanager
+    - title: Intercept annotation handling
+      link: /android/guides/basics/tools/intercept-annotation-handling
     - title: Styles
       link: /android/guides/basics/tools/tool-style
     - title: Tool Subclasses
