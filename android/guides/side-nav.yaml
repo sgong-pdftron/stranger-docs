@@ -34,10 +34,8 @@
   childLinks:
     - title: Initialize ToolManager
       link: /android/guides/basics/tools/initialize-toolmanager
-    - title: Set tool to ToolManager
+    - title: Set tool and disable tool
       link: /android/guides/basics/tools/set-tool-to-toolmanager
-    - title: Disable tool
-      link: /android/guides/basics/tools/disable-tool-in-toolmanager
     - title: Intercept annotation handling
       link: /android/guides/basics/tools/intercept-annotation-handling
     - title: Styles
