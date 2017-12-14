@@ -51,7 +51,9 @@ public void receivedAnnotationEvents(String xfdfCommand) {
 ### Jump to annotation
 To jump to an annotation by id:
 ```java
-if (mToolManager.getAnnotManager() != null) {
-    mToolManager.getAnnotManager().jumpToAnnot(annotId, pageNumber);
+public void jumpToAnnotation(String annotId) {
+    if (mToolManager.getAnnotManager() != null) {
+        mToolManager.getAnnotManager().jumpToAnnot(annotId, pageNum);
+    }
 }
 ```
