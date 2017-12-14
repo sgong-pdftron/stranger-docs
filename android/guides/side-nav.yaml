@@ -1,15 +1,6 @@
 - header: Getting started
 - title: Run sample
   link: /android/guides/getting-started
-  childLinks:
-    - title: Via command line
-      link: /android/guides/getting-started#via-command-line
-    - title: Via Android Studio
-      link: /android/guides/getting-started#via-android-studio
-    - title: CompleteReader
-      link: /android/guides/getting-started#completereader-app
-    - title: MiscellaneousSamples
-      link: /android/guides/getting-started#miscellaneoussamples-app
 - title: Try demo in your project
   link: /android/guides/getting-started/try-demo
 - title: Integrating PDFNet

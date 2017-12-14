@@ -2,7 +2,7 @@
 
 PDFNet supports annotation syncing between different clients. All the required locking, change tracking, merging and view updating are handled internally.
 
-### Requirements
+## Requirements
 
 Here are a few requirements for syncing to work as expected:
 - A valid and unique string identifier is needed for the userId.
@@ -10,7 +10,7 @@ Here are a few requirements for syncing to work as expected:
 - Existing annotations that do not have a unique identifier will not work, it is recommended that you pre-process all annoations to make sure they all have unique identifier.
 - [Undo and redo](/android/guides/basics/undo-redo) will be automatically enabled upon using anntation syncing feature.
 
-### Initialize and sending annotation changes
+## Initialize and sending annotation changes
 
 Add the following after initialize ToolManager:
 ```java
@@ -40,7 +40,7 @@ mToolManager.setExternalAnnotationManagerListener(
     });
 ```
 
-### Receiving annotation changes
+## Receiving annotation changes
 Upon an annotation change event has received from another client, add the following to notify viewer about the change:
 ```java
 public void receivedAnnotationEvents(String xfdfCommand) {
@@ -50,7 +50,7 @@ public void receivedAnnotationEvents(String xfdfCommand) {
 }
 ```
 
-### Jump to annotation
+## Jump to annotation
 To jump to an annotation by id:
 ```java
 public void jumpToAnnotation(String annotId) {

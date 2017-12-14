@@ -1,8 +1,14 @@
-## Run sample projects
+# Run sample projects
 
 **If you are interested in trying out the sample activities in your application directly, please check out [this article](/android/guides/getting-started/try-demo) instead.**
 
 PDFNet ships with two sample projects each containing examples that you could use in your project. Both samples are included in the download package under `\samples` folder.
+
+## Table of Contents  
+1. [Via command line](#via-command-line)
+2. [Via Android Studio](#via-android-studio)
+3. [About CompleteReader](#completereader-app)
+4. [About MiscellaneousSamples](#miscellaneoussamples-app)
 
 You can run any of the sample projects both via command line and/or via Android Studio.
 

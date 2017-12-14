@@ -1,4 +1,4 @@
-## Integrating PDFNet
+# Integrating PDFNet
 
 **If you have not yet received an access token for PDFNet's Maven repository, please first [obtain an access token here](https://www.pdftron.com/pdfnet/mobile/request_trial.html) before proceeding to the next step.**
 
