@@ -53,7 +53,7 @@ To jump to an annotation by id:
 ```java
 public void jumpToAnnotation(String annotId) {
     if (mToolManager.getAnnotManager() != null) {
-        mToolManager.getAnnotManager().jumpToAnnot(annotId, pageNum);
+        mToolManager.getAnnotManager().jumpToAnnot(annotId);
     }
 }
 ```
