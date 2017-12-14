@@ -8,7 +8,7 @@ It is important that you initialize PDFNet library with a valid license key befo
 
 There are two ways to include license key in your application.
 
-**Options 1: define in `gradle.properties` where you can [inject build variables into the manifest](https://developer.android.com/studio/build/manifest-build-variables.html).**
+**Options 1 (Recommended): define in `gradle.properties` where you can [inject build variables into the manifest](https://developer.android.com/studio/build/manifest-build-variables.html).**
 
 First, add your PDFNet license key in your project's `gradle.properties` file:
 
@@ -49,6 +49,7 @@ com.pdftron.pdf.utils.AppUtils.initializePDFNetApplication(getApplicationContext
 
 **Options 2: define directly in code.**
 
+Please note that option 1 will setup a number of recommended presets for using PDFNet SDK. If you choose to go with option 2, you will have to setup the options manually. See [PDFNet class documentation](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFNet.html).
 ```java
 PDFNet.initialize(getApplicationContext(), R.raw.pdfnet, "YOUR_PDFNET_LICENSE_KEY_GOES_HERE");
 ```
