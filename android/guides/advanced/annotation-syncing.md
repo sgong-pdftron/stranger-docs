@@ -22,6 +22,8 @@ mToolManager.enableAnnotManager("myUserId", new AnnotManager.AnnotManagerListene
         // action is one of {@link AnnotManager.AnnotationAction#ADD}
         //                  {@link AnnotManager.AnnotationAction#MODIFY}
         //                  {@link AnnotManager.AnnotationAction#DELETE}
+        //                  {@link AnnotManager.AnnotationAction#UNDO}
+        //                  {@link AnnotManager.AnnotationAction#REDO}
         // xfdfCommand is the XFDF command string, modification to this string is not recommended
     }
 });
