@@ -95,7 +95,7 @@ Add license key placeholder, activity declarations to `AndroidManifest.xml` file
 Finally, add style to `res/values/styles.xml`:
 
 ```xml
-<style name="CustomAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+<style name="CustomAppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
     <item name="colorPrimary">@color/app_color_primary</item>
     <item name="colorPrimaryDark">@color/app_color_primary_dark</item>
     <item name="colorAccent">@color/app_color_accent</item>
