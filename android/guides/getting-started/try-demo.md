@@ -99,8 +99,9 @@ Finally, add style to `res/values/styles.xml`:
     <item name="colorPrimary">@color/app_color_primary</item>
     <item name="colorPrimaryDark">@color/app_color_primary_dark</item>
     <item name="colorAccent">@color/app_color_accent</item>
-    <!--Drawer-->
+    <!-- Drawer -->
     <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    <!-- Action bar -->
     <item name="windowActionModeOverlay">true</item>
 </style>
 ```
