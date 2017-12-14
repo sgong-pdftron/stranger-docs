@@ -7,8 +7,8 @@ PDFNet supports annotation syncing between different clients. All the required l
 Here are a few requirements for syncing to work as expected:
 - A valid and unique string identifier is needed for the userId.
 - Annotation changes are stored as XFDF command strings, which PDFNet generates when changes are made. However, any custom modification to the XFDF command string might lead to unexpected results. Thus, modification to the XFDF command string is not recommended.
-- Existing annotations that do not have a unique identifier will not work, it is recommended that you pre-process all annoations to make sure they all have unique identifier.
-- [Undo and redo](/android/guides/basics/undo-redo) will be automatically enabled upon using anntation syncing feature.
+- Existing annotations that do not have a unique identifier will not work, it is recommended that you pre-process all annotations to make sure they all have unique identifier.
+- [Undo and redo](/android/guides/basics/undo-redo) will be automatically enabled upon using annotation syncing feature.
 
 ### Initialize and sending annotation changes
 
