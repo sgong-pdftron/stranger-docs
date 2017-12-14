@@ -1,6 +1,6 @@
 # Annotation syncing
 
-PDFNet supports annotation syncing between different clients. All the required locking, change tracking, merging and view updating are handled internally.
+PDFNet supports annotation syncing between different clients. All the required locking, change tracking, merging and view updating are handled internally. Below are instructions on how to handle the import and export of annotation changes on the client side. Not described here is how a server would handle the data. However, data that needs to be stored on server side are all primitive types and will be compatible with any cloud database services.
 
 ## Requirements
 
@@ -41,7 +41,7 @@ mToolManager.setExternalAnnotationManagerListener(
 ```
 
 ## Receiving annotation changes
-Upon an annotation change event has received from another client, add the following to notify viewer about the change:
+When an annotation change event is received from cloud service, add the following to notify viewer about the change:
 ```java
 public void receivedAnnotationEvents(String xfdfCommand) {
     if (mToolManager.getAnnotManager() != null) {
