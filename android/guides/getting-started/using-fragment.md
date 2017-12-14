@@ -9,7 +9,7 @@ Showing the `PdfViewCtrlTabHostFragment` in an activity is straightforward, like
 ```java
 PdfViewCtrlTabHostFragment mPdfViewCtrlTabHostFragment;
 
-Bundle args = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(this, fileUri, password);
+Bundle args = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(context, fileUri, password);
 mPdfViewCtrlTabHostFragment = PdfViewCtrlTabHostFragment.newInstance(args);
 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 ft.replace(R.id.fragment_container, mPdfViewCtrlTabHostFragment, null);
@@ -23,6 +23,37 @@ Uri fileUri.fromFile(file);
 ```
 
 Note that since we use support version of android fragment, your activity must extend `FragmentActivity` and must call `getSupportFragmentManager()` to get the `FragmentManager`.
+
+If you would like to customize the UI of `PdfViewCtrlTabHostFragment`, you can use `PdfFragmentConfig` class. For example:
+
+```java
+PdfFragmentConfig.Builder builder = new PdfFragmentConfig.Builder();
+PdfFragmentConfig config = builder
+    .fullscreenModeEnabled(true)
+    .multiTabEnabled(true)
+    .documentEditingEnabled(true)
+    .longPressQuickMenuEnabled(true)
+    .showPageNumberIndicator(true)
+    .showBottomNavBar(true)
+    .showThumbnailView(true)
+    .showBookmarksView(true)
+    .toolbarTitle("Host Fragment")
+    .showSearchView(true)
+    .showShareOption(true)
+    .showOpenFileOption(true)
+    .showOpenUrlOption(true)
+    .showEditPagesOption(true)
+    .showPrintOption(true)
+    .showCloseTabOption(true)
+    .showAnnotationsList(true)
+    .showOutlineList(true)
+    .showUserBookmarksList(true)
+    .build();
+
+Bundle args = PdfViewCtrlTabFragment.createBasicPdfViewCtrlTabBundle(context, fileUri, password, config);
+args.putParcelable(PdfViewCtrlTabHostFragment.BUNDLE_TAB_HOST_CONFIG, config);
+mPdfViewCtrlTabHostFragment = PdfViewCtrlTabHostFragment.newInstance(args);
+```
 
 ## Toolbar menu
 
@@ -70,7 +101,7 @@ mPdfViewCtrlTabHostFragment.addHostListener(this);
 @Override
 public boolean onToolbarOptionsItemSelected(MenuItem item) {
 	if (item.getItemId() == R.id.action_show_toast) {
-		Toast.makeText(this, "Show toast is clicked!", Toast.LENGTH_SHORT).show();
+		Toast.makeText(context, "Show toast is clicked!", Toast.LENGTH_SHORT).show();
 	}
 	return false;
 }
