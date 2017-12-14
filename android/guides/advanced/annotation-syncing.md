@@ -11,6 +11,8 @@ Here are a few requirements for syncing to work as expected:
 - [Undo and redo](/android/guides/basics/undo-redo) will be automatically enabled upon using anntation syncing feature.
 
 ### Initialize and sending annotation changes
+
+Add the following after initialize ToolManager:
 ```java
 mToolManager.enableAnnotManager("myUserId", new AnnotManager.AnnotManagerListener() {
     @Override
@@ -25,19 +27,19 @@ mToolManager.enableAnnotManager("myUserId", new AnnotManager.AnnotManagerListene
 });
 ```
 
-PDFNet will generate a unique identifier for every annotation created through PDFNet SDK. However, if you would like to generate your own ID, you will be able to do so as follows:
+PDFNet will generate a unique identifier for every annotation created through PDFNet SDK. However, if you would like to generate your own annotation identification, you will be able to do so as follows:
 ```java
 mToolManager.setExternalAnnotationManagerListener(
     new ToolManager.ExternalAnnotationManagerListener() {
         @Override
         public String generateKey() {
-            return "someUniqueId";
+            return "someAnnotId";
         }
     });
 ```
 
 ### Receiving annotation changes
-Upon an annotation change event has received from another client
+Upon an annotation change event has received from another client, add the following to notify viewer about the change:
 ```java
 public void receivedAnnotationEvents(String xfdfCommand) {
     if (mToolManager.getAnnotManager() != null) {
@@ -50,6 +52,6 @@ public void receivedAnnotationEvents(String xfdfCommand) {
 To jump to an annotation by id:
 ```java
 if (mToolManager.getAnnotManager() != null) {
-    mToolManager.getAnnotManager().jumpToAnnot(annotId, pageNum);
+    mToolManager.getAnnotManager().jumpToAnnot(annotId, pageNumber);
 }
 ```
