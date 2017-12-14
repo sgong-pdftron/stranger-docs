@@ -1,8 +1,8 @@
 # Annotation syncing
 
-PDFNet supports annotation syncing between different clients. All the required locking, change tracking, merging and view updating are handled internally.
+PDFNet supports annotation syncing between different clients. All the required locking, change tracking, merging and view updating are handled internally. Below are instructions on how to handle the import and export of annotation changes on the client side. Not described here is how a server would handle the data. However, data that needs to be stored on server side are all primitive types and will be compatible with any cloud database services.
 
-### Requirements
+## Requirements
 
 Here are a few requirements for syncing to work as expected:
 - A valid and unique string identifier is needed for the userId.
@@ -10,7 +10,7 @@ Here are a few requirements for syncing to work as expected:
 - Existing annotations that do not have a unique identifier will not work, it is recommended that you pre-process all annotations to make sure they all have unique identifier.
 - [Undo and redo](/android/guides/basics/undo-redo) will be automatically enabled upon using annotation syncing feature.
 
-### Initialize and sending annotation changes
+## Initialize and sending annotation changes
 
 Add the following after initialize ToolManager:
 ```java
@@ -40,8 +40,8 @@ mToolManager.setExternalAnnotationManagerListener(
     });
 ```
 
-### Receiving annotation changes
-Upon an annotation change event has received from another client, add the following to notify viewer about the change:
+## Receiving annotation changes
+When an annotation change event is received from cloud service, add the following to notify viewer about the change:
 ```java
 public void receivedAnnotationEvents(String xfdfCommand) {
     if (mToolManager.getAnnotManager() != null) {
@@ -50,7 +50,7 @@ public void receivedAnnotationEvents(String xfdfCommand) {
 }
 ```
 
-### Jump to annotation
+## Jump to annotation
 To jump to an annotation by id:
 ```java
 public void jumpToAnnotation(String annotId) {

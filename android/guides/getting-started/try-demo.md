@@ -1,4 +1,4 @@
-## Try the PDFNet Demo in your application
+# Try the PDFNet Demo in your application
 
 To try the PDFNet demo Activities in one of your own projects, here are a few simple steps to prepare your Android Studio project.
 
