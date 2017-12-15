@@ -17,6 +17,8 @@
   link: /android/guides/getting-started/using-activity
 - title: Using a Fragment
   link: /android/guides/getting-started/using-fragment
+- title: Using PDFViewCtrl
+  link: /android/guides/getting-started/using-layout
 - title: Document locking
   link: /android/guides/doc-lock
 - header: Basics
