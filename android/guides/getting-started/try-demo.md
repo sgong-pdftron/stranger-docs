@@ -53,9 +53,9 @@ android {
 
 dependencies {
     ...
-    implementation "com.pdftron:pdfnet:6.8.0"
-    implementation "com.pdftron:tools:6.8.0"
-    implementation "com.pdftron:demo:6.8.0"
+    implementation "com.pdftron:pdfnet:6.8.2"
+    implementation "com.pdftron:tools:6.8.2"
+    implementation "com.pdftron:demo:6.8.2"
 }
 ```
 
