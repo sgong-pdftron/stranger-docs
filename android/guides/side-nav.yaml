@@ -37,28 +37,10 @@
       link: /android/guides/basics/tools/tool-subclasses
 - title: Quick menu
   link: /android/guides/basics/quick-menu
-  childLinks:
-    - title: Add quick menu resource
-      link: /android/guides/basics/quick-menu#add-quick-menu-resource-in-resmenu-folder
-    - title: Show quick menu
-      link: /android/guides/basics/quick-menu#show-quick-menu
-    - title: Quick menu item OnClick
-      link: /android/guides/basics/quick-menu#get-quick-menu-clicked-menu-item
-    - title: Override tool menu
-      link: /android/guides/basics/quick-menu#overriding-existing-tool-quick-menu-resource
-    - title: Styles
-      link: /android/guides/basics/quick-menu#styles
 - title: Annotation toolbar
   link: /android/guides/basics/annotation-toolbar
 - title: Thumbnail slider
   link: /android/guides/basics/thumbnail-slider
-  childLinks:
-    - title: Show thumbnail slider
-      link: /android/guides/basics/thumbnail-slider#show-thumbnail-slider
-    - title: Thumbnail slider buttons
-      link: /android/guides/basics/thumbnail-slider#add-left-image-button-and-right-image-buttons
-    - title: Style
-      link: /android/guides/basics/thumbnail-slider#styles
 - title: Annotations list
   link: /android/guides/basics/annotations
 - title: Outline list
@@ -84,6 +66,8 @@
   link: /android/guides/advanced/custom-tool
 - title: Annotation syncing
   link: /android/guides/advanced/annotation-syncing
+- title: Customize Color Picker
+  link: /android/guides/advanced/customize-color-picker
 - header: FAQ
 - title:  Run project in Android Studio
   link: /android/guides/faq/run-in-android-studio

@@ -4,6 +4,13 @@
 
 <img alt='thumbnail-slider'  src='https://i.imgur.com/bchlpDc.gif' width=300 />
 
+## Table of Contents  
+1. [XML attributes](#xml-attributes)
+2. [Show thumbnail slider](#show-thumbnail-slider)
+3. [Thumbnail slider buttons](#add-left-image-button-and-right-image-buttons)
+3. [Thumbnail slider buttons onClick event listener](#set-menu-item-clicked-event-listener)
+6. [Styles](#styles)
+
 ## XML attributes
 [CustomRelativeLayout]() lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
 
