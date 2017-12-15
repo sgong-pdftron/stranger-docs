@@ -5,49 +5,12 @@
 <img alt='thumbnail-slider'  src='https://i.imgur.com/bchlpDc.gif' width=300 />
 
 ## Table of Contents  
-1. [XML attributes](#xml-attributes)
-2. [Show thumbnail slider](#show-thumbnail-slider)
-3. [Thumbnail slider buttons](#add-left-image-button-and-right-image-buttons)
+1. [Show thumbnail slider](#show-thumbnail-slider)
+2. [Thumbnail slider buttons](#add-left-image-button-and-right-image-buttons)
 3. [Thumbnail slider buttons onClick event listener](#set-menu-item-clicked-event-listener)
-6. [Styles](#styles)
+4. [Styles](#styles)
+5. [XML attributes](#xml-attributes)
 
-## XML attributes
-[CustomRelativeLayout]() lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
-
-#### `app:pdfviewctrl_id`
-
-Specifies the [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) view id
-
-Format: reference
-
-#### `app:left_menu_item_drawable`
-
-Specifies left menu item drawable resource.
-
-Format: reference
-
-#### `app:right_menu_item_drawable`
-
-Specifies right menu item drawable resource.
-
-Format: reference
-
-#### `app:left_menu_item_color`
-
-Specifies left menu item color
-
-Format: color
-
-Default value:  `#1a9bcb`
-
-
-#### `app:right_menu_item_color`
-
-Specifies right menu item color
-
-Format: color
-
-Default value:  `#1a9bcb`
 
 ## Show thumbnail slider
 
@@ -142,18 +105,24 @@ See more details about [`ThumbnailSlider.OnThumbnailSliderTrackingListener`](htt
 
 
 ## Styles
-You can change the style of thumbnail slider by setting the `colorPrimary` in `CustomAppTheme` for API < 21, and setting `colorPrimary` in your app default theme for API >= 21. Alternatively, you can also override the following style resources.
 
-### Overall style attribute: `R.style.ThumbnailSlider`
+By default thumbnail slider is using `?attr/colorPrimary` for seekbar color, left menu item color, and right menu item. You can also changing them by setting [`app:seekbar_color`](#appseelbar_color) for seekbar color, [`app:left_menu_item_color`](#appleft_menu_item_color) for left menu item icon color, and [`app:right_menu_item_color`](#appright_menu_item_color) for right menu item icon color.
 
 ```xml
-<style name="ThumbnailSlider">
-    <item name="left_menu_item_color">?attr/colorPrimary</item>
-    <item name="right_menu_item_color">?attr/colorPrimary</item>
-</style>
+<com.pdftron.pdf.controls.ThumbnailSlider
+    android:id="@+id/thumbnail_slider"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    app:left_menu_item_color="@android:color/blue"
+    app:right_menu_item_color="@android:color/purple"
+    app:seekbar_color="@android:color/black"
+/>
 ```
 
-### Seekbar style attribute: `R.style.ThumbnailSlider.Seekbar`
+### Seekbar styles
+
+If you want to further changing seekbar styles such as padidng, height, you can overrides the default seekbar style: `R.style.ThumbnailSlider.Seekbar`.
 
 API < 21:
 ```xml
@@ -171,67 +140,60 @@ API >= 21:
 
 ```xml
 <style name="ThumbnailSlider.Seekbar" parent="Widget.AppCompat.SeekBar">
-    <item name="android:progressTint">?android:attr/colorPrimary</item>
-    <item name="android:progressBackgroundTint">?android:attr/colorPrimary</item>
-    <item name="android:colorControlActivated">?android:attr/colorPrimary</item>
-    <item name="android:colorControlHighlight">?android:attr/colorPrimary</item>
+    <item name="android:progressTint">?attr/colorPrimary</item>
+    <item name="android:progressBackgroundTint">?attr/colorPrimary</item>
+    <item name="android:colorControlActivated">?attr/colorPrimary</item>
+    <item name="android:colorControlHighlight">?attr/colorPrimary</item>
     <item name="android:minHeight">2dp</item>
     <item name="android:maxHeight">2dp</item>
     <item name="android:layout_gravity">center</item>
 </style>
 ```
 
-### Seekbar track drawable attribute: `R.drawable.seek_track_material`
+In addition, you can also overrides seekbar progress bar drawable by overrding the drawable file: `seek_track_material.xml`. If you want to overrides, seekabr thumb drawable, you can overrides drawable file: `seek_thumb.xml`.
 
-Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb )
+## XML attributes
+[CustomRelativeLayout]() lets child views to be displayed inside [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html). XML properties available for positioning view in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) includes:
 
-### Seekbar thumb drawable attribute: `R.drawable.seek_thumb`
+#### `app:pdfviewctrl_id`
 
-Please note: for API < 21, drawable is using color attribute `R.color.fab_dark_blue` ( #1a9bcb )
+Specifies the [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) view id
 
-### Layout attribute: `R.layout.controls_thumbnail_slider`
+Format: reference
 
-Please note: if you want to override `R.layout.controls_thumbnail_slider`, please add the following views and the id of each view should be the same as following
+#### `app:seelbar_color`
 
-```xml
-<LinearLayout
-    android:id="@+id/controls_thumbnail_slider_scrubberview"
-    android:paddingLeft="@dimen/thumbnail_slider_padding"
-    android:paddingRight="@dimen/thumbnail_slider_padding"
-    android:focusable="true"
-    android:clickable="true"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/quick_menu_button_size"
-    android:orientation="horizontal"
-    android:background="@color/white">
+Specifies seekbar progress bar and thumb color
 
-    <android.support.v7.widget.AppCompatImageButton
-        android:id="@+id/controls_thumbnail_slider_left_menu_button"
-        android:layout_width="@dimen/quick_menu_button_size"
-        android:layout_height="@dimen/quick_menu_button_size"
-        android:theme="@style/Widget.AppCompat.Button.Borderless"
-        android:background="?android:attr/selectableItemBackground"
-        android:padding="@dimen/icon_min_padding"
-        android:visibility="gone"
-        />
+Format: color
 
-    <com.pdftron.pdf.controls.MirrorSeekBar
-        android:id="@+id/controls_thumbnail_slider_scrubberview_seekbar"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:progressDrawable="@drawable/seek_track_material"
-        android:thumb="@drawable/seek_thumb"
-        android:theme="@style/ThumbnailSlider.Seekbar"/>
+Default value: `?attr/colorPrimary`
 
-    <android.support.v7.widget.AppCompatImageButton
-        android:id="@+id/controls_thumbnail_slider_right_menu_button"
-        android:layout_width="@dimen/quick_menu_button_size"
-        android:layout_height="@dimen/quick_menu_button_size"
-        android:theme="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:background="?android:attr/selectableItemBackground"
-        android:padding="@dimen/icon_min_padding"
-        android:visibility="gone"
-        />
-</LinearLayout>
-```
+#### `app:left_menu_item_drawable`
+
+Specifies left menu item drawable resource.
+
+Format: reference
+
+#### `app:right_menu_item_drawable`
+
+Specifies right menu item drawable resource.
+
+Format: reference
+
+#### `app:left_menu_item_color`
+
+Specifies left menu item color
+
+Format: color
+
+Default value:  `?attr/colorPrimary`
+
+
+#### `app:right_menu_item_color`
+
+Specifies right menu item color
+
+Format: color
+
+Default value:  `?attr/colorPrimary`
