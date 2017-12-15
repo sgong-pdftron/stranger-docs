@@ -39,13 +39,6 @@
   link: /android/guides/basics/annotation-toolbar
 - title: Thumbnail slider
   link: /android/guides/basics/thumbnail-slider
-  childLinks:
-    - title: Show thumbnail slider
-      link: /android/guides/basics/thumbnail-slider#show-thumbnail-slider
-    - title: Thumbnail slider buttons
-      link: /android/guides/basics/thumbnail-slider#add-left-image-button-and-right-image-buttons
-    - title: Style
-      link: /android/guides/basics/thumbnail-slider#styles
 - title: Annotations list
   link: /android/guides/basics/annotations
 - title: Outline list
