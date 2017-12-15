@@ -8,6 +8,14 @@ With a given anchor rectangle view, quick menu will auto adjust position, it wil
 
 <img alt='quick-menu-layout image' src='img/quick-menu-layout.png' height='400' />
 
+## Table of Contents  
+1. [ Add quick menu resource](#add-quick-menu-resource-in-resmenu-folder)
+2. [ Add quick menu submenu](#add-quick-menu-submenu)
+3. [Show quick menu](#show-quick-menu)
+4. [Quick menu item OnClick event listener](#get-quick-menu-clicked-menu-item)
+5. [Override exsiting tool menu](#overriding-existing-tool-quick-menu-resource)
+6. [Styles](#styles)
+
 ## Add quick menu resource in `res/menu` folder
 By default, all menu items are placed in the first row, if you want to specifies where the menu item is, you can simply put the menu items inside a group with the following group id.
 
@@ -49,6 +57,30 @@ Example
 </menu>
 
 ```
+
+## Add quick menu submenu
+If you want display another quick menu after you clicked on one quick menu item, you can add a submenu under that quick menu in menu resource
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@id/qm_first_row_group">
+        <item android:id="@+id/qm_rectangle"
+            android:title="@string/tools_qm_rectangle"
+            android:icon="@drawable/annotation_square" >
+            <!-- Show "Link" after clicked on "Rectangle" quick menu item -->
+            <menu>
+                <group android:id="@id/qm_first_row_group">
+                    <item android:id="@+id/qm_link"
+                    android:title="@string/annot_link"/>
+                </group>
+            </menu>
+        </item>
+    </group>
+</menu>
+```
+
+
 ## Show quick menu
 After creating a quick menu, quick menu can simply inflate menu resource and initialize menu items by calling [`quickMenu.initMenuEntries(@MenuRes int)`]().
 

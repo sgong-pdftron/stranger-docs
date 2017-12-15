@@ -1,5 +1,10 @@
 # Tool styles
-When creating annotations, each annotation has default color and styles which is defined by the creator tool. These default colors can be easily override.
+When creating annotations, each annotation has default color and styles which is defined by the tool. For example, when creating [Square](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdftron/PDF/Annots/Square.html) annotation in [RectCreate](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/RectCreate.html) tool, by default, it will draw a rectangle with red border and fill with transparent color. These default colors can be easily override.
+
+## Table of Contents  
+1. [Default styles attributes](#default-styles-attributes)
+2. [Override existing tool default style](#override-existing-tool-default-style)
+3. [Add customized tool default style](#add-customized-tool-default-style)
 
 ## Default styles attributes
 ####`annot_color`
@@ -68,8 +73,7 @@ default annotation icon, used in [`ToolManager.e_text_annot_create`]() tool
 
 format: float
 
-## Customize style
-### Overriding existing style
+## Override existing tool default style
 The following table are default exisitng styles for corresponding tool:
 
 | Tool                                | style resource                       |
@@ -97,54 +101,9 @@ The following example will override the color presets for [FreehandCreate](http:
 </style>
 ```
 
-### Add customize tool default style
+## Add customized tool default style
 Alternatively, You can also add your customized tool default style resource by calling [`ToolStyleConfig.getInstance().addDefaultStyleMap(int, @StyleRes int)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/config/ToolStyleConfig.html#addDefaultStyleMap(int,%20int)):
 
 ```java
 ToolStyleConfig.getInstance().addDefaultStyleMap(ToolManager.e_rect_create, R.style.rectangle_style);
 ```
-
-## Customize color in tool color picker board
-
-The color picker board styles are located in `res/values/arrays.xml`, you can customize them by overriding them.
-
-### Standard colors
-Used in the color picker **Basic** page.
-
-![color-picker](./img/color-picker.png)
-
-resource name: `R.array.standard_colors`
-
-### Advance colors
-Used in the color picker **Advanced** page with more colors.
-
-![color-picker](./img/color-picker-advanced.png)
-
-resource name: `R.array.advance_colors`
-
-### Icon colors
-Used for [StickyNote](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Text.html) annotation to change sticky note icon color.
-
-![color-picker](./img/note-icon-color-picker.png)
-
-resource name: `R.array.icon_colors`
-
-### Signature colors
-Used for changing colors for [Signature]() tool.
-
-![color-picker](./img/signature-color-picker.png)
-
-resource name: `R.array.signature_colors`
-
-### Sticky note icons
-Used for selecting icons for [StickyNote](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/annots/Text.html) annotation. For each annotation icon, it stores two identical icons, one for filling color, and the other for outline.
-
-![icon-picker](./img/note-icon-picker.png)
-
-resource name: `R.array.stickynote_icons`
-
-Corresponding drawable resource: `R.drawable.annotaiton_note_icon_{$icon-name}_fill` and `R.drawable.annotation_note_icon_{$icon-name}_outline`
-
-
-
-
