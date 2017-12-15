@@ -295,7 +295,7 @@ draw: function(ctx, annotation, selectionBox, zoom) {
 ```
 
 If everything went well you should have triangle annotations that look something like this:
-![Triangle annotation](../img/triangle-annotation.png)
+![Triangle annotation](./img/triangle-annotation.png)
 
 If you tried to save and load this annotation you would notice that it isn't able to be reloaded. This is because WebViewer doesn't know that it needs to save the vertices array. To do this we can override the serialize and deserialize functions which are called when the annotation should be saved or loaded respectively.
 

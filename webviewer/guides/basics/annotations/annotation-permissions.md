@@ -7,10 +7,10 @@ WebViewer supports client side user permissions for annotations to control which
 When WebViewer is instantiated it sets the current user name to be the value of the `annotationUser` option in the WebViewer constructor. If this option isn't specified then the user's name is set to "Guest". After WebViewer has been instantiated you can also programmatically set the current user name using the [`setAnnotationUser`](https://www.pdftron.com/webviewer/demo/doc/symbols/PDFTron.WebViewer.html#setAnnotationUser__anchor) function on the WebViewer instance.
 
 When the user creates a new annotation, the [annotation's Author property](https://www.pdftron.com/webviewer/demo/lib/html5/doc/symbols/Annotations.Annotation.html) will be set to the current user name. The user will be able to modify or delete any annotations that have an Author value equal to their user name and these annotations will have a blue border when selected. The user will also be able to update the text on the note associated with the annotation.
-![Editable Annotation](../img/annot-permission-allowed.png)
+![Editable Annotation](./img/annot-permission-allowed.png)
 
 Any annotations that have a different Author value will be displayed with a red border when selected and the user will not be able to modify or delete them. They will also not be able to modify the note text but they will be able to add replies.
-![Non-Editable Annotation](../img/annot-permission-disallowed.png)
+![Non-Editable Annotation](./img/annot-permission-disallowed.png)
 
 ### Admin users
 WebViewer has an `annotationAdmin` boolean option that can be passed to the WebViewer constructor. When set to true the user is considered to be an administrator and is able to modify and delete any annotation or message regardless of the user that created it. You can programmatically toggle this property for the current user by calling [`setAdminUser`](https://www.pdftron.com/webviewer/demo/doc/symbols/PDFTron.WebViewer.html#setAdminUser__anchor).

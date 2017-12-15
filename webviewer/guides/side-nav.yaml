@@ -3,21 +3,45 @@
   link: /webviewer/guides
 - header: Basics
 - title: Instantiation
-  link: /webviewer/guides/instantiation
+  link: /webviewer/guides/basics/instantiation
+- title: Document Loading
+  link: /webviewer/guides/basics/document-loading
+- title: Troubleshooting Document Loading
+  link: /webviewer/guides/basics/troubleshooting-document-loading
+- title: Streaming Option
+  link: /webviewer/guides/basics/streaming-option
+- header: Components
 - title: Download
-  link: /webviewer/guides/download
+  link: /webviewer/guides/basics/components/download
 - title: Fit Modes
-  link: /webviewer/guides/fit-modes
+  link: /webviewer/guides/basics/components/fit-modes
 - title: Fullscreen
-  link: /webviewer/guides/fullscreen
+  link: /webviewer/guides/basics/components/fullscreen
 - title: Layout Modes
-  link: /webviewer/guides/layout-modes
+  link: /webviewer/guides/basics/components/layout-modes
 - title: Page Navigation
-  link: /webviewer/guides/page-navigation
+  link: /webviewer/guides/basics/components/page-navigation
 - title: Print
-  link: /webviewer/guides/print
+  link: /webviewer/guides/basics/components/print
 - title: Rotate
-  link: /webviewer/guides/rotate
+  link: /webviewer/guides/basics/components/rotate
 - title: Zoom
-  link: /webviewer/guides/zoom
+  link: /webviewer/guides/basics/components/zoom
+- header: Annotations
+- title: Creating Annotations
+  link: /webviewer/guides/basics/annotations/creating-annotations
+- title: Saving/Loading Annotations
+  link: /webviewer/guides/basics/annotations/saving-loading-annotations
+- title: Annotation Permissions
+  link: /webviewer/guides/basics/annotations/annotation-permissions
+- title: Annotation Events
+  link: /webviewer/guides/basics/annotations/annotation-events
+- title: Customizing Tools
+  link: /webviewer/guides/basics/annotations/customizing-tools
+- title: Custom Annotations
+  link: /webviewer/guides/basics/annotations/custom-annotations
+- title: Realtime Collaboration
+  link: /webviewer/guides/basics/annotations/realtime-collaboration
+- title: Advanced Annotation Loading
+  link: /webviewer/guides/basics/annotations/advanced-annotation-loading
 - header: Advanced
