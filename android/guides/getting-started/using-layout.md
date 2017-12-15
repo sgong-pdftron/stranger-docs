@@ -6,6 +6,8 @@
 
 In this tutorial you will be able to display a PDF file in `PDFViewCtrl`.
 
+**Before jumping into the layout, please make sure [PDFNet library is initialized](/android/guides/getting-started/add-license) before inflating the layout or before `setContentView` of your Activity.**
+
 First, add `PDFViewCtrl` to your XML layout.
 
 ```xml
@@ -33,8 +35,65 @@ First, add `PDFViewCtrl` to your XML layout.
 
 Then, get a reference of `PDFViewCtrl` in code after inflating the layout.
 ```java
+import com.pdftron.pdf.PDFViewCtrl;
+import com.pdftron.pdf.config.PDFViewCtrlConfig;
+import com.pdftron.pdf.utils.AppUtils;
+...
 PDFViewCtrl pdfViewCtrl = findViewById(R.id.pdfviewctrl);
-com.pdftron.pdf.utils.AppUtils.setupPDFViewCtrl(pdfViewCtrl, PDFViewCtrlConfig.getDefaultConfig(this));
+AppUtils.setupPDFViewCtrl(pdfViewCtrl, PDFViewCtrlConfig.getDefaultConfig(this));
 ```
 
-NOT DONE
+Next, choose a document to display:
+
+### Option 1: from HTTP/HTTPS
+
+To access internet, add the following permissions to `AndroidManifest.xml` file outside of the `<application/>` tag:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+Then:
+
+```java
+try {
+    String url = "http://www.pdftron.com/downloads/pdfref.pdf";
+    pdfViewCtrl.openUrlAsync(url, null, null, null);
+    pdfViewCtrl.setToolManager(new ToolManager(pdfViewCtrl));
+} catch (Exception ex) {
+    ex.printStackTrace();
+}
+```
+
+### Option 2: from resource
+
+Add a **sample.pdf** to `src/main/res/raw` folder.
+
+```java
+try {
+    InputStream is = getResources().openRawResource(R.raw.sample);
+    PDFDoc doc = new PDFDoc(is);
+    pdfViewCtrl.setDoc(doc);
+    pdfViewCtrl.setToolManager(new ToolManager(pdfViewCtrl));
+} catch (Exception ex) {
+    ex.printStackTrace();
+}
+```
+
+### Option 3: from local device storage
+
+To access device storage, add the following permissions to `AndroidManifest.xml` file outside of the `<application/>` tag:
+
+```xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
+
+Then:
+
+```java
+try {
+    pdfViewCtrl.setDoc(new PDFDoc("my_file_path"));
+    pdfViewCtrl.setToolManager(new ToolManager(pdfViewCtrl));
+} catch (Exception ex) {
+    ex.printStackTrace();
+}
+```
