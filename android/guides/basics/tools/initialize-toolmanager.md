@@ -1,8 +1,30 @@
 
 # Initialize ToolManager
 
-To initialize ToolManager for controling tools, you can build it easily through [ToolManagerBuilder](). [ToolManagerBuilder]() is a helper class for constructing ToolManager with style resource configuration, it also sets ToolManager to PDFViewCtrl. By default, ToolManagerBuilder reads configuration from settings first, if you want to set configuration explicitly, you can add style with the following configuration attributes and then put style in ToolManagerBuilder.
+To initialize ToolManager for controlling tools, you can build it easily through [ToolManagerBuilder](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/config/ToolManagerBuilder.html). [ToolManagerBuilder](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/config/ToolManagerBuilder.html) is a helper class for constructing ToolManager with style resource configuration, it also sets ToolManager to PDFViewCtrl. By default, ToolManagerBuilder reads configuration from settings first, if you want to set configuration explicitly, you can add style with the following configuration attributes and then put style in ToolManagerBuilder by calling [`ToolManagerBuilder.from(PDFViewCtrl pdfViewCtrl, int styleRes)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/config/ToolManagerBuilder.html#from(com.pdftron.pdf.PDFViewCtrl,%20int)).
 
+You can add the following customization in your `styles.xml` file:
+
+```xml
+<style name="TabFragmentToolManager">
+    <!-- open the annotation toolbar when editing ink annotaiton -->
+    <item name="edit_ink_annots">true</item>
+    <!-- disable image stamper tool -->
+    <item name="add_image_stamper_tool">false</item>
+    <!-- when ink selected in annotation toolbar, it should open it's own ink toolbar -->
+    <item name="open_toolbar_on_pan_ink_selected">true</item>
+    <!--hide build in page nuber indicator -->
+    <item name="build_in_page_number_indicator">false</item>
+</style>
+```
+
+And then initialize ToolManager as following:
+
+```java
+ToolManager mToolManager = ToolManagerBuilder.from(this, R.style.TabFragmentToolManager).build();
+```
+
+## XML style attributes
 #### `edit_ink_annots`
 
 whether editing ink annotation should open the annotation toolbar
@@ -106,22 +128,4 @@ whether show pop up dialog when sticky note is added/ selected/ etc.
 format: boolean
 
 default value: true
-
-Example about [PdfViewCtrlTabFragment](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabFragment.html) ToolManager configuration style:
-
-```xml
-<style name="TabFragmentToolManager">
-    <item name="extra_text_select_menu_options">true</item>
-    <item name="edit_ink_annots">true</item>
-    <item name="add_image_stamper_tool">false</item>
-    <item name="open_toolbar_on_pan_ink_selected">true</item>
-    <item name="build_in_page_number_indicator">false</item>
-</style>
-```
-
-Here is how [PdfViewCtrlTabFragment](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabFragment.html) initialize toolmanager in [`onViewCreated(View, Bundle)`](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/controls/PdfViewCtrlTabFragment.html#onViewCreated(android.view.View,%20android.os.Bundle)):
-
-```java
-ToolManager mToolManager = ToolManagerBuilder.from(this, R.style.TabFragmentToolManager).build();
-```
 
