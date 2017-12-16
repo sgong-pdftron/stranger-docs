@@ -2,8 +2,6 @@
 title: Integrate to your project
 ---
 
-WebViewer is designed to view and interact with documents, regardless they are XOD, PDF or Office. It contains a viewer to visually 
-
 ## Download WebViewer
 
 You can download the [latest WebViewer](http://www.pdftron.com/webviewer/download.html). Its folder structure is as follows:
@@ -28,10 +26,24 @@ Copy the `lib` folder to your project, and add the dependencies to `<head>` of a
 
 ## Create the viewer + load the document
 
+Add the following style tag to the head:
+```html
+<style>
+  html, body {
+    height: 100%;
+  }
+
+  #viewer {
+    height: 100%
+    width: 100%
+  }
+</style>
+```
+
 Add the following code to the HTML `<body>`.
 
 ```html
-<div id="viewer" style="width:100%;height:100%;min-height:300px;"></div>
+<div id="viewer"></div>
 <script>
   var viewerElement = document.getElementById("viewer");
   var myWebViewer = new PDFTron.WebViewer({
