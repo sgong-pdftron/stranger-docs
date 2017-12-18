@@ -15,3 +15,5 @@ The samples are included in the [latest WebViewer download package](https://www.
 3. Use the buttons at the top of the page to toggle between PDF/Office samples and XOD (Universal) samples. Most of the samples are the same but there are a few PDF specific samples and a few XOD specific ones.
 
 4. Click on any of the sample links to run them in the browser.
+
+All of the code for each sample is found in the samples folder if you want to inspect or modify it.
