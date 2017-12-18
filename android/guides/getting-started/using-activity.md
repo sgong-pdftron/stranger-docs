@@ -28,7 +28,7 @@ First, add activity declarations to `AndroidManifest.xml` file:
 Then, add theme to `res/values/styles.xml`:
 
 ```xml
-<style name="CustomAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+<style name="CustomAppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
     <item name="colorPrimary">@color/app_color_primary</item>
     <item name="colorPrimaryDark">@color/app_color_primary_dark</item>
     <item name="colorAccent">@color/app_color_accent</item>
@@ -102,15 +102,19 @@ import com.pdftron.demo.app.SimpleReaderActivity;
 // from internal storage
 final Uri localFile = Uri.fromFile(new File("myLocalFilePath"));
 SimpleReaderActivity.openDocument(context, localFile, config);
+SimpleReaderActivity.openDocument(context, localFile, password, config);
 
 // from content uri
 final Uri contentUri = Uri.parse("myContentUri");
 SimpleReaderActivity.openDocument(context, contentUri, config);
+SimpleReaderActivity.openDocument(context, contentUri, password, config);
 
 // from http/https
 final Uri fileLink = Uri.parse("myFileLink");
 SimpleReaderActivity.openDocument(context, fileLink, config);
+SimpleReaderActivity.openDocument(context, fileLink, password, config);
 
 // from res
 SimpleReaderActivity.openDocument(context, R.raw.my_file_res_id, config);
+SimpleReaderActivity.openDocument(context, R.raw.my_file_res_id, password, config);
 ```

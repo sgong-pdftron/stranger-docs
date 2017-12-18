@@ -3,10 +3,10 @@ title: Creating Annotations
 ---
 ### Creating annotations through the UI
 The annotation tools can be found on the WebViewer top toolbar. You can click on a tool to switch to it or click on the downward pointing arrow to see all of the other annotation tools.
-![Annotation tools](../img/annotation-ui.png)
+![Annotation tools](./img/annotation-ui.png)
 
 Another way to switch tools is to right-click on the document which will bring up a context menu. From this menu you can select an annotation tool to switch to.
-![Annotation tools](../img/context-menu.png)
+![Annotation tools](./img/context-menu.png)
 
 Once you've switched to an annotation tool then it varies a bit depending on which tool you're using but you'll be able to click or click + drag to create the annotation.
 

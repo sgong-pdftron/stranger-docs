@@ -1,4 +1,4 @@
-## Integrating PDFNet
+# Integrating PDFNet
 
 **If you have not yet received an access token for PDFNet's Maven repository, please first [obtain an access token here](https://www.pdftron.com/pdfnet/mobile/request_trial.html) before proceeding to the next step.**
 
@@ -47,8 +47,8 @@ android {
 
 dependencies {
     ...
-    implementation "com.pdftron:pdfnet:6.8.0"
-    implementation "com.pdftron:tools:6.8.0"
+    implementation "com.pdftron:pdfnet:6.8.2"
+    implementation "com.pdftron:tools:6.8.2"
 }
 ```
 
@@ -57,7 +57,7 @@ To use activities shown in the [CompleteReader sample project](/android/guides/g
 ```groovy
 dependencies {
     ...
-    implementation "com.pdftron:demo:6.8.0"
+    implementation "com.pdftron:demo:6.8.2"
 }
 ```
 

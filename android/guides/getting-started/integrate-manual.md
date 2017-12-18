@@ -1,4 +1,4 @@
-## Manually integrating PDFNet
+# Manually integrating PDFNet
 
 In addition to integrating via gradle [Maven package manager](/android/guides/getting-started/integrate), you can also integrate manually by copying required `aar` files to your project. Typical usage of this is when trying out custom builds or nightly builds with latest hot fixes in your application.
 

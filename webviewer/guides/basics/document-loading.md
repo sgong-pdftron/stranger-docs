@@ -7,7 +7,7 @@ The easiest way to load a document in WebViewer is by specifying the initialDoc 
 If you want to instantiate the viewer without loading any document (maybe you're getting the document URL asynchronously) then you can simply not set the initialDoc option. The viewer UI will be loaded and you can call the [loadDocument](https://www.pdftron.com/webviewer/demo/doc/PDFTron.WebViewer.html#loadDocument__anchor) function when you're ready to load a document.
 
 ### Preloading WebViewer
-If your website doesn't need to display the viewer immediately you can improve performance by preloading WebViewer so that it's immediately ready when you want to display a document. To do this you can load WebViewer without a document and hide the viewer ([make sure not to use display: none](/webviewer/guides/troubleshooting-document-loading.md#getComputedStyle)). When it's time to display WebViewer you can simply unhide the element and call loadDocument.
+If your website doesn't need to display the viewer immediately you can improve performance by preloading WebViewer so that it's immediately ready when you want to display a document. To do this you can load WebViewer without a document and hide the viewer ([make sure not to use display: none](/webviewer/guides/basics/troubleshooting-document-loading#getcomputedstyle-is-null)). When it's time to display WebViewer you can simply unhide the element and call loadDocument.
 
 The reason this is worthwhile is that when WebViewer is instantiated it needs to load a number of JavaScript and CSS files and initialize the viewer UI. Depending on the network connection this can take a non-trivial amount of time which happens in the background when preloading.
 
