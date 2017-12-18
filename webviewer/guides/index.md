@@ -2,9 +2,7 @@
 title: Integrate to your project
 ---
 
-## Download WebViewer
-
-First download the [latest WebViewer](http://www.pdftron.com/webviewer/download.html).
+First download the [latest WebViewer package](http://www.pdftron.com/webviewer/download.html).
 
 ## Add it to your project
 
