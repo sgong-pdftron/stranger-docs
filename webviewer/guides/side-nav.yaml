@@ -1,4 +1,6 @@
 - header: Getting started
+- title: Run samples
+  link: /webviewer/guides/run-samples
 - title: Integrate to your project
   link: /webviewer/guides
 - header: Basics
