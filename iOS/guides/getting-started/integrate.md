@@ -1,19 +1,26 @@
 ## Integration
 
-There are three ways to integrate PDFNet with an app: manually, using [Cocoapods](https://cocoapods.org/), and using [Carthage](https://github.com/Carthage/Carthage).
+There are three ways to integrate PDFNet with an app: [manually](./index.html#Manual-Integration), using [Cocoapods](./index.html#Cocoapods), and using [Carthage](./index.html#CocoapodsCarthage). The package managers all integrate the dynamic framework. If you wish to use the static framework, you will have to integrate it manually.
 
-The manual download includes sample projects and source code for the UI framework, the while the package manager methods include only the framework binaries.
+The manual download includes sample projects and source code for the UI framework; the package manager methods include only the framework binaries.
 
-All three methods require a [trial lisence key](https://www.pdftron.com/pdfnet/mobile/request_trial.html) (or a commercial key), so please make sure you have one ready before proceeding.
+All three methods require a [trial license key](https://www.pdftron.com/pdfnet/mobile/request_trial.html) (or a commercial key), so please make sure you have one ready before proceeding.
 
-### Manual Integration
+### Manual Integration (Dynamic Framework)
 
 
 1. If you have not already done so, please [obtain a trial license key](https://www.pdftron.com/pdfnet/mobile/request_trial.html) (or have a copy of your commerical key ready), which will be needed to intialize PDFNet.
 2. Download the PDFNet DMG from the link provided in the trial email.
-3. Copy
-4. Script
-5. PDNet initialize
+3. Copy the `/Lib` directory to an appopriate location for your project.
+4. Drag the dynamic PDFNet and Tools frameworks (`Lib/Framework-dynamic/PDFNet.framework`, `Lib/Tools/Tools.framework`) into the "Embedded Binaries" section of your project, as indicated below.
+
+    ![Add the frameworks to the project](add-frameworks.png)  
+    _The pink rectangle shows where to drag `PDFNet.framework` and `Tools.framework`_ 
+
+5. In your target's build phases, a) add a new run script phase (by clicking on the '+'), and b) add the script ```bash "$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/PDFNet.framework/strip-framework.sh"```. This will ensure invalid slices are striped from the framework before being submitted to the app store (a [longstanding Xcode bug](http://www.openradar.me/radar?id=6409498411401216)).
+
+    ![Add the script to the project](add-script.png)
+    _Create a new run script phase, and add the text as shown._
 
 ### Cocoapods Integration
 
