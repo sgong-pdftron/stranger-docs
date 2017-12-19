@@ -3,6 +3,8 @@
   link: /webviewer/guides/run-samples
 - title: Integrate to your project
   link: /webviewer/guides
+- title: Overview
+  link: /webviewer/guides/overview
 - header: Basics
 - title: Instantiation
   link: /webviewer/guides/basics/instantiation

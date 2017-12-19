@@ -1,0 +1,35 @@
+---
+title: Overview
+---
+PDFTron WebViewer is a cross-platform solution that offers a seamless and effective way to embed viewing of PDF and other document formats directly within your Web application. There are three major components to this solution:
+1. The client side viewer application
+2. The document conversion component (if necessary)
+3. Your own server for document hosting and annotation handling
+
+### Client side viewer application
+WebViewer delivers consistent and reliable document viewing across modern browsers using HTML5 technology to take advantage of the latest browser features. For pure document viewing, the WebViewer does not require any server-side scripting. The document files can be served directly from any static Web server.
+
+The provided viewer can be used as is or it can be customized using WebViewer's comprehensive API. You can check out the [samples](/webviewer/guides/run-samples) to see some examples of WebViewer customization.
+
+### Document backends
+
+WebViewer supports two document backends. It can view PDF and Office documents directly using the PDFNetJS backend and it can support viewing a wide range of document file formats (including PDF) by converting all documents to the XOD format. There are benefits to both approaches in different situations which are outlined below.
+
+#### PDFNetJS
+Using PDFNetJS as the document backend allows you to leverage the power of PDFNet rendering in the browser. When using this backend there is no server-side conversion of documents required. The trade off is that a limited set of filetypes can be viewed (currently .pdf, .docx, .xlsx, .pptx, .md, .png, and .jpeg) and PDFNetJS is only supported on mid to high end mobile devices.
+
+Viewing of PDF or Office files with PDFNetJS requires a license key to be specified when creating the viewer. Without a license, you will be prompted to register for a demo license key and demo stamp will be applied to the document. Please also note that PDFNetJS requires IE10+ and is only supported on mid to high end mobile devices.
+
+#### Universal WebViewer
+Using Universal WebViewer allows many different file formats to be viewed as long as they are converted to a web optimized XPS file called XOD. The XOD conversion step performs optimizations on the file which allows fast and accurate rendering on both desktop and mobile devices. Universal WebViewer supports IE9+ and all mobile devices.
+
+For more information about Universal WebViewer and XOD document conversion [see here](/webviewer/guides/universal-webviewer).
+
+### Your server component
+In order to view your documents on the web, both the viewer application (WebViewer) and your documents need to be hosted on a web server. Moreover, if you need access control over your documents or want to manage user-created annotations, you will need a server to handle this logic.
+
+### Annotation handling
+WebViewer provides support for rendering, creating and saving PDF annotations. See the [annotation saving and loading guide](/webviewer/guides/basics/annotations/saving-loading-annotations) for more information about persisting them on your server.
+
+### Form fields
+PDF form fields can be viewed, edited and saved. WebViewer also supports form actions and PDF embedded JavaScript on form fields.
