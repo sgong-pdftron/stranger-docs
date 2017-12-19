@@ -5,6 +5,8 @@
   link: /webviewer/guides
 - title: Overview
   link: /webviewer/guides/overview
+- title: Universal WebViewer
+  link: /webviewer/guides/universal-webviewer
 - header: Basics
 - title: Instantiation
   link: /webviewer/guides/basics/instantiation
