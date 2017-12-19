@@ -18,7 +18,7 @@ With this option, you run the conversions with a command-line tool. This works b
 For more information, see http://www.pdftron.com/docpub/index.html. Available with [redistributable licensing](http://www.pdftron.com/licensing/index.html).
 
 ### XOD Conversion Features by Converter Types
-||Extension|Mime Type|
+||PDFNet SDK|DocPub CLI|
 |---|:---:|:---:|
 |XOD Conversion|✓|✓|
 |XOD Encryption|✓|✓|
