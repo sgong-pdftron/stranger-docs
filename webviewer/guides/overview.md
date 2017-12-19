@@ -13,14 +13,14 @@ The provided viewer can be used as is or it can be customized using WebViewer's 
 
 ### Document backends
 
-WebViewer supports two document backends. It can view PDF and Office documents directly using the PDFNetJS backend and it can support viewing a wide range of document file formats (including PDF) by converting all documents to the XOD format. There are benefits to both approaches in different situations which are outlined below.
+WebViewer supports two document backends. It can view PDF and Office documents directly using the PDFNetJS backend and it can support viewing a wide range of document file formats (including PDF) by converting everything to the XOD format. There are benefits to both approaches in different situations which are outlined below.
 
 #### PDFNetJS
-Using PDFNetJS as the document backend allows you to leverage the power of PDFNet rendering in the browser. When using this backend there is no server-side conversion of documents required. The trade off is that a limited set of filetypes can be viewed (currently .pdf, .docx, .xlsx, .pptx, .md, .png, and .jpeg) and PDFNetJS is only supported on mid to high end mobile devices.
+Using PDFNetJS as the document backend allows you to leverage the power of PDFNet rendering in the browser. When using this backend there is no server-side conversion of documents required. The trade off is that a limited set of filetypes can be viewed (currently .pdf, .docx, .xlsx, .pptx, .md, .png, and .jpeg) and PDFNetJS is only supported with IE10+ and the latest mobile browsers (Chrome 59+, iOS 11+) on mid to high end devices.
 
-Viewing of PDF or Office files with PDFNetJS requires a license key to be specified when creating the viewer. Without a license, you will be prompted to register for a demo license key and demo stamp will be applied to the document. Please also note that PDFNetJS requires IE10+ and is only supported on mid to high end mobile devices.
+Viewing of PDF or Office files with PDFNetJS requires a license key to be specified when creating the viewer. Without a license, you will be prompted to register for a demo license key and demo stamp will be applied to the document.
 
-#### Universal WebViewer
+#### Universal
 Using Universal WebViewer allows many different file formats to be viewed as long as they are converted to a web optimized XPS file called XOD. The XOD conversion step performs optimizations on the file which allows fast and accurate rendering on both desktop and mobile devices. Universal WebViewer supports IE9+ and all mobile devices.
 
 For more information about Universal WebViewer and XOD document conversion [see here](/webviewer/guides/universal-webviewer).
