@@ -30,6 +30,8 @@ For more information about Universal WebViewer and XOD document conversion [see 
 ### Your server component
 In order to view your documents on the web, both WebViewer and your documents need to be hosted on a web server. Moreover, if you need access control over your documents or want to manage user-created annotations, you will need a server to handle this logic.
 
+You may not need a server component if you're [embedding WebViewer in a native app](/webviewer/guides/advanced/native-apps) and reading the files from the local file system.
+
 ### Annotation handling
 WebViewer provides support for rendering, creating and saving PDF annotations. See the [annotation saving and loading guide](/webviewer/guides/basics/annotations/saving-loading-annotations) for more information about persisting them on your server.
 
