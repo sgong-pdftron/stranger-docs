@@ -1,6 +1,12 @@
 - header: Getting started
+- title: Run samples
+  link: /webviewer/guides/run-samples
 - title: Integrate to your project
   link: /webviewer/guides
+- title: Overview
+  link: /webviewer/guides/overview
+- title: Universal WebViewer
+  link: /webviewer/guides/universal-webviewer
 - header: Basics
 - title: Instantiation
   link: /webviewer/guides/basics/instantiation
