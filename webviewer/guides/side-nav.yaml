@@ -53,3 +53,5 @@
 - header: Advanced
 - title: Forms
   link: /webviewer/guides/advanced/forms
+- title: Integrating with native apps
+  link: /webviewer/guides/advanced/native-apps
