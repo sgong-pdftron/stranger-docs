@@ -1,6 +1,6 @@
 ## Integration
 
-There are three ways to integrate PDFNet with an app: [manually](./index.html#Manual-Integration), using [Cocoapods](./index.html#Cocoapods), and using [Carthage](./index.html#CocoapodsCarthage). The package managers all integrate the dynamic framework. If you wish to use the static framework, you will have to integrate it manually.
+There are three ways to integrate PDFNet with an app: [manually](./index.html#Manual-Integration-(Dynamic Framework)), using [Cocoapods](./index.html#Cocoapods), and using [Carthage](./index.html#CocoapodsCarthage). The package managers all integrate the dynamic framework. If you wish to use the static framework, you will have to integrate it manually.
 
 The manual download includes sample projects and source code for the UI framework; the package manager methods include only the framework binaries.
 
@@ -24,7 +24,23 @@ All three methods require a [trial license key](https://www.pdftron.com/pdfnet/m
 
 ### Cocoapods Integration
 
-Cocoapod integration includes the PDFNet.framework and a binary version of the open-source UI framework, Tools.framework.
+PDFNet is available via [Cocoapods](https://www.cocoapods.com/).
+
+To add PDFNet to your project, include the following in your pod file:
+
+```
+target '<Your-Target-Name>' do
+  use_frameworks!
+  pod 'PDFNet', podspec: '<PDFNet-podspec-link>'
+end
+```
+_`<Your-Target-Name>` is your Xcode project's target name, and `<PDFNet-podspec-link>` is the link that is provided in your evaluation email._
+
+Your evaluation email will have four different `<PDFNet-podspec-link>` links:  
+
+The first two links include both `PDFNet.framework` and a binary copy of the UI framework, `Tools.framework`. One of the links references the latest release, and the other link references a specific version.
+
+In case you are using a customized version of the open-source UI framework, `Tools.framework`, we provide two links that include only `PDFNet.framework`. One of the links references the latest release, and the other link references a specific version.
 
 ### Carthage Integration
 
