@@ -35,7 +35,7 @@ This error usually means that your server does not support HTTP range requests p
 
 If you're serving your files statically from your server usually range requests will just work, however if you have your own endpoint for the file there are libraries that can handle range requests for you, or you could [implement it support yourself](https://tools.ietf.org/html/rfc7233#section-2.1).
 
-As a last resort you can set the streaming option in the WebViewer constructor to true. This is intended for streaming of the XOD conversion but can be used as a workaround for servers that don't support range requests at the cost of reduced performance and increased memory usage. See [this guide](/webviewer/guides/streaming-option.md) for more information.
+As a last resort you can set the streaming option in the WebViewer constructor to true. This is intended for streaming of the XOD conversion but can be used as a workaround for servers that don't support range requests at the cost of reduced performance and increased memory usage. See [this guide](/webviewer/guides/fundamentals/streaming-option) for more information.
 
 ### getComputedStyle(...) is null
 You might get this error in Firefox if you intially have the element that contains WebViewer set to `display: none`. You can follow the Firefox bug tracking this issue here https://bugzilla.mozilla.org/show_bug.cgi?id=548397.
