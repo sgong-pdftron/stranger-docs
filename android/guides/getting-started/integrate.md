@@ -2,9 +2,10 @@
 
 **If you have not yet received an access token for PDFNet's Maven repository, please first [obtain an access token here](https://www.pdftron.com/pdfnet/mobile/request_trial.html) before proceeding to the next step.**
 
-** Supporting Sdk verions:
-Minimum: API 16 (Using Android Support Libraries)
-Target: API 26
+#### Supporting Sdk verions:
+
+- Minimum: API 16 (Using Android Support Libraries)
+- Target: API 26
 
 To integrate PDFNet libraries into one of your own projects, here are a few simple steps to prepare your Android Studio project.
 
