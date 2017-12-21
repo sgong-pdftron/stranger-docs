@@ -1,6 +1,6 @@
 ## Integration
 
-There are three ways to integrate PDFNet with an app: [manually](./index.html#Manual-Integration-(Dynamic Framework)), using [Cocoapods](./index.html#Cocoapods), and using [Carthage](./index.html#CocoapodsCarthage). The package managers all integrate the dynamic framework. If you wish to use the static framework, you will have to integrate it manually.
+There are three ways to integrate PDFNet with an app: [manually](./index.html#Manual-Integration-(Dynamic-Framework)), using [Cocoapods](./index.html#Cocoapods), and using [Carthage](./index.html#CocoapodsCarthage). The package managers all integrate the dynamic framework. If you wish to use the static framework, you will have to integrate it manually.
 
 The manual download includes sample projects and source code for the UI framework; the package manager methods include only the framework binaries.
 
