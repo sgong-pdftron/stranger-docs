@@ -16,6 +16,9 @@
   link: /webviewer/guides/basics/troubleshooting-document-loading
 - title: Streaming Option
   link: /webviewer/guides/basics/streaming-option
+- header: Fundamentals
+- title: Config files
+  link: /webviewer/guides/fundamentals/config-files
 - header: Components
 - title: Download
   link: /webviewer/guides/basics/components/download
