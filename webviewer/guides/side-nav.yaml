@@ -7,6 +7,7 @@
   link: /webviewer/guides/overview
 - title: Universal WebViewer
   link: /webviewer/guides/universal-webviewer
+
 - header: Basics
 - title: Instantiation
   link: /webviewer/guides/basics/instantiation
@@ -14,11 +15,15 @@
   link: /webviewer/guides/basics/document-loading
 - title: Troubleshooting Document Loading
   link: /webviewer/guides/basics/troubleshooting-document-loading
+
 - header: Fundamentals
+- title: WebViewer HTML Structure
+  link: /webviewer/guides/fundamentals/html-structure
 - title: Config files
   link: /webviewer/guides/fundamentals/config-files
 - title: Streaming Option
   link: /webviewer/guides/fundamentals/streaming-option
+
 - header: Components
 - title: Download
   link: /webviewer/guides/basics/components/download
@@ -36,6 +41,7 @@
   link: /webviewer/guides/basics/components/rotate
 - title: Zoom
   link: /webviewer/guides/basics/components/zoom
+
 - header: Annotations
 - title: Creating Annotations
   link: /webviewer/guides/basics/annotations/creating-annotations
@@ -53,6 +59,7 @@
   link: /webviewer/guides/basics/annotations/realtime-collaboration
 - title: Advanced Annotation Loading
   link: /webviewer/guides/basics/annotations/advanced-annotation-loading
+
 - header: Advanced
 - title: Forms
   link: /webviewer/guides/advanced/forms
