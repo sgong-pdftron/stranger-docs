@@ -38,10 +38,12 @@ _`<Your-Target-Name>` is your Xcode project's target name, and `<PDFNet-podspec-
 
 Your evaluation email will have four different `<PDFNet-podspec-link>` links:  
 
-The first two links include both `PDFNet.framework` and a binary copy of the UI framework, `Tools.framework`. One of the links references the latest release, and the other link references a specific version.
+The first two links include both `PDFNet.framework` and a binary copy of the UI framework, `Tools.framework`. One link references the latest release, and the other references a specific version.
 
-In case you are using a customized version of the open-source UI framework, `Tools.framework`, we provide two links that include only `PDFNet.framework`. One of the links references the latest release, and the other link references a specific version.
+In case you are using a customized version of the open-source UI framework, `Tools.framework`, we provide two links that include only `PDFNet.framework`. One link references the latest release, and the other references a specific version.
 
 ### Carthage Integration
 
-Carthage integration includes the PDFNet.framework and a binary version of the open-source UI framework, Tools.framework.
+[Carthage](https://github.com/Carthage/Carthage) integration includes the `PDFNet.framework` and a binary version of the open-source UI framework, `Tools.framework`. The Carthage package does not include sample code or source code for the UI framework `Tools.framework` — please use the manual download to get these.
+
+To add PDFNet with Carthage, add one of the links you received in your evaluation email in your Cartfile, and then follow Carthage's [instructions](https://github.com/Carthage/Carthage/blob/master/README.md#if-youre-building-for-ios-tvos-or-watchos) to finish integrating.
