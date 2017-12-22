@@ -54,7 +54,7 @@ This app contains two document viewing and editing activities, `SimpleReaderActi
 
 `CompleteReaderActivity` has everything in `SimpleReaderActivity`, plus file browsers for local and SD card files. It has example for how you can implement recent and favorite files. It also demonstrates how to use document thumbnails. In addition, it supports file merging, new file creation from styles such as lined, grid, graph and music sheet. See detailed features list below.
 
-Features:
+#### Features:
 - [Multi-tab viewing](/android/guides/getting-started/using_fragment)
 - [Annotation creation and form filling](/android/guides/basics/tools)
 - [Quick menu](/android/guides/basics/quick-menu)

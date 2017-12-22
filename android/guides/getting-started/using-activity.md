@@ -1,6 +1,6 @@
 # Using an Activity
 
-Starting from PDFNet v6.8.+, PDFNet ships with `SimpleReaderActivity` which is an all-in-one document reader and PDF editor. In addition to PDF files, it also supports viewing of other file extensions such as `.docx`, `.doc`, `.pptx`, `.xlsx`, `.md`, `.cbz` and various image formats. It allows stream conversion of these non-pdf documents to PDF format so you can view the document while conversion happens. In this activity, you can read, annotate, sign, fill in PDF forms and more. See [detailed features list here](/android/guides/getting-started#completereader-app).
+Starting from PDFNet v6.8.+, PDFNet ships with `SimpleReaderActivity` which is an all-in-one document reader and PDF editor. In addition to PDF files, it also supports viewing of other file extensions such as `.docx`, `.doc`, `.pptx`, `.xlsx`, `.md`, `.cbz` and various image formats. It allows stream conversion of these non-pdf documents to PDF format so you can view the document while conversion happens. In this activity, you can read, annotate, sign, fill in PDF forms and more. See [detailed features list here](/android/guides/getting-started#features).
 
 `SimpleReaderActivity` extends Android's [`AppCompatActivity`](https://developer.android.com/reference/android/support/v7/app/AppCompatActivity.html) and follows [Material design guidelines](https://material.io/guidelines/).
 
