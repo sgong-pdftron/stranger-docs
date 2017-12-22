@@ -23,8 +23,9 @@
   link: /android/guides/doc-lock
 - header: Basics
 - title: Tools
-  link: /android/guides/basics/tools
-  childLinks:
+  links:
+    - title: Tool Overview
+      link: /android/guides/basics/tools
     - title: Initialize ToolManager
       link: /android/guides/basics/tools/initialize-toolmanager
     - title: Set tool and disable tool
