@@ -1,7 +1,8 @@
 # Custom relative layout
 
-[CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) is a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html) that can be nested and displayed in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by a given page position and page number. Therefore all child views of [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) are displayed in PDF view.
+[CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) is a [RelativeLayout](https://developer.android.com/reference/android/widget/RelativeLayout.html) that can be nested and displayed in [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) by a given page position and page number. Therefore all child views of [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) are displayed in PDF view. When [PDFViewCtrl](https://www.pdftron.com/pdfnet/mobile/docs/Android/pdfnet/javadoc/reference/com/pdftron/pdf/PDFViewCtrl.html) is scrolling or zooming, [CustomRelativeLayout](http://neon.pdftron.local:8000/www/qliu/android/api/reference/com/pdftron/pdf/tools/CustomRelativeLayout.html) can adjust position and size automatically. 
 
+`// TODO: update textView text to CustomRelativeLayout TextView`
 <img alt='custom layout' src='./img/custom-layout.png' width='300' />
 
 ## Show CustomRelativeLayout
