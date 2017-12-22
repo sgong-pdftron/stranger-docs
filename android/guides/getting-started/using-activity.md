@@ -91,8 +91,9 @@ If you need internet permission for downloading online documents, add the follow
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
-
-**Please note: from Android 6.0, API 23, and up, application needs to request storage permission at runtime before accessing any files on the external storage.**
+<p class='warning'>
+Please note: from Android 6.0, API 23, and up, application needs to request storage permission at runtime before accessing any files on the external storage.
+</p>
 
 Lastly, launch the activity from anywhere in your application:
 
