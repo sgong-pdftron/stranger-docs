@@ -3,9 +3,9 @@
   link: /android/guides/getting-started
 - title: Try demo in your project
   link: /android/guides/getting-started/try-demo
-- title: Integrating PDFNet
+- title: Integrating PDFNet quick start
   link: /android/guides/getting-started/integrate
-- title: Manual & nightly integration
+- title: Manually integrating PDFNet advanced
   link: /android/guides/getting-started/integrate-manual
 - title: Upgrading
   link: /android/guides/getting-started/upgrading
