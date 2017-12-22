@@ -47,9 +47,3 @@ If you like the annotation toolbar does not return to the hand tool after an ann
 annotationToolbar.setButtonStayDown(true);
 ```
 By default the annotation toolbar returns to the pan tool after an annotation is created.
-
-## Style
-You can change the style by calling the following methods:
-- `setNormalStateSpinnerBtnBackground(int)`: for changing the normal state spinner button background
-- `setNormalStateBtnBackground(int)`: for changing the normal state button background
-- `setNormalStateToolbarColor(int)`: for changing the normal state toolbar color
