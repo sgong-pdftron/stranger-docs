@@ -60,6 +60,8 @@
   link: /android/guides/basics/reflow
 - title: Undo and redo
   link: /android/guides/basics/undo-redo
+- title Styles and Themes
+  link: /android/guides/basics/styles-and-themes  
 - header: Advanced 
 - title: Custom relative layout
   link: /android/guides/advanced/custom-relative-layout
